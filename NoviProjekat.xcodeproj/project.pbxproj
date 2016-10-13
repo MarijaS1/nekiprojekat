@@ -42,6 +42,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA4C03C1DB024DB00A25DBF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8488D1971DAE9A68008FBF41 /* FirstViewController.h */,
+				8488D1981DAE9A68008FBF41 /* FirstViewController.m */,
+				8488D19A1DAE9A68008FBF41 /* SecondViewController.h */,
+				8488D19B1DAE9A68008FBF41 /* SecondViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		8488D1851DAE9A67008FBF41 = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +74,7 @@
 			children = (
 				8488D1941DAE9A68008FBF41 /* AppDelegate.h */,
 				8488D1951DAE9A68008FBF41 /* AppDelegate.m */,
-				8488D1971DAE9A68008FBF41 /* FirstViewController.h */,
-				8488D1981DAE9A68008FBF41 /* FirstViewController.m */,
-				8488D19A1DAE9A68008FBF41 /* SecondViewController.h */,
-				8488D19B1DAE9A68008FBF41 /* SecondViewController.m */,
+				1AA4C03C1DB024DB00A25DBF /* View Controllers */,
 				8488D19D1DAE9A68008FBF41 /* Main.storyboard */,
 				8488D1A01DAE9A68008FBF41 /* Assets.xcassets */,
 				8488D1A21DAE9A68008FBF41 /* LaunchScreen.storyboard */,
@@ -315,6 +323,7 @@
 				8488D1AA1DAE9A68008FBF41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
