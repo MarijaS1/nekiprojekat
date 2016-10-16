@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA4C0401DB0298000A25DBF /* ParkingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA4C03F1DB0298000A25DBF /* ParkingTableViewCell.xib */; };
+		1AA4C0431DB029E600A25DBF /* ParkingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4C0421DB029E600A25DBF /* ParkingTableViewCell.m */; };
 		8488D1931DAE9A68008FBF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1921DAE9A68008FBF41 /* main.m */; };
 		8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1951DAE9A68008FBF41 /* AppDelegate.m */; };
 		8488D1991DAE9A68008FBF41 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1981DAE9A68008FBF41 /* FirstViewController.m */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AA4C03F1DB0298000A25DBF /* ParkingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParkingTableViewCell.xib; sourceTree = "<group>"; };
+		1AA4C0411DB029E600A25DBF /* ParkingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingTableViewCell.h; sourceTree = "<group>"; };
+		1AA4C0421DB029E600A25DBF /* ParkingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingTableViewCell.m; sourceTree = "<group>"; };
 		8488D18E1DAE9A68008FBF41 /* NoviProjekat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoviProjekat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8488D1921DAE9A68008FBF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8488D1941DAE9A68008FBF41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +58,24 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		1AA4C03D1DB0294200A25DBF /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AA4C03E1DB0295600A25DBF /* Custom Cells */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		1AA4C03E1DB0295600A25DBF /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1AA4C03F1DB0298000A25DBF /* ParkingTableViewCell.xib */,
+				1AA4C0411DB029E600A25DBF /* ParkingTableViewCell.h */,
+				1AA4C0421DB029E600A25DBF /* ParkingTableViewCell.m */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		8488D1851DAE9A67008FBF41 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +95,7 @@
 		8488D1901DAE9A68008FBF41 /* NoviProjekat */ = {
 			isa = PBXGroup;
 			children = (
+				1AA4C03D1DB0294200A25DBF /* Custom Views */,
 				8488D1941DAE9A68008FBF41 /* AppDelegate.h */,
 				8488D1951DAE9A68008FBF41 /* AppDelegate.m */,
 				1AA4C03C1DB024DB00A25DBF /* View Controllers */,
@@ -150,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA4C0401DB0298000A25DBF /* ParkingTableViewCell.xib in Resources */,
 				8488D1A41DAE9A68008FBF41 /* LaunchScreen.storyboard in Resources */,
 				8488D1A11DAE9A68008FBF41 /* Assets.xcassets in Resources */,
 				8488D19F1DAE9A68008FBF41 /* Main.storyboard in Resources */,
@@ -166,6 +191,7 @@
 				8488D19C1DAE9A68008FBF41 /* SecondViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* FirstViewController.m in Sources */,
+				1AA4C0431DB029E600A25DBF /* ParkingTableViewCell.m in Sources */,
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
