@@ -1,0 +1,113 @@
+/* 
+  File.strings
+  NoviProjekat
+
+  Created by Marija Sumakovic on 1/2/17.
+  Copyright © 2017 Admin. All rights reserved.
+*/
+/*TYPES*/
+/*
+ *alert
+ *button
+ *label
+ *textfield
+ *rest
+ *
+ */
+
+/*SUBTYPES*/
+/*
+ *title
+ *message
+ *buttontitle
+ *text
+ *
+ */
+/*TEST MESSAGE*/
+"messagetest" = "Test message";
+
+
+/*LOGIN VC*/
+
+/*Unexpected server error alert*/
+"alert_title_unexpectedservererror" = "Oops!";
+"alert_message_unexpectedservererror" = "Something didn’t work out.\nPlease retry!";
+"alert_buttontitle_unexpectedservererror" = "Try again";
+
+"label_title_login" = "Already have an account?";
+"label_title_signin" = "Sign in";
+
+/*FB SIGNUP VC*/
+
+/*Menu buttons*/
+"alert_title_photosource" = "Photo source";
+"alert_text_library" = "Library";
+"alert_text_send" = "Pošalji";
+"alert_text_cancel" = "Otkaži";
+
+/*fb picture download failed*/
+"alert_message_fbpicturedownloadfailed" = "Your picture didn’t download";
+"alert_buttontitle_tryagain" = "Try again";
+"alert_buttontitle_cancel" = "Cancel";
+"alert_buttontitle_gotit" = "Okay";
+"alert_buttontitle_continue" = "Continue";
+"alert_title_oops" = "Oops!";
+
+/*Picture uploaded successfuly*/
+"alert_title_pictureuploadsuccess" = "Picture uploaded";
+"alert_message_pictureuploadsuccess" = "Yay!";
+"alert_buttontitle_pictureuploadsuccess" = "Okay";
+
+/*Picture upload failed*/
+"alert_title_pictureuploadfailed" = "Oops!";
+"alert_message_pictureuploadfailed" = "Picture upload failed.\nPlease try again!";
+"alert_buttontitle_pictureuploadfailed" = "Okay";
+
+/*Invalid displayname alert*/
+"alert_title_invaliddisplayname" = "Invalid username";
+"alert_message_invaliddisplayname" = "Username needs to be between 4-12 characters.";
+"alert_buttontitle_invaliddisplayname" = "Okay";
+
+/*Missing displayname alert*/
+"alert_title_missingdisplayname" = "Missing username";
+"alert_message_missingdisplayname" = "Oops! You forgot to enter your username!";
+"alert_buttontitle_missingdisplayname" = "Okay";
+
+/*Upload profile picture not finished*/
+"alert_title_uploadnotfinished" = "Upload unfinished";
+"alert_message_uploadnotfinished" = "Your picture hasn’t finished uploading yet.\nDo you want to continue?";
+
+/*Selfi info label text*/
+"label_text_lookingundecidedenough" = "Looking Undecided enough?";
+
+/*Term of services and privacy policy label*/
+"label_text_tofandpp" = "By signing up, you agree to the Terms of Use and Privacy Policy.";
+"label_text_termsofservices" = "Terms of Use";
+"label_text_privacypolicy" = "Privacy Policy";
+
+/*Navigation bar title*/
+"label_title_createyourprofile" = "Create your profile";
+
+
+/*UD LOGIN VC*/
+
+/*Navigation bar title*/
+"label_title_login2" = "Sign in";
+
+/*PARKING VC*/
+"label_title_zona1" = "Zona 1";
+"label_title_zona1text" = "Max 60 min, od 7h do 21h, subotom od 7h do 14h (56 din/sat)";
+
+"label_title_zona2" = "Zona 2";
+"label_title_zona2text" = "Max 120 min, od 7h do 21h, subotom od 7h do 14h (48 din/sat)";
+
+"label_title_zona3" = "Zona 3";
+"label_title_zona3text" = "Max 180 min, od 7h do 21h, subotom od 7h do 14h (41 din/sat)";
+
+"label_title_nolimit" = "Bez ograničenja";
+"label_title_nolimittext" = "Naplata od 8h do 21h, subotom od 8h do 14h (31 din/sat)";
+
+"label_title_dailyticket" = "Dnevna karta";
+"label_title_dailytickettext" = "Važi od 8h do 21h, subotom od 8h do 14h (285 din/dan)";
+
+

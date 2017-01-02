@@ -11,6 +11,12 @@
 
 @interface ParkingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, strong) NSArray *titleData;
+@property (nonatomic, strong) NSArray *descriptionData;
+@property (nonatomic, strong) NSArray *thumbnails;
+
+-(void)adjustCellForIndexPath: (NSIndexPath*)indexPath;
 
 @end

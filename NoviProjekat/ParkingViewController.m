@@ -8,11 +8,11 @@
 
 #import "ParkingViewController.h"
 #import "ParkingTableViewCell.h"
+#import "LocalizableStringService.h"
 
 
 @interface ParkingViewController ()
-@property (nonatomic, strong) NSArray *tableData;
-@property (nonatomic, strong) NSArray *thumbnails;
+
 @end
 
 @implementation ParkingViewController
@@ -23,13 +23,20 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ParkingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:PARKING_TABLE_VIEW_CELL_IDENTIFIER];
     [self initGui];
+    
+
+
 }
+
 
 -(void)initGui{
-    self.tableData = [NSArray arrayWithObjects:@"String1",@"String2",@"String3",@"String4",@"String5", nil];
-    self.thumbnails = [NSArray arrayWithObjects:@"car",@"car",@"car",@"car",@"car",nil];
+    UIView *tableViewBackground = [[UIView alloc] init];
+    tableViewBackground.frame = self.view.frame;
+    tableViewBackground.backgroundColor= [UIColor colorWithRed:56/255.0 green:56/255.0 blue:56/255.0 alpha:1.0];
+    
+    [self.view insertSubview:tableViewBackground belowSubview:self.tableView];
+    self.tableView.backgroundColor = [UIColor clearColor];
 }
-
 
 #pragma mark - UITableViewControllerDelegate
 
@@ -44,9 +51,9 @@
     }
     
     [cell setBackgroundColor:[UIColor clearColor]];
+    
+    [cell adjustCellForIndexPath:indexPath];
 //    cell.delegate = self;
-    cell.descriptionLabel.text = [self.tableData objectAtIndex:indexPath.row];
-    cell.thumbnailImage.image = [UIImage imageNamed:[self.thumbnails objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -55,6 +62,53 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 5;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *smsNumber = @"";
+    
+    switch (indexPath.row) {
+        case 0:
+            smsNumber = @"9111";
+            break;
+            
+        case 1:
+            smsNumber = @"9112";
+            break;
+        case 2:
+            smsNumber = @"9113";
+            break;
+        case 3:
+            smsNumber = @"9119";
+            break;
+        case 4:
+            smsNumber = @"9118";
+            break;
+        default:
+            break;
+    }
+   
+      UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Pošsalji SMS" message:[NSString stringWithFormat:@"Na broj: %@ Sadržaj: Broj tablice", smsNumber ] preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[[LocalizableStringService sharedInstance] getLocalizableStringForType:TYPE_ALERT andSybtype:SUBTYPE_TEXT andSuffix:@"cancel"]  style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+        
+
+        [alertView dismissViewControllerAnimated:YES completion:nil];
+
+    }];
+    [alertView addAction:cancelAction];
+    
+    UIAlertAction *sendAction = [UIAlertAction actionWithTitle:[[LocalizableStringService sharedInstance] getLocalizableStringForType:TYPE_ALERT andSybtype:SUBTYPE_TEXT andSuffix:@"send"]  style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        
+        
+        [alertView dismissViewControllerAnimated:YES completion:nil];
+        
+    }];
+    [alertView addAction:sendAction];
+    
+    [self presentViewController:alertView animated:YES completion:nil];
+
+}
+
 
 
 

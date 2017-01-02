@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1D2A681E1AFB2200205CA9 /* Localizable.strings */; };
+		1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */; };
 		8488D1931DAE9A68008FBF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1921DAE9A68008FBF41 /* main.m */; };
 		8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1951DAE9A68008FBF41 /* AppDelegate.m */; };
 		8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1981DAE9A68008FBF41 /* ReminderViewController.m */; };
@@ -19,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A1D2A681E1AFB2200205CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1A1D2A8E1E1B039400205CA9 /* LocalizableStringService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizableStringService.h; path = Services/LocalizableStringService.h; sourceTree = "<group>"; };
+		1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalizableStringService.m; path = Services/LocalizableStringService.m; sourceTree = "<group>"; };
 		8488D18E1DAE9A68008FBF41 /* NoviProjekat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoviProjekat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8488D1921DAE9A68008FBF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8488D1941DAE9A68008FBF41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1D2A8D1E1B035400205CA9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A1D2A8E1E1B039400205CA9 /* LocalizableStringService.h */,
+				1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		1AA4C03C1DB024DB00A25DBF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +109,7 @@
 		8488D1901DAE9A68008FBF41 /* NoviProjekat */ = {
 			isa = PBXGroup;
 			children = (
+				1A1D2A8D1E1B035400205CA9 /* Services */,
 				1AA4C03D1DB0294200A25DBF /* Custom Views */,
 				8488D1941DAE9A68008FBF41 /* AppDelegate.h */,
 				8488D1951DAE9A68008FBF41 /* AppDelegate.m */,
@@ -112,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8488D1921DAE9A68008FBF41 /* main.m */,
+				1A1D2A681E1AFB2200205CA9 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -142,7 +158,7 @@
 		8488D1861DAE9A67008FBF41 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Admin;
 				TargetAttributes = {
 					8488D18D1DAE9A67008FBF41 = {
@@ -178,6 +194,7 @@
 				8488D1A41DAE9A68008FBF41 /* LaunchScreen.storyboard in Resources */,
 				8488D1A11DAE9A68008FBF41 /* Assets.xcassets in Resources */,
 				8488D19F1DAE9A68008FBF41 /* Main.storyboard in Resources */,
+				1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +208,7 @@
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,
+				1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */,
 				8488D1AE1DB5600E008FBF41 /* ParkingTableViewCell.m in Sources */,
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
 			);
@@ -236,6 +254,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -284,6 +303,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
