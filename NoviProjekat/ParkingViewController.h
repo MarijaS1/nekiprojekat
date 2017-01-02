@@ -10,6 +10,7 @@
 
 @interface ParkingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

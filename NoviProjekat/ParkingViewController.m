@@ -9,6 +9,7 @@
 #import "ParkingViewController.h"
 #import "ParkingTableViewCell.h"
 
+
 @interface ParkingViewController ()
 @property (nonatomic, strong) NSArray *tableData;
 @property (nonatomic, strong) NSArray *thumbnails;
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"ParkingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:PARKING_TABLE_VIEW_CELL_IDENTIFIER];
     [self initGui];
 }
 
@@ -32,17 +34,17 @@
 #pragma mark - UITableViewControllerDelegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *simpleTableIdentifier = @"parkingTableViewCell";
+    static NSString *simpleTableIdentifier = PARKING_TABLE_VIEW_CELL_IDENTIFIER;
     
-    ParkingTableViewCell *cell = (ParkingTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ParkingTableViewCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-     
-    
+   
+    ParkingTableViewCell* cell =[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        cell = [[ParkingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
+    [cell setBackgroundColor:[UIColor clearColor]];
+//    cell.delegate = self;
     cell.descriptionLabel.text = [self.tableData objectAtIndex:indexPath.row];
     cell.thumbnailImage.image = [UIImage imageNamed:[self.thumbnails objectAtIndex:indexPath.row]];
     return cell;

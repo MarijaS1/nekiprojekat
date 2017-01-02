@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define PARKING_TABLE_VIEW_CELL_IDENTIFIER  @"parkingTableViewCell"
 
 @interface ParkingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
