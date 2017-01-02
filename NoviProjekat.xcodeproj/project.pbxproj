@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		8488D1931DAE9A68008FBF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1921DAE9A68008FBF41 /* main.m */; };
 		8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1951DAE9A68008FBF41 /* AppDelegate.m */; };
-		8488D1991DAE9A68008FBF41 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1981DAE9A68008FBF41 /* FirstViewController.m */; };
-		8488D19C1DAE9A68008FBF41 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D19B1DAE9A68008FBF41 /* SecondViewController.m */; };
+		8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1981DAE9A68008FBF41 /* ReminderViewController.m */; };
+		8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D19B1DAE9A68008FBF41 /* ParkingViewController.m */; };
 		8488D19F1DAE9A68008FBF41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8488D19D1DAE9A68008FBF41 /* Main.storyboard */; };
 		8488D1A11DAE9A68008FBF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8488D1A01DAE9A68008FBF41 /* Assets.xcassets */; };
 		8488D1A41DAE9A68008FBF41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8488D1A21DAE9A68008FBF41 /* LaunchScreen.storyboard */; };
@@ -23,10 +23,10 @@
 		8488D1921DAE9A68008FBF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8488D1941DAE9A68008FBF41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8488D1951DAE9A68008FBF41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8488D1971DAE9A68008FBF41 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		8488D1981DAE9A68008FBF41 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		8488D19A1DAE9A68008FBF41 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		8488D19B1DAE9A68008FBF41 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		8488D1971DAE9A68008FBF41 /* ReminderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
+		8488D1981DAE9A68008FBF41 /* ReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReminderViewController.m; sourceTree = "<group>"; };
+		8488D19A1DAE9A68008FBF41 /* ParkingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingViewController.h; sourceTree = "<group>"; };
+		8488D19B1DAE9A68008FBF41 /* ParkingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingViewController.m; sourceTree = "<group>"; };
 		8488D19E1DAE9A68008FBF41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8488D1A01DAE9A68008FBF41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8488D1A31DAE9A68008FBF41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,10 +50,10 @@
 		1AA4C03C1DB024DB00A25DBF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8488D1971DAE9A68008FBF41 /* FirstViewController.h */,
-				8488D1981DAE9A68008FBF41 /* FirstViewController.m */,
-				8488D19A1DAE9A68008FBF41 /* SecondViewController.h */,
-				8488D19B1DAE9A68008FBF41 /* SecondViewController.m */,
+				8488D1971DAE9A68008FBF41 /* ReminderViewController.h */,
+				8488D1981DAE9A68008FBF41 /* ReminderViewController.m */,
+				8488D19A1DAE9A68008FBF41 /* ParkingViewController.h */,
+				8488D19B1DAE9A68008FBF41 /* ParkingViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -188,9 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8488D19C1DAE9A68008FBF41 /* SecondViewController.m in Sources */,
+				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
-				8488D1991DAE9A68008FBF41 /* FirstViewController.m in Sources */,
+				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,
 				8488D1AE1DB5600E008FBF41 /* ParkingTableViewCell.m in Sources */,
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
 			);
