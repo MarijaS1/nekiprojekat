@@ -1,0 +1,6 @@
+framework module Pods_NoviProjekat {
+  umbrella header "Pods-NoviProjekat-umbrella.h"
+
+  export *
+  module * { export * }
+}
