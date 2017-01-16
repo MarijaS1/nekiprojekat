@@ -17,25 +17,36 @@
 
 @implementation ParkingViewController
 
+#pragma mark - Lifecycle
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ParkingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:PARKING_TABLE_VIEW_CELL_IDENTIFIER];
+    
+    
     [self initGui];
     
-
 
 }
 
 
 -(void)initGui{
+    
+    
     UIView *tableViewBackground = [[UIView alloc] init];
     tableViewBackground.frame = self.view.frame;
-    tableViewBackground.backgroundColor= [UIColor colorWithRed:56/255.0 green:56/255.0 blue:56/255.0 alpha:1.0];
+    tableViewBackground.backgroundColor= [UIColor colorWithRed:124/255.0 green:128/255.0 blue:135/255.0 alpha:1.0];
     
     [self.view insertSubview:tableViewBackground belowSubview:self.tableView];
     self.tableView.backgroundColor = [UIColor clearColor];
+//
+//    UILabel *registrationPlatesLabel = [[UILabel alloc]initWithFrame:self.registrationPlatesLabel.frame];
+//     registrationPlatesLabel.text = @"Registration Plates";
+//    registrationPlatesLabel.textAlignment = NSTextAlignmentCenter;
+//       registrationPlatesLabel.textColor = [UIColor whiteColor];
+//    [self.view insertSubview:registrationPlatesLabel aboveSubview:self.tableView];
 }
 
 #pragma mark - UITableViewControllerDelegate
