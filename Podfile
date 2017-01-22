@@ -7,7 +7,7 @@ target 'NoviProjekat' do
 
 	pod 'MBProgressHUD', '~> 1.0.0’
 	pod ‘Charts’
-	
+    pod 'Toast', '~> 3.0'	
 	
 
   # Pods for NoviProjekat

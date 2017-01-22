@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1D2A681E1AFB2200205CA9 /* Localizable.strings */; };
 		1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */; };
+		1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D61E34D55D00713D25 /* BasicViewController.m */; };
+		1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D91E34D8A400713D25 /* UIFont+UDFont.m */; };
+		1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */; };
 		7F8C94B4160044F51D13E214 /* Pods_NoviProjekat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A84FB88838389AEEFCD518 /* Pods_NoviProjekat.framework */; };
 		8488D1931DAE9A68008FBF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1921DAE9A68008FBF41 /* main.m */; };
 		8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1951DAE9A68008FBF41 /* AppDelegate.m */; };
@@ -27,6 +30,13 @@
 		1A1D2A681E1AFB2200205CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1A1D2A8E1E1B039400205CA9 /* LocalizableStringService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizableStringService.h; path = Services/LocalizableStringService.h; sourceTree = "<group>"; };
 		1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalizableStringService.m; path = Services/LocalizableStringService.m; sourceTree = "<group>"; };
+		1A6793D51E34D55D00713D25 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicViewController.h; path = ViewControllers/BasicViewController.h; sourceTree = "<group>"; };
+		1A6793D61E34D55D00713D25 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicViewController.m; path = ViewControllers/BasicViewController.m; sourceTree = "<group>"; };
+		1A6793D81E34D8A400713D25 /* UIFont+UDFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+UDFont.h"; path = "Categories/UIFont+UDFont.h"; sourceTree = "<group>"; };
+		1A6793D91E34D8A400713D25 /* UIFont+UDFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+UDFont.m"; path = "Categories/UIFont+UDFont.m"; sourceTree = "<group>"; };
+		1A6793DB1E34D98700713D25 /* MojAutomobil.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MojAutomobil.pch; sourceTree = "<group>"; };
+		1A6793DD1E34DB9800713D25 /* UIColor+UDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+UDColor.h"; path = "Categories/UIColor+UDColor.h"; sourceTree = "<group>"; };
+		1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+UDColor.m"; path = "Categories/UIColor+UDColor.m"; sourceTree = "<group>"; };
 		8488D18E1DAE9A68008FBF41 /* NoviProjekat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoviProjekat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8488D1921DAE9A68008FBF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8488D1941DAE9A68008FBF41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +76,17 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		1A6793DC1E34DB6100713D25 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1A6793D81E34D8A400713D25 /* UIFont+UDFont.h */,
+				1A6793D91E34D8A400713D25 /* UIFont+UDFont.m */,
+				1A6793DD1E34DB9800713D25 /* UIColor+UDColor.h */,
+				1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		1AA4C03C1DB024DB00A25DBF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +94,8 @@
 				8488D1981DAE9A68008FBF41 /* ReminderViewController.m */,
 				8488D19A1DAE9A68008FBF41 /* ParkingViewController.h */,
 				8488D19B1DAE9A68008FBF41 /* ParkingViewController.m */,
+				1A6793D51E34D55D00713D25 /* BasicViewController.h */,
+				1A6793D61E34D55D00713D25 /* BasicViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -133,6 +156,7 @@
 		8488D1901DAE9A68008FBF41 /* NoviProjekat */ = {
 			isa = PBXGroup;
 			children = (
+				1A6793DC1E34DB6100713D25 /* Categories */,
 				1A1D2A8D1E1B035400205CA9 /* Services */,
 				1AA4C03D1DB0294200A25DBF /* Custom Views */,
 				8488D1941DAE9A68008FBF41 /* AppDelegate.h */,
@@ -151,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				8488D1921DAE9A68008FBF41 /* main.m */,
+				1A6793DB1E34D98700713D25 /* MojAutomobil.pch */,
 				1A1D2A681E1AFB2200205CA9 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -283,8 +308,11 @@
 			files = (
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
+				1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */,
+				1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,
 				1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */,
+				1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */,
 				8488D1AE1DB5600E008FBF41 /* ParkingTableViewCell.m in Sources */,
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
 			);
@@ -357,6 +385,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -400,6 +429,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -412,8 +442,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = NoviProjekat/MojAutomobil.pch;
 				INFOPLIST_FILE = NoviProjekat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = projekeat.NoviProjekat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -426,8 +459,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = NoviProjekat/MojAutomobil.pch;
 				INFOPLIST_FILE = NoviProjekat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = projekeat.NoviProjekat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
