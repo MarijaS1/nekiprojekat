@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasicViewController.h"
 
-@interface ReminderViewController : UIViewController
+@interface ReminderViewController : BasicViewController
 
 
 @end

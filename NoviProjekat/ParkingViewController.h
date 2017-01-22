@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasicViewController.h"
 
-@interface ParkingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ParkingViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
