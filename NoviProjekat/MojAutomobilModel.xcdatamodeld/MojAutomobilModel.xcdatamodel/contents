@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES" codeGenerationType="class">
+        <attribute name="brandName" optional="YES" attributeType="String" minValueString="3" maxValueString="100" syncable="YES"/>
+        <attribute name="carID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="registration" optional="YES" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
+        <relationship name="hasExpensesRelationship" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Expenses" inverseName="hasCarRelationship" inverseEntity="Expenses" syncable="YES"/>
+        <relationship name="hasOwnerRelationship" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="User" inverseName="hasCarRelationship" inverseEntity="User" syncable="YES"/>
+        <relationship name="hasReminderRelationship" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Remider" inverseName="hasCarRelationship" inverseEntity="Remider" syncable="YES"/>
+    </entity>
+    <entity name="Expenses" representedClassName="Expenses" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="expensesID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="purpose" optional="YES" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
+        <relationship name="hasCarRelationship" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Car" inverseName="hasExpensesRelationship" inverseEntity="Car" syncable="YES"/>
+    </entity>
+    <entity name="Remider" representedClassName="Remider" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
+        <attribute name="reminderID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
+        <relationship name="hasCarRelationship" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Car" inverseName="hasReminderRelationship" inverseEntity="Car" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" minValueString="0" maxValueString="150" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" minValueString="0" maxValueString="50" syncable="YES"/>
+        <relationship name="hasCarRelationship" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Car" inverseName="hasOwnerRelationship" inverseEntity="Car" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-488" positionY="-162" width="128" height="118"/>
+        <element name="Car" positionX="-119" positionY="-225" width="128" height="148"/>
+        <element name="Remider" positionX="-315" positionY="107" width="128" height="118"/>
+        <element name="Expenses" positionX="63" positionY="62" width="128" height="118"/>
+    </elements>
+</model>
