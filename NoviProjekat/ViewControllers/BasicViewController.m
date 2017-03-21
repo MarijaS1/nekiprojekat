@@ -48,11 +48,14 @@ static MBProgressHUD *mbProgressHud;
     //    myStyle.verticalPadding = 5.0;
     
     [CSToastManager setSharedStyle:myStyle];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:33/255.0 green:126/255.0 blue:99/255.0 alpha:1];
 }
 
 - (void) initializeGui
 {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     
     if (!mbProgressHud) {
         mbProgressHud = [[MBProgressHUD alloc] initWithView:appDelegate.window];

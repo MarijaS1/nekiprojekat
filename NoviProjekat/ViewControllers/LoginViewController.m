@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "SignUpViewController.h"
 
 @interface LoginViewController ()
 
@@ -19,6 +20,11 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -28,7 +34,10 @@
 }
 
 - (IBAction)registerButtonPressed:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
+    SignUpViewController *signUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"signUpViewController"];
+     [self.navigationController pushViewController:signUpViewController animated:YES];
 }
 
 
