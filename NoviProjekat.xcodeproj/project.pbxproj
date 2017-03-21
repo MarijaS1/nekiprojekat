@@ -9,19 +9,16 @@
 /* Begin PBXBuildFile section */
 		1A0C80CA1E6C611F0084D24C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0C80C91E6C611F0084D24C /* CoreData.framework */; };
 		1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */; };
-		1A0C80FF1E6C6D500084D24C /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80F01E6C6D500084D24C /* User+CoreDataClass.m */; };
 		1A0C81001E6C6D500084D24C /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80F21E6C6D500084D24C /* User+CoreDataProperties.m */; };
-		1A0C81011E6C6D500084D24C /* Remider+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80F41E6C6D500084D24C /* Remider+CoreDataClass.m */; };
 		1A0C81021E6C6D500084D24C /* Remider+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80F61E6C6D500084D24C /* Remider+CoreDataProperties.m */; };
-		1A0C81031E6C6D500084D24C /* Car+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80F81E6C6D500084D24C /* Car+CoreDataClass.m */; };
 		1A0C81041E6C6D500084D24C /* Car+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80FA1E6C6D500084D24C /* Car+CoreDataProperties.m */; };
-		1A0C81051E6C6D500084D24C /* Expenses+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80FC1E6C6D500084D24C /* Expenses+CoreDataClass.m */; };
 		1A0C81061E6C6D500084D24C /* Expenses+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80FE1E6C6D500084D24C /* Expenses+CoreDataProperties.m */; };
 		1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1D2A681E1AFB2200205CA9 /* Localizable.strings */; };
 		1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */; };
 		1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D61E34D55D00713D25 /* BasicViewController.m */; };
 		1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D91E34D8A400713D25 /* UIFont+UDFont.m */; };
 		1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */; };
+		1AE78AA61E81B0120018FF66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE78AA51E81B0120018FF66 /* LoginViewController.m */; };
 		7F8C94B4160044F51D13E214 /* Pods_NoviProjekat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A84FB88838389AEEFCD518 /* Pods_NoviProjekat.framework */; };
 		8488D1931DAE9A68008FBF41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1921DAE9A68008FBF41 /* main.m */; };
 		8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488D1951DAE9A68008FBF41 /* AppDelegate.m */; };
@@ -65,6 +62,8 @@
 		1A6793DB1E34D98700713D25 /* MojAutomobil.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MojAutomobil.pch; sourceTree = "<group>"; };
 		1A6793DD1E34DB9800713D25 /* UIColor+UDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+UDColor.h"; path = "Categories/UIColor+UDColor.h"; sourceTree = "<group>"; };
 		1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+UDColor.m"; path = "Categories/UIColor+UDColor.m"; sourceTree = "<group>"; };
+		1AE78AA41E81B0120018FF66 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
+		1AE78AA51E81B0120018FF66 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
 		8488D18E1DAE9A68008FBF41 /* NoviProjekat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoviProjekat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8488D1921DAE9A68008FBF41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8488D1941DAE9A68008FBF41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +124,8 @@
 				8488D19B1DAE9A68008FBF41 /* ParkingViewController.m */,
 				1A6793D51E34D55D00713D25 /* BasicViewController.h */,
 				1A6793D61E34D55D00713D25 /* BasicViewController.m */,
+				1AE78AA41E81B0120018FF66 /* LoginViewController.h */,
+				1AE78AA51E81B0120018FF66 /* LoginViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -145,6 +146,29 @@
 				8488D1AD1DB5600E008FBF41 /* ParkingTableViewCell.xib */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		1AE78AA31E81AFBD0018FF66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A0C80EF1E6C6D500084D24C /* User+CoreDataClass.h */,
+				1A0C80F01E6C6D500084D24C /* User+CoreDataClass.m */,
+				1A0C80F11E6C6D500084D24C /* User+CoreDataProperties.h */,
+				1A0C80F21E6C6D500084D24C /* User+CoreDataProperties.m */,
+				1A0C80F31E6C6D500084D24C /* Remider+CoreDataClass.h */,
+				1A0C80F41E6C6D500084D24C /* Remider+CoreDataClass.m */,
+				1A0C80F51E6C6D500084D24C /* Remider+CoreDataProperties.h */,
+				1A0C80F61E6C6D500084D24C /* Remider+CoreDataProperties.m */,
+				1A0C80F71E6C6D500084D24C /* Car+CoreDataClass.h */,
+				1A0C80F81E6C6D500084D24C /* Car+CoreDataClass.m */,
+				1A0C80F91E6C6D500084D24C /* Car+CoreDataProperties.h */,
+				1A0C80FA1E6C6D500084D24C /* Car+CoreDataProperties.m */,
+				1A0C80FB1E6C6D500084D24C /* Expenses+CoreDataClass.h */,
+				1A0C80FC1E6C6D500084D24C /* Expenses+CoreDataClass.m */,
+				1A0C80FD1E6C6D500084D24C /* Expenses+CoreDataProperties.h */,
+				1A0C80FE1E6C6D500084D24C /* Expenses+CoreDataProperties.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		4000430524CC9DE28C9D8D2D /* Frameworks */ = {
@@ -186,22 +210,7 @@
 		8488D1901DAE9A68008FBF41 /* NoviProjekat */ = {
 			isa = PBXGroup;
 			children = (
-				1A0C80EF1E6C6D500084D24C /* User+CoreDataClass.h */,
-				1A0C80F01E6C6D500084D24C /* User+CoreDataClass.m */,
-				1A0C80F11E6C6D500084D24C /* User+CoreDataProperties.h */,
-				1A0C80F21E6C6D500084D24C /* User+CoreDataProperties.m */,
-				1A0C80F31E6C6D500084D24C /* Remider+CoreDataClass.h */,
-				1A0C80F41E6C6D500084D24C /* Remider+CoreDataClass.m */,
-				1A0C80F51E6C6D500084D24C /* Remider+CoreDataProperties.h */,
-				1A0C80F61E6C6D500084D24C /* Remider+CoreDataProperties.m */,
-				1A0C80F71E6C6D500084D24C /* Car+CoreDataClass.h */,
-				1A0C80F81E6C6D500084D24C /* Car+CoreDataClass.m */,
-				1A0C80F91E6C6D500084D24C /* Car+CoreDataProperties.h */,
-				1A0C80FA1E6C6D500084D24C /* Car+CoreDataProperties.m */,
-				1A0C80FB1E6C6D500084D24C /* Expenses+CoreDataClass.h */,
-				1A0C80FC1E6C6D500084D24C /* Expenses+CoreDataClass.m */,
-				1A0C80FD1E6C6D500084D24C /* Expenses+CoreDataProperties.h */,
-				1A0C80FE1E6C6D500084D24C /* Expenses+CoreDataProperties.m */,
+				1AE78AA31E81AFBD0018FF66 /* Model */,
 				1A6793DC1E34DB6100713D25 /* Categories */,
 				1A1D2A8D1E1B035400205CA9 /* Services */,
 				1AA4C03D1DB0294200A25DBF /* Custom Views */,
@@ -356,18 +365,15 @@
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
 				1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */,
-				1A0C81051E6C6D500084D24C /* Expenses+CoreDataClass.m in Sources */,
-				1A0C81031E6C6D500084D24C /* Car+CoreDataClass.m in Sources */,
 				1A0C81041E6C6D500084D24C /* Car+CoreDataProperties.m in Sources */,
-				1A0C80FF1E6C6D500084D24C /* User+CoreDataClass.m in Sources */,
 				1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,
 				1A0C81001E6C6D500084D24C /* User+CoreDataProperties.m in Sources */,
 				1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */,
 				1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */,
-				1A0C81011E6C6D500084D24C /* Remider+CoreDataClass.m in Sources */,
 				8488D1AE1DB5600E008FBF41 /* ParkingTableViewCell.m in Sources */,
 				1A0C81061E6C6D500084D24C /* Expenses+CoreDataProperties.m in Sources */,
+				1AE78AA61E81B0120018FF66 /* LoginViewController.m in Sources */,
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
 				1A0C81021E6C6D500084D24C /* Remider+CoreDataProperties.m in Sources */,
 				1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */,
@@ -439,7 +445,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -485,7 +490,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
@@ -505,6 +509,7 @@
 				GCC_PREFIX_HEADER = NoviProjekat/MojAutomobil.pch;
 				INFOPLIST_FILE = NoviProjekat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = projekeat.NoviProjekat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,6 +530,7 @@
 				GCC_PREFIX_HEADER = NoviProjekat/MojAutomobil.pch;
 				INFOPLIST_FILE = NoviProjekat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = projekeat.NoviProjekat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
