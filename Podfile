@@ -7,7 +7,8 @@ target 'NoviProjekat' do
 
 	pod 'MBProgressHUD', '~> 1.0.0’
 	pod ‘Charts’
-    pod 'Toast', '~> 3.0'	
+    pod 'Toast', '~> 3.0'
+    pod 'IQKeyboardManager'
 	
 
   # Pods for NoviProjekat

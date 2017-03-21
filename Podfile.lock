@@ -2,19 +2,22 @@ PODS:
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - IQKeyboardManager (4.0.8)
   - MBProgressHUD (1.0.0)
   - Toast (3.1.0)
 
 DEPENDENCIES:
   - Charts
+  - IQKeyboardManager
   - MBProgressHUD (~> 1.0.0)
   - Toast (~> 3.0)
 
 SPEC CHECKSUMS:
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: 2c9fafd9c5e5d63bd451bf949e05ba8664f2af4c
+PODFILE CHECKSUM: bcba5ce72aa4a94cc00259e033865bc59a72faad
 
 COCOAPODS: 1.1.1
