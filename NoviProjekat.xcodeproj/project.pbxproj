@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		1A0C80CA1E6C611F0084D24C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0C80C91E6C611F0084D24C /* CoreData.framework */; };
 		1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */; };
-		1A0C81001E6C6D500084D24C /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80F21E6C6D500084D24C /* User+CoreDataProperties.m */; };
-		1A0C81021E6C6D500084D24C /* Remider+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80F61E6C6D500084D24C /* Remider+CoreDataProperties.m */; };
-		1A0C81041E6C6D500084D24C /* Car+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80FA1E6C6D500084D24C /* Car+CoreDataProperties.m */; };
-		1A0C81061E6C6D500084D24C /* Expenses+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80FE1E6C6D500084D24C /* Expenses+CoreDataProperties.m */; };
 		1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1D2A681E1AFB2200205CA9 /* Localizable.strings */; };
 		1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */; };
 		1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D61E34D55D00713D25 /* BasicViewController.m */; };
 		1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D91E34D8A400713D25 /* UIFont+UDFont.m */; };
 		1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */; };
+		1AC823601EA509FE009AFBFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8235F1EA509FE009AFBFC /* User.m */; };
+		1AC823631EA50BE9009AFBFC /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823621EA50BE9009AFBFC /* Reminder.m */; };
+		1AC823661EA50C97009AFBFC /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823651EA50C97009AFBFC /* Car.m */; };
+		1AC823691EA50D72009AFBFC /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823681EA50D72009AFBFC /* Expenses.m */; };
+		1AC8236D1EA52487009AFBFC /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8236C1EA52487009AFBFC /* DataController.m */; };
 		1AE78AA61E81B0120018FF66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE78AA51E81B0120018FF66 /* LoginViewController.m */; };
 		1AE78AA91E81B5F70018FF66 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE78AA81E81B5F70018FF66 /* SignUpViewController.m */; };
 		7F8C94B4160044F51D13E214 /* Pods_NoviProjekat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A84FB88838389AEEFCD518 /* Pods_NoviProjekat.framework */; };
@@ -37,22 +38,6 @@
 		18A84FB88838389AEEFCD518 /* Pods_NoviProjekat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoviProjekat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0C80C91E6C611F0084D24C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MojAutomobilModel.xcdatamodel; sourceTree = "<group>"; };
-		1A0C80EF1E6C6D500084D24C /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataClass.h"; path = "Model/User+CoreDataClass.h"; sourceTree = "<group>"; };
-		1A0C80F01E6C6D500084D24C /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataClass.m"; path = "Model/User+CoreDataClass.m"; sourceTree = "<group>"; };
-		1A0C80F11E6C6D500084D24C /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+CoreDataProperties.h"; path = "Model/User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		1A0C80F21E6C6D500084D24C /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+CoreDataProperties.m"; path = "Model/User+CoreDataProperties.m"; sourceTree = "<group>"; };
-		1A0C80F31E6C6D500084D24C /* Remider+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Remider+CoreDataClass.h"; path = "Model/Remider+CoreDataClass.h"; sourceTree = "<group>"; };
-		1A0C80F41E6C6D500084D24C /* Remider+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Remider+CoreDataClass.m"; path = "Model/Remider+CoreDataClass.m"; sourceTree = "<group>"; };
-		1A0C80F51E6C6D500084D24C /* Remider+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Remider+CoreDataProperties.h"; path = "Model/Remider+CoreDataProperties.h"; sourceTree = "<group>"; };
-		1A0C80F61E6C6D500084D24C /* Remider+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Remider+CoreDataProperties.m"; path = "Model/Remider+CoreDataProperties.m"; sourceTree = "<group>"; };
-		1A0C80F71E6C6D500084D24C /* Car+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Car+CoreDataClass.h"; path = "Model/Car+CoreDataClass.h"; sourceTree = "<group>"; };
-		1A0C80F81E6C6D500084D24C /* Car+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Car+CoreDataClass.m"; path = "Model/Car+CoreDataClass.m"; sourceTree = "<group>"; };
-		1A0C80F91E6C6D500084D24C /* Car+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Car+CoreDataProperties.h"; path = "Model/Car+CoreDataProperties.h"; sourceTree = "<group>"; };
-		1A0C80FA1E6C6D500084D24C /* Car+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Car+CoreDataProperties.m"; path = "Model/Car+CoreDataProperties.m"; sourceTree = "<group>"; };
-		1A0C80FB1E6C6D500084D24C /* Expenses+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Expenses+CoreDataClass.h"; path = "Model/Expenses+CoreDataClass.h"; sourceTree = "<group>"; };
-		1A0C80FC1E6C6D500084D24C /* Expenses+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Expenses+CoreDataClass.m"; path = "Model/Expenses+CoreDataClass.m"; sourceTree = "<group>"; };
-		1A0C80FD1E6C6D500084D24C /* Expenses+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Expenses+CoreDataProperties.h"; path = "Model/Expenses+CoreDataProperties.h"; sourceTree = "<group>"; };
-		1A0C80FE1E6C6D500084D24C /* Expenses+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Expenses+CoreDataProperties.m"; path = "Model/Expenses+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1A1D2A681E1AFB2200205CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1A1D2A8E1E1B039400205CA9 /* LocalizableStringService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizableStringService.h; path = Services/LocalizableStringService.h; sourceTree = "<group>"; };
 		1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalizableStringService.m; path = Services/LocalizableStringService.m; sourceTree = "<group>"; };
@@ -63,6 +48,17 @@
 		1A6793DB1E34D98700713D25 /* MojAutomobil.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MojAutomobil.pch; sourceTree = "<group>"; };
 		1A6793DD1E34DB9800713D25 /* UIColor+UDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+UDColor.h"; path = "Categories/UIColor+UDColor.h"; sourceTree = "<group>"; };
 		1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+UDColor.m"; path = "Categories/UIColor+UDColor.m"; sourceTree = "<group>"; };
+		1AC8235E1EA509FE009AFBFC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		1AC8235F1EA509FE009AFBFC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
+		1AC823611EA50BE9009AFBFC /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminder.h; path = Model/Reminder.h; sourceTree = "<group>"; };
+		1AC823621EA50BE9009AFBFC /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminder.m; path = Model/Reminder.m; sourceTree = "<group>"; };
+		1AC823641EA50C97009AFBFC /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Model/Car.h; sourceTree = "<group>"; };
+		1AC823651EA50C97009AFBFC /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Car.m; path = Model/Car.m; sourceTree = "<group>"; };
+		1AC823671EA50D72009AFBFC /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expenses.h; path = Model/Expenses.h; sourceTree = "<group>"; };
+		1AC823681EA50D72009AFBFC /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expenses.m; path = Model/Expenses.m; sourceTree = "<group>"; };
+		1AC8236A1EA5104F009AFBFC /* MojAutomobilModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MojAutomobilModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		1AC8236B1EA52487009AFBFC /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataController.h; path = Services/DataController.h; sourceTree = "<group>"; };
+		1AC8236C1EA52487009AFBFC /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Services/DataController.m; sourceTree = "<group>"; };
 		1AE78AA41E81B0120018FF66 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
 		1AE78AA51E81B0120018FF66 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
 		1AE78AA71E81B5F70018FF66 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = ViewControllers/SignUpViewController.h; sourceTree = "<group>"; };
@@ -103,6 +99,8 @@
 			children = (
 				1A1D2A8E1E1B039400205CA9 /* LocalizableStringService.h */,
 				1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */,
+				1AC8236B1EA52487009AFBFC /* DataController.h */,
+				1AC8236C1EA52487009AFBFC /* DataController.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -156,22 +154,14 @@
 		1AE78AA31E81AFBD0018FF66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1A0C80EF1E6C6D500084D24C /* User+CoreDataClass.h */,
-				1A0C80F01E6C6D500084D24C /* User+CoreDataClass.m */,
-				1A0C80F11E6C6D500084D24C /* User+CoreDataProperties.h */,
-				1A0C80F21E6C6D500084D24C /* User+CoreDataProperties.m */,
-				1A0C80F31E6C6D500084D24C /* Remider+CoreDataClass.h */,
-				1A0C80F41E6C6D500084D24C /* Remider+CoreDataClass.m */,
-				1A0C80F51E6C6D500084D24C /* Remider+CoreDataProperties.h */,
-				1A0C80F61E6C6D500084D24C /* Remider+CoreDataProperties.m */,
-				1A0C80F71E6C6D500084D24C /* Car+CoreDataClass.h */,
-				1A0C80F81E6C6D500084D24C /* Car+CoreDataClass.m */,
-				1A0C80F91E6C6D500084D24C /* Car+CoreDataProperties.h */,
-				1A0C80FA1E6C6D500084D24C /* Car+CoreDataProperties.m */,
-				1A0C80FB1E6C6D500084D24C /* Expenses+CoreDataClass.h */,
-				1A0C80FC1E6C6D500084D24C /* Expenses+CoreDataClass.m */,
-				1A0C80FD1E6C6D500084D24C /* Expenses+CoreDataProperties.h */,
-				1A0C80FE1E6C6D500084D24C /* Expenses+CoreDataProperties.m */,
+				1AC8235E1EA509FE009AFBFC /* User.h */,
+				1AC8235F1EA509FE009AFBFC /* User.m */,
+				1AC823611EA50BE9009AFBFC /* Reminder.h */,
+				1AC823621EA50BE9009AFBFC /* Reminder.m */,
+				1AC823641EA50C97009AFBFC /* Car.h */,
+				1AC823651EA50C97009AFBFC /* Car.m */,
+				1AC823671EA50D72009AFBFC /* Expenses.h */,
+				1AC823681EA50D72009AFBFC /* Expenses.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -367,21 +357,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC823691EA50D72009AFBFC /* Expenses.m in Sources */,
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
 				1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */,
-				1A0C81041E6C6D500084D24C /* Car+CoreDataProperties.m in Sources */,
+				1AC823661EA50C97009AFBFC /* Car.m in Sources */,
+				1AC823601EA509FE009AFBFC /* User.m in Sources */,
 				1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */,
+				1AC8236D1EA52487009AFBFC /* DataController.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,
 				1AE78AA91E81B5F70018FF66 /* SignUpViewController.m in Sources */,
-				1A0C81001E6C6D500084D24C /* User+CoreDataProperties.m in Sources */,
 				1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */,
 				1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */,
 				8488D1AE1DB5600E008FBF41 /* ParkingTableViewCell.m in Sources */,
-				1A0C81061E6C6D500084D24C /* Expenses+CoreDataProperties.m in Sources */,
+				1AC823631EA50BE9009AFBFC /* Reminder.m in Sources */,
 				1AE78AA61E81B0120018FF66 /* LoginViewController.m in Sources */,
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
-				1A0C81021E6C6D500084D24C /* Remider+CoreDataProperties.m in Sources */,
 				1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,7 +546,7 @@
 				8488D1A71DAE9A68008FBF41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		8488D1A81DAE9A68008FBF41 /* Build configuration list for PBXNativeTarget "NoviProjekat" */ = {
 			isa = XCConfigurationList;
@@ -564,7 +555,7 @@
 				8488D1AA1DAE9A68008FBF41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
@@ -572,9 +563,10 @@
 		1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1AC8236A1EA5104F009AFBFC /* MojAutomobilModel 2.xcdatamodel */,
 				1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */,
 			);
-			currentVersion = 1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */;
+			currentVersion = 1AC8236A1EA5104F009AFBFC /* MojAutomobilModel 2.xcdatamodel */;
 			path = MojAutomobilModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

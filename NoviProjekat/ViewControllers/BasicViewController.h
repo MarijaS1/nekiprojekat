@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "AppDelegate.h"
 
 #define WARNING_TOAST                       0
 #define INFO_TOAST                          1
 #define ERROR_TOAST                         2
 
 @interface BasicViewController : UIViewController
+
+@property (strong, nonatomic) AppDelegate *appDelegate;
 - (void) showProgressWithInfoMessage:(NSString *)message;
 - (void) showProgressWithInfoMessage:(NSString *)message withTimeoutInterval:(float)timeout;
 - (void) showTemporaryInfoMessage:(NSString *)message;

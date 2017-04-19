@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "ParkingViewController.h"
+#import "DataController.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +24,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+     UINavigationController *rootNavigationController = nil;
+
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
+              rootNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        self.window.rootViewController = rootNavigationController;
+        [self.window makeKeyAndVisible];
+    } else {
+        UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
+        tabBarController.selectedIndex=0;
+        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:0];
+        ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
+        parkingVC.car = [DataController sharedInstance].carInfo;
+        [self.window makeKeyAndVisible];
+        
+        [self.window setRootViewController:parkingVC];
+
+    }
     return YES;
 }
 
@@ -61,9 +82,10 @@
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
                                    initWithManagedObjectModel:[self managedObjectModel]];
+    NSDictionary *options = @{NSSQLitePragmasOption:@{@"journal_mode":@"DELETE"}};
     
     if(![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                                  configuration:nil URL:storeUrl options:nil error:&error]) {
+                                                  configuration:nil URL:storeUrl options:options error:&error]) {
         /*Error for store creation should be handled in here*/
     }
     return _persistentStoreCoordinator;

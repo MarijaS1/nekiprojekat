@@ -7,8 +7,6 @@
 //
 
 #import "BasicViewController.h"
-
-#import "AppDelegate.h"
 #import "MBProgressHUD.h"
 #import "UIView+Toast.h"
 #import "LocalizableStringService.h"
@@ -31,9 +29,10 @@
 
 static MBProgressHUD *mbProgressHud;
 
-- (void) viewDidLoad
-{
+- (void) viewDidLoad {
     [super viewDidLoad];
+    
+    self.appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     [self initializeGui];
     
@@ -52,8 +51,7 @@ static MBProgressHUD *mbProgressHud;
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:33/255.0 green:126/255.0 blue:99/255.0 alpha:1];
 }
 
-- (void) initializeGui
-{
+- (void) initializeGui {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     
@@ -66,8 +64,8 @@ static MBProgressHUD *mbProgressHud;
 
 - (void) showProgressWithInfoMessage:(NSString *)message withTimeoutInterval:(float)timeout{
     self.timeoutInterval = timeout>0?timeout:30.0;
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.window addSubview:mbProgressHud];
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self.appDelegate.window addSubview:mbProgressHud];
     mbProgressHud.mode = MBProgressHUDModeIndeterminate;
     mbProgressHud.label.text = @"";
     mbProgressHud.detailsLabel.text = message;
@@ -91,8 +89,8 @@ static MBProgressHUD *mbProgressHud;
 - (void) showTemporaryInfoMessage:(NSString *)message
                      withDuration:(NSTimeInterval) duration
 {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate.window addSubview:mbProgressHud];
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self.appDelegate.window addSubview:mbProgressHud];
     mbProgressHud.customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 1)];
     mbProgressHud.customView.backgroundColor = [UIColor clearColor];
     mbProgressHud.mode = MBProgressHUDModeCustomView;

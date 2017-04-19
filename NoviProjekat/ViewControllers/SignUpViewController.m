@@ -7,6 +7,9 @@
 //
 
 #import "SignUpViewController.h"
+#import "User.h"
+#import "Car.h"
+#import "AppDelegate.h"
 
 @interface SignUpViewController ()
 
@@ -35,8 +38,31 @@
 }
 
 - (IBAction)registerButtonPressed:(id)sender {
+    NSError *error = nil;
     
+//    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    Car *car = [NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    car.type = self.typeOfCarTextField.text;
+    car.brandName = self.brandNameTextField.text;
+    car.registration = self.registrationPlateTextField.text;
+    
+    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    user.username = self.usernameTextField.text;
+    user.email = self.emailTextField.text;
+    user.password = self.passwordTextField.text;
+    
+    [user addHasCarRelationshipObject:car];
+    
+    if (![self.appDelegate.managedObjectContext save:&error]) {
+        NSLog(@"Great, error while fixing error; couldn't save: %@", [error localizedDescription]);
+    }
+    else {
+        NSLog(@"User and car saved");
+    }
 }
+
+
 
 /*
 #pragma mark - Navigation

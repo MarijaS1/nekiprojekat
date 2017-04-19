@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *registrationPlateTextField;
 @property (weak, nonatomic) IBOutlet UITextField *typeOfCarTextField;
+@property (weak, nonatomic) IBOutlet UITextField *brandNameTextField;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
 @end

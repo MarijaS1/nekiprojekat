@@ -1,20 +1,18 @@
 //
-//  User+CoreDataProperties.h
+//  User.h
 //  NoviProjekat
 //
-//  Created by Marija Sumakovic on 3/5/17.
+//  Created by Marija Sumakovic on 4/17/17.
 //  Copyright © 2017 Admin. All rights reserved.
-//  This file was automatically generated and should not be edited.
 //
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-#import "User+CoreDataClass.h"
-
+@class Car;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User (CoreDataProperties)
-
-+ (NSFetchRequest<User *> *)fetchRequest;
+@interface User : NSManagedObject
 
 @property (nonatomic) int32_t userID;
 @property (nullable, nonatomic, copy) NSString *password;
@@ -38,5 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeHasCarRelationship:(NSOrderedSet<Car *> *)values;
 
 @end
+
 
 NS_ASSUME_NONNULL_END

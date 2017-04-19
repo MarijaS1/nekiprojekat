@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "BasicViewController.h"
+#import "Car.h"
 
 @interface ParkingViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UILabel *registrationPlatesLabel;
+
+@property (strong, nonatomic) Car *car;
 
 @end
 

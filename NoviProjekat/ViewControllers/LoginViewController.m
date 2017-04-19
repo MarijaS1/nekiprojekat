@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "SignUpViewController.h"
+#import "User.h"
+#import "ParkingViewController.h"
+
 
 @interface LoginViewController ()
 
@@ -31,6 +34,41 @@
 }
 - (IBAction)signInButtonPressed:(UIButton *)sender {
     
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"username" ascending:NO]];
+    request.predicate = [NSPredicate predicateWithFormat:@"username = %@", self.emailTextField.text];
+    NSError *error = nil;
+    NSArray *matches = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if (!matches || error || (matches.count > 1)) {
+        NSLog(@"Error while getting users");
+    }else if([matches count] == 0){
+        [self showTemporaryInfoMessage:@"Korisnik ne postoji!"];
+    }else if ([matches count] == 1){
+        User *user = [matches lastObject];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Car"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"brandName" ascending:NO]];
+        [request setReturnsObjectsAsFaults:NO];
+        request.predicate = [NSPredicate predicateWithFormat:@"hasOwnerRelationship = %@", user.objectID];
+        NSError *error = nil;
+        NSArray *matches = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+        if (!matches || error || (matches.count > 1)) {
+            NSLog(@"Error while getting car");
+        }else if ([matches count] == 1){
+            Car *car = [matches lastObject];
+            [DataController sharedInstance].carInfo = car;
+            UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
+            tabBarController.selectedIndex=0;
+            UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:0];
+            ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
+            //TO DO add proterties to Model Car, like in Darwin Rodhes... Dreiden
+            parkingVC.car = car;
+            [self presentViewController:tabBarController animated:YES completion:nil];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        }
+    }
 }
 
 - (IBAction)registerButtonPressed:(UIButton *)sender {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="czf-ya-Ywx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="czf-ya-Ywx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,7 @@
         <!--Podsetnik-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="ReminderViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="reminderViewController" id="9pv-A4-QxB" customClass="ReminderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -52,7 +52,7 @@
         <!--Parking-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="ParkingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="parkingViewController" id="8rJ-Kc-sve" customClass="ParkingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -117,7 +117,7 @@
         <!--Kontrola troškova-->
         <scene sceneID="bXR-1P-rFd">
             <objects>
-                <viewController id="Oaj-LV-28r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="expensesViewController" id="Oaj-LV-28r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sP8-Le-RnS"/>
                         <viewControllerLayoutGuide type="bottom" id="QON-d2-UUh"/>
@@ -136,7 +136,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBar" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -222,11 +222,22 @@
                                     <action selector="registerButtonPressed:" destination="aMf-5P-6Lr" eventType="touchUpInside" id="T0E-6v-K3o"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tip vozila" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r84-5I-Fde">
+                                <rect key="frame" x="36" y="390" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LjH-o4-8Rt"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="r84-5I-Fde" secondAttribute="trailing" constant="20" id="3J7-PE-sEC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EO6-0t-bTE" secondAttribute="trailing" constant="20" id="64C-sy-LRg"/>
+                            <constraint firstItem="r84-5I-Fde" firstAttribute="top" secondItem="T65-zM-jPx" secondAttribute="bottom" constant="20" id="6Fc-9V-eDf"/>
                             <constraint firstItem="wP0-PA-YE6" firstAttribute="top" secondItem="EO6-0t-bTE" secondAttribute="bottom" constant="20" id="ATK-Ac-yk6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7Dd-qy-gIj" secondAttribute="trailing" constant="20" id="Avc-yt-IcM"/>
                             <constraint firstItem="35X-aE-dMl" firstAttribute="leading" secondItem="SCg-PB-OsJ" secondAttribute="leadingMargin" constant="20" id="BhL-iK-9qF"/>
@@ -241,6 +252,7 @@
                             <constraint firstItem="EO6-0t-bTE" firstAttribute="top" secondItem="Oav-Za-GCR" secondAttribute="bottom" constant="70" id="U4d-hD-oPt"/>
                             <constraint firstItem="7Dd-qy-gIj" firstAttribute="leading" secondItem="SCg-PB-OsJ" secondAttribute="leadingMargin" constant="20" id="Yiv-ld-hwX"/>
                             <constraint firstItem="EO6-0t-bTE" firstAttribute="leading" secondItem="SCg-PB-OsJ" secondAttribute="leadingMargin" constant="20" id="ctu-Eo-atr"/>
+                            <constraint firstItem="r84-5I-Fde" firstAttribute="leading" secondItem="SCg-PB-OsJ" secondAttribute="leadingMargin" constant="20" id="eWC-sa-y9h"/>
                             <constraint firstItem="T65-zM-jPx" firstAttribute="top" secondItem="vzv-WK-VLJ" secondAttribute="bottom" constant="20" id="kgd-SE-KuX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wP0-PA-YE6" secondAttribute="trailing" constant="20" id="n9c-u3-vBe"/>
                             <constraint firstItem="T65-zM-jPx" firstAttribute="leading" secondItem="SCg-PB-OsJ" secondAttribute="leadingMargin" constant="20" id="s9k-v5-Cjl"/>
@@ -248,11 +260,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Hvd-Wk-rGG"/>
                     <connections>
+                        <outlet property="brandNameTextField" destination="T65-zM-jPx" id="svR-NH-x8a"/>
                         <outlet property="emailTextField" destination="wP0-PA-YE6" id="eli-Vs-1EL"/>
                         <outlet property="passwordTextField" destination="7Dd-qy-gIj" id="HF6-CV-Jqy"/>
                         <outlet property="registerButton" destination="35X-aE-dMl" id="cOD-ce-Gos"/>
                         <outlet property="registrationPlateTextField" destination="vzv-WK-VLJ" id="jNm-qH-ndE"/>
-                        <outlet property="typeOfCarTextField" destination="T65-zM-jPx" id="H0m-IA-sfY"/>
+                        <outlet property="typeOfCarTextField" destination="r84-5I-Fde" id="v1m-5r-6nK"/>
                         <outlet property="usernameTextField" destination="EO6-0t-bTE" id="C4E-jf-tn2"/>
                     </connections>
                 </viewController>

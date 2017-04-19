@@ -1,20 +1,20 @@
 //
-//  Car+CoreDataProperties.h
+//  Car.h
 //  NoviProjekat
 //
-//  Created by Marija Sumakovic on 3/5/17.
+//  Created by Marija Sumakovic on 4/17/17.
 //  Copyright © 2017 Admin. All rights reserved.
-//  This file was automatically generated and should not be edited.
 //
 
-#import "Car+CoreDataClass.h"
 
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+@class Expenses, Remider, User;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Car (CoreDataProperties)
-
-+ (NSFetchRequest<Car *> *)fetchRequest;
+@interface Car : NSManagedObject
 
 @property (nonatomic) int32_t carID;
 @property (nullable, nonatomic, copy) NSString *registration;
@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) User *hasOwnerRelationship;
 @property (nullable, nonatomic, retain) NSOrderedSet<Remider *> *hasReminderRelationship;
 @property (nullable, nonatomic, retain) NSOrderedSet<Expenses *> *hasExpensesRelationship;
-
 @end
 
 @interface Car (CoreDataGeneratedAccessors)

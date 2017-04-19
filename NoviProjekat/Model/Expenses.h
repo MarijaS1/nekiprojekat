@@ -1,20 +1,19 @@
 //
-//  Expenses+CoreDataProperties.h
+//  Expenses.h
 //  NoviProjekat
 //
-//  Created by Marija Sumakovic on 3/5/17.
+//  Created by Marija Sumakovic on 4/17/17.
 //  Copyright © 2017 Admin. All rights reserved.
-//  This file was automatically generated and should not be edited.
 //
 
-#import "Expenses+CoreDataClass.h"
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
+@class Car;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Expenses (CoreDataProperties)
-
-+ (NSFetchRequest<Expenses *> *)fetchRequest;
+@interface Expenses : NSManagedObject
 
 @property (nonatomic) int32_t expensesID;
 @property (nullable, nonatomic, copy) NSString *purpose;
