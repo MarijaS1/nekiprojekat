@@ -11,6 +11,10 @@
 
 @interface ReminderViewController : BasicViewController
 
+@property (weak, nonatomic) IBOutlet UIView *emptyView;
+
+@property (weak, nonatomic) IBOutlet UIButton *addReminder;
+
 
 @end
 

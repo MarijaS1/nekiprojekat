@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0691F41EB8AC5600CB3326 /* CalendarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0691F31EB8AC5600CB3326 /* CalendarService.m */; };
+		1A0691F71EB8B6ED00CB3326 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */; };
 		1A0C80CA1E6C611F0084D24C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0C80C91E6C611F0084D24C /* CoreData.framework */; };
 		1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */; };
 		1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1D2A681E1AFB2200205CA9 /* Localizable.strings */; };
@@ -36,6 +38,10 @@
 /* Begin PBXFileReference section */
 		1322785619B7B20662938C27 /* Pods-NoviProjekat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoviProjekat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoviProjekat/Pods-NoviProjekat.debug.xcconfig"; sourceTree = "<group>"; };
 		18A84FB88838389AEEFCD518 /* Pods_NoviProjekat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoviProjekat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A0691F21EB8AC5600CB3326 /* CalendarService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarService.h; path = Services/CalendarService.h; sourceTree = "<group>"; };
+		1A0691F31EB8AC5600CB3326 /* CalendarService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarService.m; path = Services/CalendarService.m; sourceTree = "<group>"; };
+		1A0691F51EB8B6ED00CB3326 /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddReminderViewController.h; path = ViewControllers/AddReminderViewController.h; sourceTree = "<group>"; };
+		1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddReminderViewController.m; path = ViewControllers/AddReminderViewController.m; sourceTree = "<group>"; };
 		1A0C80C91E6C611F0084D24C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MojAutomobilModel.xcdatamodel; sourceTree = "<group>"; };
 		1A1D2A681E1AFB2200205CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 				1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */,
 				1AC8236B1EA52487009AFBFC /* DataController.h */,
 				1AC8236C1EA52487009AFBFC /* DataController.m */,
+				1A0691F21EB8AC5600CB3326 /* CalendarService.h */,
+				1A0691F31EB8AC5600CB3326 /* CalendarService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -129,6 +137,8 @@
 				1AE78AA51E81B0120018FF66 /* LoginViewController.m */,
 				1AE78AA71E81B5F70018FF66 /* SignUpViewController.h */,
 				1AE78AA81E81B5F70018FF66 /* SignUpViewController.m */,
+				1A0691F51EB8B6ED00CB3326 /* AddReminderViewController.h */,
+				1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -362,7 +372,9 @@
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
 				1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */,
 				1AC823661EA50C97009AFBFC /* Car.m in Sources */,
+				1A0691F41EB8AC5600CB3326 /* CalendarService.m in Sources */,
 				1AC823601EA509FE009AFBFC /* User.m in Sources */,
+				1A0691F71EB8B6ED00CB3326 /* AddReminderViewController.m in Sources */,
 				1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */,
 				1AC8236D1EA52487009AFBFC /* DataController.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,

@@ -1,23 +1,29 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - DownPicker (0.1.34)
   - IQKeyboardManager (4.0.8)
   - MBProgressHUD (1.0.0)
   - Toast (3.1.0)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - Charts
+  - DownPicker
   - IQKeyboardManager
   - MBProgressHUD (~> 1.0.0)
   - Toast (~> 3.0)
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: bcba5ce72aa4a94cc00259e033865bc59a72faad
+PODFILE CHECKSUM: 566b059df47b3414ef4ac1b7d89ec145d34ce30b
 
 COCOAPODS: 1.1.1

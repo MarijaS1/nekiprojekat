@@ -49,5 +49,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>kako bi kreirali podsetnike</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>kako bi kreirali podsetnike</string>
 </dict>
 </plist>

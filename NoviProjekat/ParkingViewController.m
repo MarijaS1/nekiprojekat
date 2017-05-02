@@ -35,7 +35,7 @@
 -(void)initGui{
     UIView *tableViewBackground = [[UIView alloc] init];
     tableViewBackground.frame = self.view.frame;
-    tableViewBackground.backgroundColor= [UIColor colorWithRed:124/255.0 green:128/255.0 blue:135/255.0 alpha:1.0];
+    tableViewBackground.backgroundColor= [UIColor getDarkGreyColor];
     
    [self.view insertSubview:tableViewBackground belowSubview:self.tableView];
    self.tableView.backgroundColor = [UIColor clearColor];
@@ -90,7 +90,7 @@
             break;
     }
    
-      UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Pošsalji SMS" message:[NSString stringWithFormat:@"Na broj: %@ Sadržaj: %@", smsNumber, self.car.registration ] preferredStyle:UIAlertControllerStyleActionSheet];
+      UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Pošalji SMS" message:[NSString stringWithFormat:@"Na broj: %@ Sadržaj: %@", smsNumber, self.car.registration ] preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[[LocalizableStringService sharedInstance] getLocalizableStringForType:TYPE_ALERT andSybtype:SUBTYPE_TEXT andSuffix:@"cancel"]  style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
         

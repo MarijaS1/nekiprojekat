@@ -9,6 +9,7 @@ target 'NoviProjekat' do
 	pod ‘Charts’
     pod 'Toast', '~> 3.0'
     pod 'IQKeyboardManager'
+    pod 'ActionSheetPicker-3.0'
 	
 
   # Pods for NoviProjekat
