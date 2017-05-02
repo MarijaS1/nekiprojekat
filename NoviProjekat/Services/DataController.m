@@ -30,8 +30,9 @@ static DataController *sharedDataController = nil;
     self = [super init];
     if (self)
     {
-        self.isLoggedIn = NO;
-        
+        NSUserDefaults *keychain = [NSUserDefaults standardUserDefaults];
+        self.userInfo  = [keychain objectForKey:@"userInfo"];
+        self.isLoggedIn = [keychain boolForKey:@"isLoggedIn"];        
         
     }
     return self;

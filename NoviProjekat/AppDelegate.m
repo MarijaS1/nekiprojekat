@@ -28,7 +28,7 @@
      UINavigationController *rootNavigationController = nil;
 
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
-              rootNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+              rootNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"loginNavigationController"];
         self.window.rootViewController = rootNavigationController;
         [self.window makeKeyAndVisible];
     } else {
@@ -39,7 +39,7 @@
         parkingVC.car = [DataController sharedInstance].carInfo;
         [self.window makeKeyAndVisible];
         
-        [self.window setRootViewController:parkingVC];
+        [self.window setRootViewController:tabBarController];
 
     }
     return YES;

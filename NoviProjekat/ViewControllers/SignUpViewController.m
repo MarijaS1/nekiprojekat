@@ -10,6 +10,7 @@
 #import "User.h"
 #import "Car.h"
 #import "AppDelegate.h"
+#import "ParkingViewController.h"
 
 @interface SignUpViewController ()
 
@@ -56,9 +57,17 @@
     
     if (![self.appDelegate.managedObjectContext save:&error]) {
         NSLog(@"Great, error while fixing error; couldn't save: %@", [error localizedDescription]);
-    }
-    else {
+    } else {
         NSLog(@"User and car saved");
+        [DataController sharedInstance].carInfo = car;
+        UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
+        tabBarController.selectedIndex=0;
+        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:0];
+        ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
+        parkingVC.car = car;
+        [self presentViewController:tabBarController animated:YES completion:nil];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

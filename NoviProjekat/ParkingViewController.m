@@ -39,14 +39,13 @@
     
    [self.view insertSubview:tableViewBackground belowSubview:self.tableView];
    self.tableView.backgroundColor = [UIColor clearColor];
-    self.registrationPlatesLabel.text =self.car.registration;
+    self.registrationPlatesLabel.text = self.car.registration;
 }
 
 #pragma mark - UITableViewControllerDelegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *simpleTableIdentifier = PARKING_TABLE_VIEW_CELL_IDENTIFIER;
-    
+    static NSString *simpleTableIdentifier = PARKING_TABLE_VIEW_CELL_IDENTIFIER;   
    
     ParkingTableViewCell* cell =[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
@@ -91,7 +90,7 @@
             break;
     }
    
-      UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Pošsalji SMS" message:[NSString stringWithFormat:@"Na broj: %@ Sadržaj: Broj tablice", smsNumber ] preferredStyle:UIAlertControllerStyleActionSheet];
+      UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Pošsalji SMS" message:[NSString stringWithFormat:@"Na broj: %@ Sadržaj: %@", smsNumber, self.car.registration ] preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[[LocalizableStringService sharedInstance] getLocalizableStringForType:TYPE_ALERT andSybtype:SUBTYPE_TEXT andSuffix:@"cancel"]  style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
         

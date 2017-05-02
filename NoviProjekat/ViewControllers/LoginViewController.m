@@ -61,20 +61,18 @@
             tabBarController.selectedIndex=0;
             UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:0];
             ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
-            //TO DO add proterties to Model Car, like in Darwin Rodhes... Dreiden
             parkingVC.car = car;
             [self presentViewController:tabBarController animated:YES completion:nil];
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            
         }
     }
 }
 
 - (IBAction)registerButtonPressed:(UIButton *)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     
-    SignUpViewController *signUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"signUpViewController"];
+    SignUpViewController *signUpViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"signUpViewController"];
      [self.navigationController pushViewController:signUpViewController animated:YES];
 }
 

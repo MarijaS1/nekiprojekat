@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="czf-ya-Ywx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zcn-5O-72B">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2764" y="-509.59520239880067"/>
+            <point key="canvasLocation" x="3703.1999999999998" y="-509.59520239880067"/>
         </scene>
         <!--Parking-->
         <scene sceneID="wg7-f3-ORb">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zed-uU-ghY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3703.1999999999998" y="258.62068965517244"/>
+            <point key="canvasLocation" x="4642.3999999999996" y="258.62068965517244"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -152,7 +152,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877.5999999999999" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="2816.8000000000002" y="-0.44977511244377816"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="VwJ-dH-N6Z">
@@ -182,7 +182,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lozinka" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dd-qy-gIj">
                                 <rect key="frame" x="36" y="210" width="303" height="40"/>
@@ -191,7 +191,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Registraciona oznaka" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzv-WK-VLJ">
                                 <rect key="frame" x="36" y="270" width="303" height="40"/>
@@ -200,7 +200,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marka vozila" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T65-zM-jPx">
                                 <rect key="frame" x="36" y="330" width="303" height="40"/>
@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd6-TH-9U7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167.19999999999999" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="1106.4000000000001" y="-0.44977511244377816"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="wof-HF-dUb">
@@ -293,7 +293,7 @@
                                     <constraint firstAttribute="width" constant="70" id="QdD-e3-dbH"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-01-AmQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-01-AmQ">
                                 <rect key="frame" x="36" y="244" width="303" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qFX-oP-iyf"/>
@@ -309,7 +309,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhV-Eq-2SH">
                                 <rect key="frame" x="36" y="577" width="303" height="40"/>
@@ -363,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IcM-ny-J6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-716" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="223.19999999999999" y="-0.44977511244377816"/>
         </scene>
         <!--Parking-->
         <scene sceneID="yOf-KR-9yC">
@@ -390,22 +390,22 @@
             <point key="canvasLocation" x="1825" y="-1251"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="fGz-Vt-4aE">
+        <scene sceneID="fB2-AC-CNR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="czf-ya-Ywx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="loginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="zcn-5O-72B" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zDp-Hv-OFf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zce-rb-ltE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Atj-Zs-nnd" kind="relationship" relationship="rootViewController" id="mJm-rf-Vqr"/>
+                        <segue destination="Atj-Zs-nnd" kind="relationship" relationship="rootViewController" id="Q2g-Zz-sCB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wxG-0P-sdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1U-YC-bo2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1655.2" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="-716" y="-0.44977511244377816"/>
         </scene>
     </scenes>
     <resources>
