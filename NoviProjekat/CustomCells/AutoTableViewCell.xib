@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="autoTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="AutoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="bUB-Vu-sVY">
+                        <rect key="frame" x="10" y="10" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="PuM-a1-mfu"/>
+                            <constraint firstAttribute="height" constant="70" id="xc7-mn-0ta"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ford" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSZ-1U-xNn">
+                        <rect key="frame" x="90" y="10" width="33" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="K1X-SQ-Z3a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C max" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rb-li-bY9">
+                        <rect key="frame" x="90" y="33" width="44" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="qBI-Cs-7yK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BG-098-OM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0st-cY-uAd">
+                        <rect key="frame" x="90" y="59" width="83" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="cnC-Ho-Q7v"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0st-cY-uAd" firstAttribute="top" secondItem="1Rb-li-bY9" secondAttribute="bottom" constant="5" id="AXB-vX-r1U"/>
+                    <constraint firstItem="1Rb-li-bY9" firstAttribute="leading" secondItem="bUB-Vu-sVY" secondAttribute="trailing" constant="10" id="SKC-xK-DSI"/>
+                    <constraint firstAttribute="bottom" secondItem="0st-cY-uAd" secondAttribute="bottom" constant="10" id="SMk-7R-dQP"/>
+                    <constraint firstItem="0st-cY-uAd" firstAttribute="leading" secondItem="bUB-Vu-sVY" secondAttribute="trailing" constant="10" id="UXV-lw-wdm"/>
+                    <constraint firstItem="fSZ-1U-xNn" firstAttribute="leading" secondItem="bUB-Vu-sVY" secondAttribute="trailing" constant="10" id="c8e-Bw-ict"/>
+                    <constraint firstItem="bUB-Vu-sVY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lxm-67-aHx"/>
+                    <constraint firstItem="fSZ-1U-xNn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="qjF-ib-rcT"/>
+                    <constraint firstAttribute="bottom" secondItem="bUB-Vu-sVY" secondAttribute="bottom" constant="10" id="qlu-lf-pgb"/>
+                    <constraint firstItem="bUB-Vu-sVY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tbu-7h-c4p"/>
+                    <constraint firstItem="1Rb-li-bY9" firstAttribute="top" secondItem="fSZ-1U-xNn" secondAttribute="bottom" constant="2" id="uj9-jg-TLu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="autoImageView" destination="bUB-Vu-sVY" id="62V-wL-0Y6"/>
+                <outlet property="brandNameLabel" destination="fSZ-1U-xNn" id="MSG-au-YqA"/>
+                <outlet property="registrationPlateLabel" destination="0st-cY-uAd" id="ZPv-LI-DOI"/>
+                <outlet property="typeOfCarLabel" destination="1Rb-li-bY9" id="3wH-4z-5Jr"/>
+            </connections>
+            <point key="canvasLocation" x="-67" y="-12"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="car" width="24" height="24"/>
+    </resources>
+</document>

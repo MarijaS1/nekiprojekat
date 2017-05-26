@@ -22,4 +22,6 @@
 
 - (BOOL)isEventAvailableForId:(NSString *)identifier;
 
+-(NSMutableArray *)getAllCalendarEvents;
+
 @end

@@ -34,7 +34,7 @@
     } else {
         UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
         tabBarController.selectedIndex=0;
-        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:0];
+        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:1];
         ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
         parkingVC.car = [DataController sharedInstance].carInfo;
         [self.window makeKeyAndVisible];

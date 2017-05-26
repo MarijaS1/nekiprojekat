@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reminderTableViewCell" rowHeight="80" id="KGk-i7-Jjw" customClass="ReminderTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18X-bC-VIU">
+                        <rect key="frame" x="10" y="10" width="290" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="GXi-vY-vkJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsd-5Q-4rq">
+                        <rect key="frame" x="10" y="33" width="300" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="tVy-KU-PuA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEd-xl-kPr">
+                        <rect key="frame" x="10" y="53" width="300" height="16"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Bsd-5Q-4rq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="5Ye-ud-ZsI"/>
+                    <constraint firstItem="18X-bC-VIU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="8P6-wk-pdB"/>
+                    <constraint firstAttribute="trailing" secondItem="18X-bC-VIU" secondAttribute="trailing" constant="20" id="IpQ-Ad-MzM"/>
+                    <constraint firstItem="18X-bC-VIU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Mkv-mb-1tE"/>
+                    <constraint firstAttribute="bottom" secondItem="eEd-xl-kPr" secondAttribute="bottom" constant="10" id="lHg-X1-GCr"/>
+                    <constraint firstAttribute="trailing" secondItem="Bsd-5Q-4rq" secondAttribute="trailing" constant="10" id="oXM-ff-nWh"/>
+                    <constraint firstItem="eEd-xl-kPr" firstAttribute="top" secondItem="Bsd-5Q-4rq" secondAttribute="bottom" constant="5" id="pG5-Yb-K6P"/>
+                    <constraint firstItem="eEd-xl-kPr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="tGA-qT-0fK"/>
+                    <constraint firstAttribute="trailing" secondItem="eEd-xl-kPr" secondAttribute="trailing" constant="10" id="ymd-Gt-dpL"/>
+                    <constraint firstItem="Bsd-5Q-4rq" firstAttribute="top" secondItem="18X-bC-VIU" secondAttribute="bottom" constant="5" id="yqg-Rv-UpU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="Bsd-5Q-4rq" id="W39-As-KcB"/>
+                <outlet property="noteLabel" destination="eEd-xl-kPr" id="QeT-cM-dA0"/>
+                <outlet property="titleLabel" destination="18X-bC-VIU" id="GNU-E0-eQq"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

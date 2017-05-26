@@ -49,6 +49,7 @@
     car.registration = self.registrationPlateTextField.text;
     
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    
     user.username = self.usernameTextField.text;
     user.email = self.emailTextField.text;
     user.password = self.passwordTextField.text;
@@ -59,15 +60,16 @@
         NSLog(@"Great, error while fixing error; couldn't save: %@", [error localizedDescription]);
     } else {
         NSLog(@"User and car saved");
+        [DataController sharedInstance].userInfo = user;
         [DataController sharedInstance].carInfo = car;
         UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
         tabBarController.selectedIndex=0;
-        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:0];
+        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:1];
         ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
         parkingVC.car = car;
         [self presentViewController:tabBarController animated:YES completion:nil];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

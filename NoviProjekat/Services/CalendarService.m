@@ -12,10 +12,14 @@
 #define ONE_HOUR 60 * (-60)
 #define ONE_DAY  60 * (-24) * 60
 #define CALENDAR_EVENTS_KEY @"calendarEvents"
+#define DRIVER_LICENCE_KEY @"Vozacka dozvola"
+#define SERVICE_KEY @"Godisnji servis"
+#define REGISTRATION_KEY @"Registracija"
 
 @interface CalendarService ()
 
 @property (strong, nonatomic) EKEventStore *eventStore;
+@property (strong, nonatomic) NSMutableArray *calendarEvents;
 
 - (EKEvent *)createEventWithTitle:(NSString *)title
                  andWithStartDate:(NSDate *)startDate
@@ -117,6 +121,73 @@ static CalendarService *shared = nil;
     }
     
     return available;
+}
+
+
+-(NSMutableArray *)getAllCalendarEvents{
+    
+    // Get the appropriate calendar
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    
+    if ([self.eventStore respondsToSelector:@selector(requestAccessToEntityType:completion:)])
+    {
+        /* iOS Settings > Privacy > Calendars > MY APP > ENABLE | DISABLE */
+        [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+         {
+             if ( granted )
+             {
+                 NSLog(@"User has granted permission!");
+                 // Get the appropriate calendar
+                 NSCalendar *calendar = [NSCalendar currentCalendar];
+                 
+                 // Create the start date components
+                 NSDateComponents *oneDayAgoComponents = [[NSDateComponents alloc] init];
+                 oneDayAgoComponents.day = -1;
+                 NSDate *oneDayAgo = [calendar dateByAddingComponents:oneDayAgoComponents
+                                                               toDate:[NSDate date]
+                                                              options:0];
+                 
+                 // Create the end date components
+                 NSDateComponents *oneYearFromNowComponents = [[NSDateComponents alloc] init];
+                 oneYearFromNowComponents.year = 1;
+                 NSDate *oneYearFromNow = [calendar dateByAddingComponents:oneYearFromNowComponents
+                                                                    toDate:[NSDate date]
+                                                                   options:0];
+                 
+                 // Create the predicate from the event store's instance method
+                 NSPredicate *predicate = [self.eventStore predicateForEventsWithStartDate:oneDayAgo
+                                                                         endDate:oneYearFromNow
+                                                                       calendars:nil];
+                 self.calendarEvents  = [[NSMutableArray alloc]init];
+                 
+                 // Fetch all events that match the predicate
+//
+                    NSArray *events = [self.eventStore eventsMatchingPredicate:predicate];
+                 self.calendarEvents =[events mutableCopy];
+//                    self.calendarEvents = [events mutableCopy];
+//                    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+//                    [userInfo setObject:self.calendarEvents forKey:@"events"];
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                 
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:@"ALL_EVENTS" object:nil userInfo:userInfo];
+//                 });
+                 
+//                 for (EKEvent *event in events) {
+//                     if ([event.eventIdentifier isEqualToString:REGISTRATION_KEY] || [event.eventIdentifier isEqualToString:SERVICE_KEY] || [event.eventIdentifier isEqualToString:DRIVER_LICENCE_KEY]) {
+//                         [self.calendarEvents addObject:event];
+//                     }
+//                 }
+                 
+////                 NSArray *events = [self.eventStore eventWithIdentifier:CALENDAR_EVENTS_KEY];
+//                NSLog(@"%@", events);
+             }else {
+                 NSLog(@"User has not granted permission!");
+             }
+         }];
+    }
+    return self.calendarEvents;
+   
 }
 
 #pragma mark - Private methods

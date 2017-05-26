@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zcn-5O-72B">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,14 +18,14 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZ4-c2-QRd">
-                                <rect key="frame" x="40" y="207" width="295" height="140"/>
+                                <rect key="frame" x="40" y="157.5" width="240" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izb-OM-YR5">
-                                        <rect key="frame" x="10" y="10" width="275" height="52.5"/>
+                                        <rect key="frame" x="10" y="10" width="220" height="70"/>
                                         <string key="text">Trenutno nemate nijedan podsetnik.
 Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -33,7 +33,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wct-ng-8iz">
-                                        <rect key="frame" x="20" y="90" width="255" height="40"/>
+                                        <rect key="frame" x="20" y="90" width="200" height="40"/>
                                         <color key="backgroundColor" red="0.44313725490196076" green="0.76862745098039209" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="DGb-Nb-v1Z"/>
@@ -57,19 +57,55 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                     <constraint firstAttribute="trailing" secondItem="Izb-OM-YR5" secondAttribute="trailing" constant="10" id="rJP-j6-ugt"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSc-8f-SWU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xG0-ER-2ZG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kSr-QU-Ko9">
+                                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kSr-QU-Ko9" id="P5U-X1-KIS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9pv-A4-QxB" id="O1s-9C-cE3"/>
+                                            <outlet property="delegate" destination="9pv-A4-QxB" id="ubz-66-nJb"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xG0-ER-2ZG" secondAttribute="bottom" id="H3c-S3-pUg"/>
+                                    <constraint firstAttribute="trailing" secondItem="xG0-ER-2ZG" secondAttribute="trailing" id="Xm8-gR-FcG"/>
+                                    <constraint firstItem="xG0-ER-2ZG" firstAttribute="leading" secondItem="sSc-8f-SWU" secondAttribute="leading" id="pJ7-pd-O2q"/>
+                                    <constraint firstItem="xG0-ER-2ZG" firstAttribute="top" secondItem="sSc-8f-SWU" secondAttribute="top" id="pel-zZ-SWq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vZ4-c2-QRd" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="40" id="0na-7b-h4x"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="sSc-8f-SWU" secondAttribute="bottom" id="CVz-8c-2hQ"/>
                             <constraint firstItem="vZ4-c2-QRd" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="HcM-c0-Wao"/>
+                            <constraint firstAttribute="trailing" secondItem="sSc-8f-SWU" secondAttribute="trailing" id="Ss3-IS-Drj"/>
                             <constraint firstAttribute="trailing" secondItem="vZ4-c2-QRd" secondAttribute="trailing" constant="40" id="ZOL-9S-ONY"/>
+                            <constraint firstItem="sSc-8f-SWU" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="dLb-pw-NPj"/>
                             <constraint firstItem="vZ4-c2-QRd" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="mVU-Mm-zgl"/>
+                            <constraint firstItem="sSc-8f-SWU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="rlq-vm-hsj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="POh-ti-jXt"/>
                     <connections>
                         <outlet property="addReminder" destination="Wct-ng-8iz" id="Aat-9l-uEN"/>
                         <outlet property="emptyView" destination="vZ4-c2-QRd" id="Ug4-8d-Pwb"/>
+                        <outlet property="tableView" destination="xG0-ER-2ZG" id="aNF-A7-Jhz"/>
+                        <outlet property="viewTable" destination="sSc-8f-SWU" id="QOx-ck-FIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -85,11 +121,11 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <viewControllerLayoutGuide type="bottom" id="eKq-13-68k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yRl-xt-whh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcE-vH-mwg">
-                                <rect key="frame" x="20" y="104" width="335" height="523"/>
+                                <rect key="frame" x="20" y="104" width="280" height="424"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naslov:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfK-I8-Fyv">
                                         <rect key="frame" x="0.0" y="10" width="53" height="30"/>
@@ -102,7 +138,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZSy-zZ-NjR">
-                                        <rect key="frame" x="63" y="10" width="262" height="30"/>
+                                        <rect key="frame" x="63" y="10" width="207" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -117,7 +153,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Izaberite:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FE8-Iz-kS9">
-                                        <rect key="frame" x="62" y="100" width="263" height="30"/>
+                                        <rect key="frame" x="62" y="100" width="208" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -138,13 +174,13 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Izaberite:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMp-ei-8F5">
-                                        <rect key="frame" x="134" y="55" width="190.5" height="30"/>
+                                        <rect key="frame" x="134" y="55" width="135.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TwW-Kd-aXJ">
-                                        <rect key="frame" x="92" y="145" width="233" height="80"/>
+                                        <rect key="frame" x="92" y="145" width="178" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="LdI-kC-N4h"/>
@@ -153,19 +189,19 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjv-hB-F0x">
-                                        <rect key="frame" x="62" y="100" width="263" height="30"/>
+                                        <rect key="frame" x="62" y="100" width="208" height="30"/>
                                         <connections>
                                             <action selector="dateButtonPressed:" destination="Sk3-kD-lq9" eventType="touchUpInside" id="7JN-TE-Z0C"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-d2-NwD">
-                                        <rect key="frame" x="134.5" y="55" width="190.5" height="30"/>
+                                        <rect key="frame" x="134.5" y="55" width="135.5" height="30"/>
                                         <connections>
                                             <action selector="typeOfReminderButtonPressed:" destination="Sk3-kD-lq9" eventType="touchUpInside" id="heC-rG-5rD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJc-0t-JsB">
-                                        <rect key="frame" x="40" y="383" width="255" height="40"/>
+                                        <rect key="frame" x="40" y="284" width="200" height="40"/>
                                         <color key="backgroundColor" red="0.44313725490196076" green="0.76862745098039209" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Yrf-Ue-Jji"/>
@@ -249,19 +285,19 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pnI-EZ-Fyt">
-                                <rect key="frame" x="0.0" y="70" width="375" height="484"/>
+                                <rect key="frame" x="0.0" y="70" width="320" height="385"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="parkingTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="parkingTableViewCell" rowHeight="70" id="sms-0v-1Ux">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sms-0v-1Ux" id="ix2-ra-zW1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -273,7 +309,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration Plate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgT-S6-pOh">
-                                <rect key="frame" x="10" y="10" width="355" height="50"/>
+                                <rect key="frame" x="10" y="10" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.44313725490196076" green="0.76862745098039209" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Vmc-NP-URa"/>
@@ -314,7 +350,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <viewControllerLayoutGuide type="bottom" id="QON-d2-UUh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IBK-Fi-Qd5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -336,6 +372,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <color key="selectedImageTintColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="QI4-sZ-rcb" kind="relationship" relationship="viewControllers" id="9Q5-3R-1oj"/>
                         <segue destination="mDN-8V-y4F" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="93t-tV-bdr" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="FGI-dK-woU" kind="relationship" relationship="viewControllers" id="efq-AR-lOa"/>
@@ -354,11 +391,11 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <viewControllerLayoutGuide type="bottom" id="t8X-Ux-PYJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SCg-PB-OsJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Korisnicko ime" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EO6-0t-bTE">
-                                <rect key="frame" x="36" y="90" width="303" height="40"/>
+                                <rect key="frame" x="36" y="90" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HU5-Nr-Dqg"/>
                                 </constraints>
@@ -367,7 +404,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wP0-PA-YE6">
-                                <rect key="frame" x="36" y="150" width="303" height="40"/>
+                                <rect key="frame" x="36" y="150" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xQD-HQ-Vd1"/>
                                 </constraints>
@@ -376,7 +413,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lozinka" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dd-qy-gIj">
-                                <rect key="frame" x="36" y="210" width="303" height="40"/>
+                                <rect key="frame" x="36" y="210" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="KlT-1v-8kA"/>
                                 </constraints>
@@ -385,7 +422,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Registraciona oznaka" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzv-WK-VLJ">
-                                <rect key="frame" x="36" y="270" width="303" height="40"/>
+                                <rect key="frame" x="36" y="270" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eYa-yG-lW6"/>
                                 </constraints>
@@ -394,7 +431,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marka vozila" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T65-zM-jPx">
-                                <rect key="frame" x="36" y="330" width="303" height="40"/>
+                                <rect key="frame" x="36" y="330" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3Ie-fA-bac"/>
                                 </constraints>
@@ -403,7 +440,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35X-aE-dMl">
-                                <rect key="frame" x="36" y="587" width="303" height="40"/>
+                                <rect key="frame" x="36" y="488" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PMY-Wo-I0h"/>
@@ -414,7 +451,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tip vozila" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r84-5I-Fde">
-                                <rect key="frame" x="36" y="390" width="303" height="40"/>
+                                <rect key="frame" x="36" y="390" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LjH-o4-8Rt"/>
                                 </constraints>
@@ -473,11 +510,11 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <viewControllerLayoutGuide type="bottom" id="YRQ-B3-z5s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tg6-F1-29w">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JDh-JX-8aH">
-                                <rect key="frame" x="152" y="84" width="70" height="70"/>
+                                <rect key="frame" x="125" y="84" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="6XE-aD-2wf"/>
@@ -485,7 +522,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-01-AmQ">
-                                <rect key="frame" x="36" y="244" width="303" height="40"/>
+                                <rect key="frame" x="36" y="244" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qFX-oP-iyf"/>
                                 </constraints>
@@ -494,7 +531,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-z2-I1L">
-                                <rect key="frame" x="36" y="314" width="303" height="40"/>
+                                <rect key="frame" x="36" y="314" width="248" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cHX-Kb-EOL"/>
                                 </constraints>
@@ -503,7 +540,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhV-Eq-2SH">
-                                <rect key="frame" x="36" y="577" width="303" height="40"/>
+                                <rect key="frame" x="36" y="478" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cMv-hz-nBz"/>
@@ -514,7 +551,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No7-Np-wkg">
-                                <rect key="frame" x="36" y="507" width="303" height="40"/>
+                                <rect key="frame" x="36" y="408" width="248" height="40"/>
                                 <color key="backgroundColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zWP-p8-FCT"/>
@@ -555,6 +592,63 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IcM-ny-J6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="223.19999999999999" y="-0.44977511244377816"/>
+        </scene>
+        <!--Auto-->
+        <scene sceneID="6aK-pV-W08">
+            <objects>
+                <viewController id="ztd-aB-AKd" customClass="AutoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vlQ-K0-k4i"/>
+                        <viewControllerLayoutGuide type="bottom" id="wjg-sK-xJy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zzt-UB-79u">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-QD-d77">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="91" id="DSs-xG-eW8" customClass="AutoTableViewCell">
+                                        <rect key="frame" x="0.0" y="1" width="320" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DSs-xG-eW8" id="iwn-c3-Agl">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ztd-aB-AKd" id="fqz-6s-aP8"/>
+                                    <outlet property="delegate" destination="ztd-aB-AKd" id="jtg-GD-qZX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e0L-QD-d77" firstAttribute="leading" secondItem="zzt-UB-79u" secondAttribute="leading" id="QUl-a5-59E"/>
+                            <constraint firstItem="wjg-sK-xJy" firstAttribute="top" secondItem="e0L-QD-d77" secondAttribute="bottom" id="epB-Dr-j5F"/>
+                            <constraint firstAttribute="trailing" secondItem="e0L-QD-d77" secondAttribute="trailing" id="jyB-H8-8ye"/>
+                            <constraint firstItem="e0L-QD-d77" firstAttribute="top" secondItem="vlQ-K0-k4i" secondAttribute="bottom" id="ySw-QG-xcz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Auto" id="1wa-Vg-hsM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="GOA-1o-Rdr">
+                            <color key="tintColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addCarButtonPressed:" destination="ztd-aB-AKd" id="cw3-kT-lJt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addCarBarButtonItem" destination="GOA-1o-Rdr" id="YU0-JI-XJs"/>
+                        <outlet property="tableView" destination="e0L-QD-d77" id="7dW-Q5-AK0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P9T-cd-Kl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4640.8000000000002" y="-2178.2608695652175"/>
         </scene>
         <!--Parking-->
         <scene sceneID="yOf-KR-9yC">
@@ -604,7 +698,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="93t-tV-bdr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Podsetnik" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="rqc-DN-2JH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rqc-DN-2JH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -655,8 +749,30 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
             </objects>
             <point key="canvasLocation" x="5541.6000000000004" y="-510.49475262368821"/>
         </scene>
+        <!--Auto-->
+        <scene sceneID="IR7-33-xB1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QI4-sZ-rcb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Auto" image="car" selectedImage="car" id="cTI-5f-ewF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nXM-zh-B9L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ztd-aB-AKd" kind="relationship" relationship="rootViewController" id="ifV-LQ-Ddj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgb-lu-yxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3702" y="-2178"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="car" width="24" height="24"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
