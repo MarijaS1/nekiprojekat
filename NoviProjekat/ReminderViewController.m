@@ -1,4 +1,4 @@
- //
+//
 //  FirstViewController.m
 //  NoviProjekat
 //
@@ -29,9 +29,10 @@
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 80;
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
     [self initGui];
     self.formatter = [[NSDateFormatter alloc] init];
-
+    
 }
 
 
@@ -40,7 +41,7 @@
     
     [self addNotifications];
     self.eventsArray = [[NSMutableArray alloc]init];
-//    self.filteredEventsArray = [[NSMutableArray alloc]init];
+    //    self.filteredEventsArray = [[NSMutableArray alloc]init];
     self.emptyView.hidden = YES;
     self.viewTable.hidden = YES;
     
@@ -49,28 +50,8 @@
         [self showProgressWithInfoMessage:@"Please wait..."];
     });
     
-           [[CalendarService sharedInstance] getAllCalendarEvents];
-        
-        //    for (EKEvent *event in self.eventsArray) {
-        //        if ( ([event. isEqualToString:@"Vozacka dozvola"] || [event.title isEqualToString:@"Godisnji servis"] || [event.title isEqualToString:@"Registracija"])) {
-        //            [self.filteredEventsArray addObject:event];
-        //        }
-        //    }
+    [[CalendarService sharedInstance] getAllCalendarEvents];
     
-    
-//    self.eventsArray = [[CalendarService sharedInstance] getAllCalendarEvents];
-//    
-////    for (EKEvent *event in self.eventsArray) {
-////        if ( ([event. isEqualToString:@"Vozacka dozvola"] || [event.title isEqualToString:@"Godisnji servis"] || [event.title isEqualToString:@"Registracija"])) {
-////            [self.filteredEventsArray addObject:event];
-////        }
-////    }
-//    [self hideProgressAndMessage];
-//    if (self.eventsArray.count != 0) {
-//        [self showTableView];
-//    }else{
-//        [self showEmptyView];
-//    }
 }
 
 
@@ -93,49 +74,36 @@
 
 -(void)showTableView {
     dispatch_async(dispatch_get_main_queue(), ^{
-    [self.emptyView setHidden:YES];
-     [self.viewTable setHidden:NO];
-    [self.tableView reloadData];
+        [self.emptyView setHidden:YES];
+        [self.viewTable setHidden:NO];
+        [self.tableView reloadData];
     });
 }
 
 -(void)addNotifications{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allEventsReceived:) name:@"ALL_EVENTS" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eventsReceived:) name:@"NOTIF_CALENDAR" object:nil];
-
+    
 }
 
 -(void)removeNotifications{
     [[NSNotificationCenter defaultCenter] removeObserver:@"ALL_EVENTS"];
     [[NSNotificationCenter defaultCenter] removeObserver:@"NOTIF_CALENDAR"];
-
+    
 }
 
 -(void)allEventsReceived:(NSNotification *)infoNotification{
-//    self.eventsArray = [infoNotification.userInfo objectForKey:@"events"];
-//    for (EKEvent *event in self.eventsArray) {
-//        if (event.hasNotes && ![event.title isEqualToString:@""] && ([event.title isEqualToString:@"Vozacka dozvola"] || [event.title isEqualToString:@"Godisnji servis"] || [event.title isEqualToString:@"Registracija"])) {
-//            [self.filteredEventsArray addObject:event];
-//        }
-//    }
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//    [self hideProgressAndMessage];
-//    });
-//    if (self.filteredEventsArray.count == 0) {
-//        [self showEmptyView];
-//    }else {
-//        [self showTableView];
-//    }
+   
 }
 
 
 -(void)eventsReceived:(NSNotification *)infoNotification{
-        self.eventsArray = [infoNotification.userInfo objectForKey:@"calendar"];
+    self.eventsArray = [infoNotification.userInfo objectForKey:@"calendar"];
     
-        dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self hideProgressAndMessage];
-        });
-//    [self hideProgressAndMessage];
+    });
+    
     if (self.eventsArray.count != 0) {
         [self showTableView];
     }else{
@@ -149,13 +117,40 @@
 
 
 - (IBAction)addReminderButtonPressed:(UIButton *)sender {
-   AddReminderViewController *addReminderVC = (AddReminderViewController*) [self.storyboard instantiateViewControllerWithIdentifier:@"addReminderViewController"];
+    AddReminderViewController *addReminderVC = (AddReminderViewController*) [self.storyboard instantiateViewControllerWithIdentifier:@"addReminderViewController"];
     [self.navigationController pushViewController:addReminderVC animated:YES];
 }
 
+- (IBAction)addNewReminderBarButtonPressed:(UIBarButtonItem *)sender {
+    AddReminderViewController *addReminderVC = (AddReminderViewController*) [self.storyboard instantiateViewControllerWithIdentifier:@"addReminderViewController"];
+    addReminderVC.eventsArray = self.eventsArray;
+    [self.navigationController pushViewController:addReminderVC animated:YES];
+}
 
 #pragma mark - UITableViewDelegate
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        [[CalendarService sharedInstance] removeEvent:((EKEvent*)self.eventsArray[indexPath.row]).title accessDenied:^{
+            
+        } accessGranted:^{
+            [self.eventsArray removeObject:((EKEvent*)self.eventsArray[indexPath.row])];
+            if (self.eventsArray.count != 0) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                });
+            }else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showEmptyView];
+                });
+            }
+        }];
+    }
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -178,15 +173,27 @@
         
         [self.formatter setDateFormat:@"dd-MM-yyyy"];
         NSString *stringFromDate = [self.formatter stringFromDate:event.startDate];
-
+        
         cell.titleLabel.text = event.title;
         cell.dateLabel.text = stringFromDate;
         cell.noteLabel.text = event.notes;
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     
     return [UITableViewCell new];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AddReminderViewController *addReminderVC = (AddReminderViewController*) [self.storyboard instantiateViewControllerWithIdentifier:@"addReminderViewController"];
+    addReminderVC.eventsArray = self.eventsArray;
+    [self.formatter setDateFormat:@"dd-MM-yyyy"];
+    NSString *stringFromDate = [self.formatter stringFromDate:((EKEvent*)self.eventsArray[indexPath.row]).startDate];
+    addReminderVC.date = stringFromDate;
+    addReminderVC.type = ((EKEvent*)self.eventsArray[indexPath.row]).title;
+    addReminderVC.notes = ((EKEvent*)self.eventsArray[indexPath.row]).notes;
+
+    [self.navigationController pushViewController:addReminderVC animated:YES];
 }
 
 

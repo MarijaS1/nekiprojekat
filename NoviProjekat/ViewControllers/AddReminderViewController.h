@@ -7,7 +7,7 @@
 //
 
 #import "BasicViewController.h"
-
+#import <EventKit/EventKit.h>
 
 @interface AddReminderViewController : BasicViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -17,5 +17,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 @property (weak, nonatomic) IBOutlet UIButton *typeOfRemiderButton;
 @property (weak, nonatomic) IBOutlet UIButton *addReminder;
+
+@property (strong, nonatomic) NSArray *eventsArray;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) NSString *notes;
+
+
 
 @end

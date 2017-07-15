@@ -89,7 +89,6 @@
 "label_title_createyourprofile" = "Create your profile";
 
 
-/*UD LOGIN VC*/
 
 /*Navigation bar title*/
 "label_title_login2" = "Sign in";
@@ -111,3 +110,7 @@
 "label_title_dailytickettext" = "Važi od 8h do 21h, subotom od 8h do 14h (285 din/dan)";
 
 
+/*REMINDER VC*/
+"alert_title_error" = "";
+"alert_message_alreadygotreminder" = "Vec ste dodali podsetnik tog tipa. Molimo izaberite drugu vrstu podsetnika";
+"alert_buttontitle_warning" = "OK";

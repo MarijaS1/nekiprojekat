@@ -10,6 +10,7 @@
 #import "ActionSheetPicker.h"
 #import "CalendarService.h"
 #import "Reminder.h"
+#import "LocalizableStringService.h"
 
 
 
@@ -26,6 +27,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initGui];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.addReminder.enabled = NO;
+    if (self.type) {
+        self.typeOfReminderTextField.text = self.type;
+    }
+    if (self.notes) {
+        self.noteTextField.text = self.notes;
+    }
+    if (self.date){
+        self.dateTextField.text = self.date;
+    }
 }
 
 #pragma mark - Private methods
@@ -96,11 +111,13 @@
 
 #pragma mark - Action methods
 - (IBAction)typeOfReminderButtonPressed:(UIButton *)sender {
+    
     [ActionSheetStringPicker showPickerWithTitle:@""
                                             rows:self.pickTypeOfReminderArray
                                 initialSelection:0
                                        doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
                                            self.typeOfReminderTextField.text = (NSString*)selectedValue;
+                                           self.addReminder.enabled = YES;
                                        }
                                      cancelBlock:^(ActionSheetStringPicker *picker) {
                                          NSLog(@"Block Picker Canceled");
@@ -126,71 +143,51 @@
 
 - (IBAction)addNewReminderButtonPressed:(UIButton *)sender {
     [self addReminderToCalendarAppWithTitle:self.titleTextField.text withDate:self.selectedDate withNotes:self.noteTextField.text WithType:self.typeOfReminderTextField.text];
-    NSError *error = nil;
-    
-    //    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    
-//    Reminder *reminder = [NSEntityDescription insertNewObjectForEntityForName:@"Reminder" inManagedObjectContext:self.appDelegate.managedObjectContext];
-//    reminder.type = self.typeOfReminderTextField.text;
-//    reminder.date = self.selectedDate;
-//    reminder.registration = self.registrationPlateTextField.text;s
-//    
-//    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.appDelegate.managedObjectContext];
-//    user.username = self.usernameTextField.text;
-//    user.email = self.emailTextField.text;
-//    user.password = self.passwordTextField.text;
-//    
-//    [user addHasCarRelationshipObject:reminder];
-//    
-//    if (![self.appDelegate.managedObjectContext save:&error]) {
-//        NSLog(@"Great, error while fixing error; couldn't save: %@", [error localizedDescription]);
-//    } else {
-//        NSLog(@"User and car saved");
-//        [DataController sharedInstance].carInfo = reminder;
-//        UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
-//        tabBarController.selectedIndex=0;
-//        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:0];
-//        ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
-//        parkingVC.car = car;
-//        [self presentViewController:tabBarController animated:YES completion:nil];
-//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//    }
 
-        
 }
 
 -(void)addReminderToCalendarAppWithTitle:(NSString*)title withDate:(NSDate*)date withNotes:(NSString*)notes WithType:(NSString*)type{
-    
-    [[CalendarService sharedInstance] addEventWithTitle:type andWithStartDate:date andWithEndDate:date andWithNotes:([notes isEqualToString:@""]) ? type : notes andWithIdentifier:type accessDenied:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Unable to add to calendar");
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Kalendar permisije su isključene za Moj Automobil aplikaciju. Uključite ih u Privacy Settings." preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert dismissViewControllerAnimated:YES completion:nil];
-            }];
+    BOOL isFound = NO;
+    for (EKEvent *event in self.eventsArray) {
+        if ([event.title isEqualToString:type]) {
+            isFound = YES;
+            break;
+        }
+    }
+    if (isFound) {
+        [self showAlertPopupWithMessage:[[LocalizableStringService sharedInstance]getLocalizableStringForType:TYPE_ALERT andSybtype:SUBTYPE_MESSAGE andSuffix:@"alreadygotreminder"]];
+    }else{
+        [[CalendarService sharedInstance] addEventWithTitle:type andWithStartDate:date andWithEndDate:date andWithNotes:([notes isEqualToString:@""]) ? type : notes andWithIdentifier:type accessDenied:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"Unable to add to calendar");
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Kalendar permisije su isključene za Moj Automobil aplikaciju. Uključite ih u Privacy Settings." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [alert dismissViewControllerAnimated:YES completion:nil];
+                }];
+                
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+            });
+        } accessGranted:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"Day  added to calendar");
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Podsetnik je uspešno sačuvan u kalendaru!" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+                
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+            });
             
-            [alert addAction:ok];
-            [self presentViewController:alert animated:YES completion:nil];
-        });
-    } accessGranted:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Day  added to calendar");
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Podsetnik je uspešno sačuvan u kalendaru!" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self.navigationController popViewControllerAnimated:YES];
-            }];
-            
-            [alert addAction:ok];
-            [self presentViewController:alert animated:YES completion:nil];
-        });
-        
-    }];
+        }];
+    }
     
 }
 
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
+    self.addReminder.enabled = YES;
     self.selectedDate = selectedDate;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

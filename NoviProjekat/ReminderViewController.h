@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addReminder;
 @property (weak, nonatomic) IBOutlet UIView *viewTable;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addNewReminderButtonItem;
 
 
 @end

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zcn-5O-72B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zcn-5O-72B">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,7 +68,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kSr-QU-Ko9" id="P5U-X1-KIS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -100,8 +100,16 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                             <constraint firstItem="sSc-8f-SWU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="rlq-vm-hsj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="POh-ti-jXt"/>
+                    <navigationItem key="navigationItem" id="POh-ti-jXt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="crE-9a-fLX">
+                            <color key="tintColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addNewReminderBarButtonPressed:" destination="9pv-A4-QxB" id="j5u-5h-hG3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addNewReminderButtonItem" destination="crE-9a-fLX" id="xAJ-wp-gOq"/>
                         <outlet property="addReminder" destination="Wct-ng-8iz" id="Aat-9l-uEN"/>
                         <outlet property="emptyView" destination="vZ4-c2-QRd" id="Ug4-8d-Pwb"/>
                         <outlet property="tableView" destination="xG0-ER-2ZG" id="aNF-A7-Jhz"/>
@@ -127,22 +135,6 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcE-vH-mwg">
                                 <rect key="frame" x="20" y="104" width="280" height="424"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naslov:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfK-I8-Fyv">
-                                        <rect key="frame" x="0.0" y="10" width="53" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Gpj-aj-ICc"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <color key="textColor" red="0.44313725490196076" green="0.76862745098039209" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZSy-zZ-NjR">
-                                        <rect key="frame" x="63" y="10" width="207" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXQ-xL-ZZ3">
                                         <rect key="frame" x="0.0" y="100" width="52" height="30"/>
                                         <constraints>
@@ -202,13 +194,14 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJc-0t-JsB">
                                         <rect key="frame" x="40" y="284" width="200" height="40"/>
-                                        <color key="backgroundColor" red="0.44313725490196076" green="0.76862745098039209" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Yrf-Ue-Jji"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="Dodaj podsetnik">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="addNewReminderButtonPressed:" destination="Sk3-kD-lq9" eventType="touchUpInside" id="uzn-ra-GQd"/>
@@ -221,7 +214,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                     <constraint firstAttribute="bottom" secondItem="aJc-0t-JsB" secondAttribute="bottom" constant="100" id="CQv-ZL-0Na"/>
                                     <constraint firstAttribute="trailing" secondItem="FE8-Iz-kS9" secondAttribute="trailing" constant="10" id="DEU-4a-AzO"/>
                                     <constraint firstItem="LDB-ya-rrA" firstAttribute="leading" secondItem="XcE-vH-mwg" secondAttribute="leading" id="IyI-4m-Yfa"/>
-                                    <constraint firstItem="ZSy-zZ-NjR" firstAttribute="leading" secondItem="BfK-I8-Fyv" secondAttribute="trailing" constant="10" id="KUA-Up-9wO"/>
+                                    <constraint firstItem="BQf-d2-NwD" firstAttribute="top" secondItem="XcE-vH-mwg" secondAttribute="top" constant="55" id="Kui-5N-bub"/>
                                     <constraint firstItem="Mjv-hB-F0x" firstAttribute="top" secondItem="FMp-ei-8F5" secondAttribute="bottom" constant="15" id="NoJ-2P-abO"/>
                                     <constraint firstItem="sOx-xb-l8U" firstAttribute="leading" secondItem="XcE-vH-mwg" secondAttribute="leading" id="OwR-P9-fLT"/>
                                     <constraint firstItem="sOx-xb-l8U" firstAttribute="centerY" secondItem="TwW-Kd-aXJ" secondAttribute="centerY" id="Rxl-6V-F5N"/>
@@ -236,20 +229,14 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                     <constraint firstItem="sOx-xb-l8U" firstAttribute="top" secondItem="FE8-Iz-kS9" secondAttribute="bottom" constant="15" id="ahB-sg-RKR"/>
                                     <constraint firstItem="FE8-Iz-kS9" firstAttribute="top" secondItem="FMp-ei-8F5" secondAttribute="bottom" constant="15" id="au0-Bg-j8A"/>
                                     <constraint firstItem="aJc-0t-JsB" firstAttribute="leading" secondItem="XcE-vH-mwg" secondAttribute="leading" constant="40" id="bUA-2t-CT4"/>
-                                    <constraint firstItem="BfK-I8-Fyv" firstAttribute="centerY" secondItem="ZSy-zZ-NjR" secondAttribute="centerY" id="biO-DD-kSr"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZSy-zZ-NjR" secondAttribute="trailing" constant="10" id="cL7-RV-XXr"/>
                                     <constraint firstItem="BQf-d2-NwD" firstAttribute="leading" secondItem="LDB-ya-rrA" secondAttribute="trailing" constant="10" id="cWv-nC-iWN"/>
                                     <constraint firstItem="FMp-ei-8F5" firstAttribute="leading" secondItem="LDB-ya-rrA" secondAttribute="trailing" constant="10" id="gUG-Ex-pjy"/>
                                     <constraint firstItem="kXQ-xL-ZZ3" firstAttribute="leading" secondItem="XcE-vH-mwg" secondAttribute="leading" id="gpK-5I-KwN"/>
                                     <constraint firstAttribute="trailing" secondItem="TwW-Kd-aXJ" secondAttribute="trailing" constant="10" id="ixE-UG-udV"/>
-                                    <constraint firstItem="BfK-I8-Fyv" firstAttribute="top" secondItem="XcE-vH-mwg" secondAttribute="top" constant="10" id="mKI-tC-TK3"/>
-                                    <constraint firstItem="BQf-d2-NwD" firstAttribute="top" secondItem="ZSy-zZ-NjR" secondAttribute="bottom" constant="15" id="mzf-iA-Wuc"/>
                                     <constraint firstItem="TwW-Kd-aXJ" firstAttribute="top" secondItem="FE8-Iz-kS9" secondAttribute="bottom" constant="15" id="nCd-Oy-oMK"/>
                                     <constraint firstItem="FE8-Iz-kS9" firstAttribute="leading" secondItem="kXQ-xL-ZZ3" secondAttribute="trailing" constant="10" id="suG-Lg-IIE"/>
-                                    <constraint firstItem="ZSy-zZ-NjR" firstAttribute="top" secondItem="XcE-vH-mwg" secondAttribute="top" constant="10" id="tfi-gU-puq"/>
                                     <constraint firstAttribute="trailing" secondItem="Mjv-hB-F0x" secondAttribute="trailing" constant="10" id="uwq-9D-QCz"/>
-                                    <constraint firstItem="FMp-ei-8F5" firstAttribute="top" secondItem="ZSy-zZ-NjR" secondAttribute="bottom" constant="15" id="uxT-72-Ajn"/>
-                                    <constraint firstItem="BfK-I8-Fyv" firstAttribute="leading" secondItem="XcE-vH-mwg" secondAttribute="leading" id="vJb-w5-Csz"/>
+                                    <constraint firstItem="LDB-ya-rrA" firstAttribute="top" secondItem="XcE-vH-mwg" secondAttribute="top" constant="55" id="wld-PO-uCO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -267,7 +254,6 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <outlet property="dateButton" destination="Mjv-hB-F0x" id="4zd-RE-OMZ"/>
                         <outlet property="dateTextField" destination="FE8-Iz-kS9" id="mYc-VG-ZWk"/>
                         <outlet property="noteTextField" destination="TwW-Kd-aXJ" id="fEh-we-ZNP"/>
-                        <outlet property="titleTextField" destination="ZSy-zZ-NjR" id="Yej-FD-Qdz"/>
                         <outlet property="typeOfRemiderButton" destination="BQf-d2-NwD" id="yC7-YY-VCP"/>
                         <outlet property="typeOfReminderTextField" destination="FMp-ei-8F5" id="hPs-RN-uIW"/>
                     </connections>
@@ -297,7 +283,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sms-0v-1Ux" id="ix2-ra-zW1">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -614,7 +600,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <rect key="frame" x="0.0" y="1" width="320" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DSs-xG-eW8" id="iwn-c3-Agl">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -634,7 +620,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Auto" id="1wa-Vg-hsM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="GOA-1o-Rdr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GOA-1o-Rdr">
                             <color key="tintColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addCarButtonPressed:" destination="ztd-aB-AKd" id="cw3-kT-lJt"/>
