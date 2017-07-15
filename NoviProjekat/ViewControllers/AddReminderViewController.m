@@ -162,7 +162,7 @@
 
 -(void)addReminderToCalendarAppWithTitle:(NSString*)title withDate:(NSDate*)date withNotes:(NSString*)notes WithType:(NSString*)type{
     
-    [[CalendarService sharedInstance] addEventWithTitle:(([title isEqualToString:@""]) ? type : title) andWithStartDate:date andWithEndDate:date andWithNotes:([notes isEqualToString:@""]) ? type : notes andWithIdentifier:type accessDenied:^{
+    [[CalendarService sharedInstance] addEventWithTitle:type andWithStartDate:date andWithEndDate:date andWithNotes:([notes isEqualToString:@""]) ? type : notes andWithIdentifier:type accessDenied:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Unable to add to calendar");
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Kalendar permisije su isključene za Moj Automobil aplikaciju. Uključite ih u Privacy Settings." preferredStyle:UIAlertControllerStyleAlert];

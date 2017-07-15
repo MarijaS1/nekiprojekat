@@ -124,7 +124,7 @@ static CalendarService *shared = nil;
 }
 
 
--(NSMutableArray *)getAllCalendarEvents{
+-(void)getAllCalendarEvents{
     
     // Get the appropriate calendar
 //    NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -150,7 +150,7 @@ static CalendarService *shared = nil;
                  
                  // Create the end date components
                  NSDateComponents *oneYearFromNowComponents = [[NSDateComponents alloc] init];
-                 oneYearFromNowComponents.year = 1;
+                 oneYearFromNowComponents.year = 3;
                  NSDate *oneYearFromNow = [calendar dateByAddingComponents:oneYearFromNowComponents
                                                                     toDate:[NSDate date]
                                                                    options:0];
@@ -159,34 +159,38 @@ static CalendarService *shared = nil;
                  NSPredicate *predicate = [self.eventStore predicateForEventsWithStartDate:oneDayAgo
                                                                          endDate:oneYearFromNow
                                                                        calendars:nil];
+                 
                  self.calendarEvents  = [[NSMutableArray alloc]init];
                  
                  // Fetch all events that match the predicate
 //
                     NSArray *events = [self.eventStore eventsMatchingPredicate:predicate];
-                 self.calendarEvents =[events mutableCopy];
-//                    self.calendarEvents = [events mutableCopy];
-//                    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-//                    [userInfo setObject:self.calendarEvents forKey:@"events"];
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                 
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:@"ALL_EVENTS" object:nil userInfo:userInfo];
-//                 });
                  
-//                 for (EKEvent *event in events) {
-//                     if ([event.eventIdentifier isEqualToString:REGISTRATION_KEY] || [event.eventIdentifier isEqualToString:SERVICE_KEY] || [event.eventIdentifier isEqualToString:DRIVER_LICENCE_KEY]) {
-//                         [self.calendarEvents addObject:event];
-//                     }
-//                 }
+                 for(EKEvent *event in events) {
+                     NSLog(@"Event Title:%@", event.title);
+                     if ([event.title isEqualToString:@"Vozacka dozvola"]){
+                         [self.calendarEvents addObject:event];
+                     }else if([event.title isEqualToString:@"Registracija"]){
+                        [self.calendarEvents addObject:event];
+                     }else if([event.title isEqualToString:@"Godisnji servis"]){
+                        [self.calendarEvents addObject:event];
+                     }
+                 }
                  
-////                 NSArray *events = [self.eventStore eventWithIdentifier:CALENDAR_EVENTS_KEY];
-//                NSLog(@"%@", events);
+                 if (self.calendarEvents != nil) {
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIF_CALENDAR" object:nil userInfo:[NSDictionary dictionaryWithObject:self.calendarEvents forKey:@"calendar"]];
+                 }else{
+                     [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIF_CALENDAR" object:nil userInfo:nil];
+                 }
+
              }else {
                  NSLog(@"User has not granted permission!");
              }
          }];
     }
-    return self.calendarEvents;
+    
+    
+//    return self.calendarEvents;
    
 }
 
