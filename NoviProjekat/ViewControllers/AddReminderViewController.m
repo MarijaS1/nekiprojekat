@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSDate *selectedDate;
 @property (strong, nonatomic) UITapGestureRecognizer *tap;
 @property (strong, nonatomic) NSArray *pickTypeOfReminderArray;
+@property (nonatomic) BOOL isEditingReminder;
 
 @end
 
@@ -31,15 +32,21 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.addReminder.enabled = NO;
+    
     if (self.type) {
         self.typeOfReminderTextField.text = self.type;
+        self.isEditingReminder = true;
     }
     if (self.notes) {
         self.noteTextField.text = self.notes;
     }
     if (self.date){
         self.dateTextField.text = self.date;
+         self.isEditingReminder = true;
+    }
+    
+    if ( self.isEditingReminder ) {
+        [self.addReminder setTitle:@"Izmeni podsetnik" forState:UIControlStateNormal];
     }
 }
 
@@ -111,18 +118,19 @@
 
 #pragma mark - Action methods
 - (IBAction)typeOfReminderButtonPressed:(UIButton *)sender {
-    
-    [ActionSheetStringPicker showPickerWithTitle:@""
-                                            rows:self.pickTypeOfReminderArray
-                                initialSelection:0
-                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
-                                           self.typeOfReminderTextField.text = (NSString*)selectedValue;
-                                           self.addReminder.enabled = YES;
-                                       }
-                                     cancelBlock:^(ActionSheetStringPicker *picker) {
-                                         NSLog(@"Block Picker Canceled");
-                                                                            }
-                                          origin:sender];
+ 
+        [ActionSheetStringPicker showPickerWithTitle:@""
+                                                rows:self.pickTypeOfReminderArray
+                                    initialSelection:0
+                                           doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                               self.typeOfReminderTextField.text = (NSString*)selectedValue;
+//                                               self.addReminder.enabled = YES;
+                                           }
+                                         cancelBlock:^(ActionSheetStringPicker *picker) {
+                                             NSLog(@"Block Picker Canceled");
+                                         }
+                                              origin:sender];
+
     
 }
 
@@ -142,7 +150,22 @@
 }
 
 - (IBAction)addNewReminderButtonPressed:(UIButton *)sender {
-    [self addReminderToCalendarAppWithTitle:self.titleTextField.text withDate:self.selectedDate withNotes:self.noteTextField.text WithType:self.typeOfReminderTextField.text];
+    if ([sender.titleLabel.text isEqualToString:@"Izmeni podsetnik"]) {
+        [[CalendarService sharedInstance] removeEvent:self.type accessDenied:^{
+        } accessGranted:^{
+        }];
+        
+        // Convert string to date object
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd-MM-yyyy"];
+        NSDate *dateToUse = [dateFormat dateFromString:self.date];
+        
+        [self addReminderToCalendarAppWithTitle:self.titleTextField.text withDate:dateToUse withNotes:self.noteTextField.text WithType:self.typeOfReminderTextField.text];
+
+    }else{
+         [self addReminderToCalendarAppWithTitle:self.titleTextField.text withDate:self.selectedDate withNotes:self.noteTextField.text WithType:self.typeOfReminderTextField.text];
+    }
+   
 
 }
 
@@ -187,7 +210,7 @@
 
 
 - (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
-    self.addReminder.enabled = YES;
+//    self.addReminder.enabled = YES;
     self.selectedDate = selectedDate;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

@@ -150,7 +150,7 @@ static CalendarService *shared = nil;
                  
                  // Create the end date components
                  NSDateComponents *oneYearFromNowComponents = [[NSDateComponents alloc] init];
-                 oneYearFromNowComponents.year = 3;
+                 oneYearFromNowComponents.year = 1;
                  NSDate *oneYearFromNow = [calendar dateByAddingComponents:oneYearFromNowComponents
                                                                     toDate:[NSDate date]
                                                                    options:0];
