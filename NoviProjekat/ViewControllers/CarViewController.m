@@ -6,16 +6,17 @@
 //  Copyright © 2017 Admin. All rights reserved.
 //
 
-#import "AutoViewController.h"
+#import "CarViewController.h"
 #import "AutoTableViewCell.h"
+#import "AddNewCarViewController.h"
 
-@interface AutoViewController ()
+@interface CarViewController ()
 
 @property (strong, nonatomic) NSMutableArray *carArray;
 
 @end
 
-@implementation AutoViewController
+@implementation CarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +38,7 @@
         NSLog(@"Error while getting car");
     }else if ([matches count]){
         self.carArray = [matches mutableCopy];
+        [self.tableView reloadData];
     }
 }
 
@@ -71,6 +73,7 @@
         cell.typeOfCarLabel.text = car.type;
         cell.registrationPlateLabel.text = car.registration;
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     
@@ -81,6 +84,10 @@
 
 
 - (IBAction)addCarButtonPressed:(UIBarButtonItem *)sender {
+    AddNewCarViewController *addCarVC = (AddNewCarViewController*) [self.storyboard instantiateViewControllerWithIdentifier:@"addNewCarViewController"];
+    [self.navigationController pushViewController:addCarVC animated:YES];
+
+    
 }
 
 @end

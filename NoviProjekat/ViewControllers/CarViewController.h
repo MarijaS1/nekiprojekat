@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BasicViewController.h"
 
-@interface AutoViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CarViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addCarBarButtonItem;
 

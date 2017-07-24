@@ -11,7 +11,7 @@
 		1A0691F71EB8B6ED00CB3326 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */; };
 		1A0C80CA1E6C611F0084D24C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0C80C91E6C611F0084D24C /* CoreData.framework */; };
 		1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */; };
-		1A17D8FB1ECB5025009F6580 /* AutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17D8FA1ECB5025009F6580 /* AutoViewController.m */; };
+		1A17D8FB1ECB5025009F6580 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17D8FA1ECB5025009F6580 /* CarViewController.m */; };
 		1A17D8FF1ECB5196009F6580 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17D8FD1ECB5196009F6580 /* AutoTableViewCell.m */; };
 		1A17D9001ECB5196009F6580 /* AutoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A17D8FE1ECB5196009F6580 /* AutoTableViewCell.xib */; };
 		1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1D2A681E1AFB2200205CA9 /* Localizable.strings */; };
@@ -26,6 +26,7 @@
 		1AC823661EA50C97009AFBFC /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823651EA50C97009AFBFC /* Car.m */; };
 		1AC823691EA50D72009AFBFC /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823681EA50D72009AFBFC /* Expenses.m */; };
 		1AC8236D1EA52487009AFBFC /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8236C1EA52487009AFBFC /* DataController.m */; };
+		1AD691521F239CF900627D0F /* AddNewCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD691511F239CF900627D0F /* AddNewCarViewController.m */; };
 		1AE78AA61E81B0120018FF66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE78AA51E81B0120018FF66 /* LoginViewController.m */; };
 		1AE78AA91E81B5F70018FF66 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE78AA81E81B5F70018FF66 /* SignUpViewController.m */; };
 		7F8C94B4160044F51D13E214 /* Pods_NoviProjekat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A84FB88838389AEEFCD518 /* Pods_NoviProjekat.framework */; };
@@ -49,8 +50,8 @@
 		1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddReminderViewController.m; path = ViewControllers/AddReminderViewController.m; sourceTree = "<group>"; };
 		1A0C80C91E6C611F0084D24C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MojAutomobilModel.xcdatamodel; sourceTree = "<group>"; };
-		1A17D8F91ECB5025009F6580 /* AutoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoViewController.h; path = ViewControllers/AutoViewController.h; sourceTree = "<group>"; };
-		1A17D8FA1ECB5025009F6580 /* AutoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoViewController.m; path = ViewControllers/AutoViewController.m; sourceTree = "<group>"; };
+		1A17D8F91ECB5025009F6580 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarViewController.h; path = ViewControllers/CarViewController.h; sourceTree = "<group>"; };
+		1A17D8FA1ECB5025009F6580 /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarViewController.m; path = ViewControllers/CarViewController.m; sourceTree = "<group>"; };
 		1A17D8FC1ECB5196009F6580 /* AutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoTableViewCell.h; path = CustomCells/AutoTableViewCell.h; sourceTree = "<group>"; };
 		1A17D8FD1ECB5196009F6580 /* AutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoTableViewCell.m; path = CustomCells/AutoTableViewCell.m; sourceTree = "<group>"; };
 		1A17D8FE1ECB5196009F6580 /* AutoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AutoTableViewCell.xib; path = CustomCells/AutoTableViewCell.xib; sourceTree = "<group>"; };
@@ -78,6 +79,8 @@
 		1AC8236A1EA5104F009AFBFC /* MojAutomobilModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MojAutomobilModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		1AC8236B1EA52487009AFBFC /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataController.h; path = Services/DataController.h; sourceTree = "<group>"; };
 		1AC8236C1EA52487009AFBFC /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Services/DataController.m; sourceTree = "<group>"; };
+		1AD691501F239CF900627D0F /* AddNewCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddNewCarViewController.h; path = ViewControllers/AddNewCarViewController.h; sourceTree = "<group>"; };
+		1AD691511F239CF900627D0F /* AddNewCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddNewCarViewController.m; path = ViewControllers/AddNewCarViewController.m; sourceTree = "<group>"; };
 		1AE78AA41E81B0120018FF66 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
 		1AE78AA51E81B0120018FF66 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
 		1AE78AA71E81B5F70018FF66 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = ViewControllers/SignUpViewController.h; sourceTree = "<group>"; };
@@ -152,8 +155,10 @@
 				1AE78AA81E81B5F70018FF66 /* SignUpViewController.m */,
 				1A0691F51EB8B6ED00CB3326 /* AddReminderViewController.h */,
 				1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */,
-				1A17D8F91ECB5025009F6580 /* AutoViewController.h */,
-				1A17D8FA1ECB5025009F6580 /* AutoViewController.m */,
+				1A17D8F91ECB5025009F6580 /* CarViewController.h */,
+				1A17D8FA1ECB5025009F6580 /* CarViewController.m */,
+				1AD691501F239CF900627D0F /* AddNewCarViewController.h */,
+				1AD691511F239CF900627D0F /* AddNewCarViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				1AC823691EA50D72009AFBFC /* Expenses.m in Sources */,
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
+				1AD691521F239CF900627D0F /* AddNewCarViewController.m in Sources */,
 				1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */,
 				1AC823661EA50C97009AFBFC /* Car.m in Sources */,
 				1A0691F41EB8AC5600CB3326 /* CalendarService.m in Sources */,
@@ -401,7 +407,7 @@
 				1A17D8FF1ECB5196009F6580 /* AutoTableViewCell.m in Sources */,
 				1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */,
 				1AC8236D1EA52487009AFBFC /* DataController.m in Sources */,
-				1A17D8FB1ECB5025009F6580 /* AutoViewController.m in Sources */,
+				1A17D8FB1ECB5025009F6580 /* CarViewController.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,
 				1AE78AA91E81B5F70018FF66 /* SignUpViewController.m in Sources */,
 				1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */,

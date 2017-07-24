@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zcn-5O-72B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zcn-5O-72B">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -582,7 +583,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
         <!--Auto-->
         <scene sceneID="6aK-pV-W08">
             <objects>
-                <viewController id="ztd-aB-AKd" customClass="AutoViewController" sceneMemberID="viewController">
+                <viewController id="ztd-aB-AKd" customClass="CarViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vlQ-K0-k4i"/>
                         <viewControllerLayoutGuide type="bottom" id="wjg-sK-xJy"/>
@@ -635,6 +636,133 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9T-cd-Kl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4640.8000000000002" y="-2178.2608695652175"/>
+        </scene>
+        <!--Add New Car View Controller-->
+        <scene sceneID="hq0-ee-p3Y">
+            <objects>
+                <viewController storyboardIdentifier="addNewCarViewController" id="hOa-yz-O1J" customClass="AddNewCarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wK4-eI-OdU"/>
+                        <viewControllerLayoutGuide type="bottom" id="G6B-8p-WX6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OWZ-aD-FAi">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-RI-TiE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlw-9o-lna">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="nk2-ld-dX0">
+                                                <rect key="frame" x="100" y="10" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="nk2-ld-dX0" secondAttribute="height" multiplier="1:1" id="cGW-Ra-fK3"/>
+                                                    <constraint firstAttribute="height" constant="120" id="do1-g4-ZCt"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="0FW-hP-RYn"/>
+                                            <constraint firstItem="nk2-ld-dX0" firstAttribute="top" secondItem="xlw-9o-lna" secondAttribute="top" constant="10" id="dcP-eN-4db"/>
+                                            <constraint firstItem="nk2-ld-dX0" firstAttribute="centerX" secondItem="xlw-9o-lna" secondAttribute="centerX" id="gEy-Ko-yZP"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJQ-kJ-vtC">
+                                        <rect key="frame" x="20" y="170" width="280" height="214"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Registraciona oznaka" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vv2-FR-l4m">
+                                                <rect key="frame" x="0.0" y="20" width="280" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="ui4-5p-keJ"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marka vozila" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yuz-Y0-QZZ">
+                                                <rect key="frame" x="0.0" y="87" width="280" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="abX-Xi-MJ5"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tip vozila" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="op1-jP-NiO">
+                                                <rect key="frame" x="0.0" y="154" width="280" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Tlj-Mf-djz"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="yuz-Y0-QZZ" firstAttribute="centerY" secondItem="BJQ-kJ-vtC" secondAttribute="centerY" id="0OF-h7-6rp"/>
+                                            <constraint firstAttribute="trailing" secondItem="vv2-FR-l4m" secondAttribute="trailing" id="A8f-2X-PgV"/>
+                                            <constraint firstItem="vv2-FR-l4m" firstAttribute="leading" secondItem="BJQ-kJ-vtC" secondAttribute="leading" id="BPT-Pt-yt2"/>
+                                            <constraint firstAttribute="trailing" secondItem="op1-jP-NiO" secondAttribute="trailing" id="Gjg-S5-sXe"/>
+                                            <constraint firstAttribute="trailing" secondItem="yuz-Y0-QZZ" secondAttribute="trailing" id="RxS-fe-1Ua"/>
+                                            <constraint firstItem="vv2-FR-l4m" firstAttribute="top" secondItem="BJQ-kJ-vtC" secondAttribute="top" constant="20" id="Ski-NJ-DHy"/>
+                                            <constraint firstItem="yuz-Y0-QZZ" firstAttribute="leading" secondItem="BJQ-kJ-vtC" secondAttribute="leading" id="Uxj-UH-gob"/>
+                                            <constraint firstItem="op1-jP-NiO" firstAttribute="leading" secondItem="BJQ-kJ-vtC" secondAttribute="leading" id="coc-uw-sBe"/>
+                                            <constraint firstAttribute="bottom" secondItem="op1-jP-NiO" secondAttribute="bottom" constant="20" id="qfo-vt-tgT"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Y-If-StQ">
+                                        <rect key="frame" x="20" y="414" width="280" height="40"/>
+                                        <color key="backgroundColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="jlr-nv-cYK"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Dodaj Automobil"/>
+                                        <connections>
+                                            <action selector="addCarButtonPressed:" destination="hOa-yz-O1J" eventType="touchUpInside" id="tFG-JQ-bKf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Z5Y-If-StQ" secondAttribute="bottom" constant="50" id="2CD-C4-KbI"/>
+                                    <constraint firstItem="BJQ-kJ-vtC" firstAttribute="leading" secondItem="wmX-RI-TiE" secondAttribute="leading" constant="20" id="Nar-fz-HIg"/>
+                                    <constraint firstItem="BJQ-kJ-vtC" firstAttribute="top" secondItem="xlw-9o-lna" secondAttribute="bottom" constant="30" id="O6c-Aq-TI1"/>
+                                    <constraint firstItem="xlw-9o-lna" firstAttribute="leading" secondItem="wmX-RI-TiE" secondAttribute="leading" id="QVM-LR-7be"/>
+                                    <constraint firstAttribute="trailing" secondItem="BJQ-kJ-vtC" secondAttribute="trailing" constant="20" id="Qhx-nh-XEs"/>
+                                    <constraint firstAttribute="trailing" secondItem="xlw-9o-lna" secondAttribute="trailing" id="RQC-WW-KDD"/>
+                                    <constraint firstItem="Z5Y-If-StQ" firstAttribute="top" secondItem="BJQ-kJ-vtC" secondAttribute="bottom" constant="30" id="TcE-WZ-grU"/>
+                                    <constraint firstItem="xlw-9o-lna" firstAttribute="centerX" secondItem="wmX-RI-TiE" secondAttribute="centerX" id="haI-6m-KP7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z5Y-If-StQ" secondAttribute="trailing" constant="20" id="moa-Om-BPA"/>
+                                    <constraint firstItem="xlw-9o-lna" firstAttribute="top" secondItem="wmX-RI-TiE" secondAttribute="top" id="tMP-8c-2zW"/>
+                                    <constraint firstItem="Z5Y-If-StQ" firstAttribute="leading" secondItem="wmX-RI-TiE" secondAttribute="leading" constant="20" id="xdm-Md-DwY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wmX-RI-TiE" secondAttribute="trailing" id="7rN-B9-u2f"/>
+                            <constraint firstItem="wmX-RI-TiE" firstAttribute="leading" secondItem="OWZ-aD-FAi" secondAttribute="leading" id="BIE-V8-y1L"/>
+                            <constraint firstItem="G6B-8p-WX6" firstAttribute="top" secondItem="wmX-RI-TiE" secondAttribute="bottom" id="FQm-0L-7Yz"/>
+                            <constraint firstItem="wmX-RI-TiE" firstAttribute="top" secondItem="wK4-eI-OdU" secondAttribute="bottom" id="UJJ-RG-IMO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1N1-e1-hi1"/>
+                    <connections>
+                        <outlet property="addCarButton" destination="Z5Y-If-StQ" id="bAB-7C-1xE"/>
+                        <outlet property="carBrandtextField" destination="yuz-Y0-QZZ" id="VPS-lM-Kca"/>
+                        <outlet property="carImageView" destination="nk2-ld-dX0" id="Aon-DI-sGe"/>
+                        <outlet property="carPlateTextField" destination="vv2-FR-l4m" id="TBt-7K-MH6"/>
+                        <outlet property="carTypeTextField" destination="op1-jP-NiO" id="FfL-9y-2BQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tZ-ok-tk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6656.25" y="-2178.1690140845071"/>
         </scene>
         <!--Parking-->
         <scene sceneID="yOf-KR-9yC">
@@ -755,6 +883,25 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgb-lu-yxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3702" y="-2178"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BZ9-3c-zCj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hRG-d5-GYz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rUC-BB-8sc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hOa-yz-O1J" kind="relationship" relationship="rootViewController" id="NDu-nZ-B6J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xNd-Mf-X4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5616" y="-2179"/>
         </scene>
     </scenes>
     <resources>
