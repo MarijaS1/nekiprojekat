@@ -21,10 +21,10 @@
 		1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D61E34D55D00713D25 /* BasicViewController.m */; };
 		1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793D91E34D8A400713D25 /* UIFont+UDFont.m */; };
 		1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */; };
-		1AC823601EA509FE009AFBFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8235F1EA509FE009AFBFC /* User.m */; };
-		1AC823631EA50BE9009AFBFC /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823621EA50BE9009AFBFC /* Reminder.m */; };
-		1AC823661EA50C97009AFBFC /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823651EA50C97009AFBFC /* Car.m */; };
-		1AC823691EA50D72009AFBFC /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC823681EA50D72009AFBFC /* Expenses.m */; };
+		1AA68CE61F2E0FCF009D12EA /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA68CDF1F2E0FCF009D12EA /* Car.m */; };
+		1AA68CE71F2E0FCF009D12EA /* Expenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA68CE11F2E0FCF009D12EA /* Expenses.m */; };
+		1AA68CE81F2E0FCF009D12EA /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA68CE31F2E0FCF009D12EA /* Reminder.m */; };
+		1AA68CE91F2E0FCF009D12EA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA68CE51F2E0FCF009D12EA /* User.m */; };
 		1AC8236D1EA52487009AFBFC /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8236C1EA52487009AFBFC /* DataController.m */; };
 		1AD691521F239CF900627D0F /* AddNewCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD691511F239CF900627D0F /* AddNewCarViewController.m */; };
 		1AE78AA61E81B0120018FF66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE78AA51E81B0120018FF66 /* LoginViewController.m */; };
@@ -58,6 +58,7 @@
 		1A1D2A681E1AFB2200205CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1A1D2A8E1E1B039400205CA9 /* LocalizableStringService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizableStringService.h; path = Services/LocalizableStringService.h; sourceTree = "<group>"; };
 		1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalizableStringService.m; path = Services/LocalizableStringService.m; sourceTree = "<group>"; };
+		1A221AD61F2E02C100D1746B /* MojAutomobilModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MojAutomobilModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		1A667C6E1EC8B96300201980 /* ReminderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReminderTableViewCell.h; path = CustomCells/ReminderTableViewCell.h; sourceTree = "<group>"; };
 		1A667C6F1EC8B96300201980 /* ReminderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReminderTableViewCell.m; path = CustomCells/ReminderTableViewCell.m; sourceTree = "<group>"; };
 		1A667C701EC8B96300201980 /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReminderTableViewCell.xib; path = CustomCells/ReminderTableViewCell.xib; sourceTree = "<group>"; };
@@ -68,14 +69,14 @@
 		1A6793DB1E34D98700713D25 /* MojAutomobil.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MojAutomobil.pch; sourceTree = "<group>"; };
 		1A6793DD1E34DB9800713D25 /* UIColor+UDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+UDColor.h"; path = "Categories/UIColor+UDColor.h"; sourceTree = "<group>"; };
 		1A6793DE1E34DB9800713D25 /* UIColor+UDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+UDColor.m"; path = "Categories/UIColor+UDColor.m"; sourceTree = "<group>"; };
-		1AC8235E1EA509FE009AFBFC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
-		1AC8235F1EA509FE009AFBFC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
-		1AC823611EA50BE9009AFBFC /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminder.h; path = Model/Reminder.h; sourceTree = "<group>"; };
-		1AC823621EA50BE9009AFBFC /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminder.m; path = Model/Reminder.m; sourceTree = "<group>"; };
-		1AC823641EA50C97009AFBFC /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Model/Car.h; sourceTree = "<group>"; };
-		1AC823651EA50C97009AFBFC /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Car.m; path = Model/Car.m; sourceTree = "<group>"; };
-		1AC823671EA50D72009AFBFC /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expenses.h; path = Model/Expenses.h; sourceTree = "<group>"; };
-		1AC823681EA50D72009AFBFC /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expenses.m; path = Model/Expenses.m; sourceTree = "<group>"; };
+		1AA68CDE1F2E0FCF009D12EA /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Car.h; path = Model/Car.h; sourceTree = "<group>"; };
+		1AA68CDF1F2E0FCF009D12EA /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Car.m; path = Model/Car.m; sourceTree = "<group>"; };
+		1AA68CE01F2E0FCF009D12EA /* Expenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expenses.h; path = Model/Expenses.h; sourceTree = "<group>"; };
+		1AA68CE11F2E0FCF009D12EA /* Expenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expenses.m; path = Model/Expenses.m; sourceTree = "<group>"; };
+		1AA68CE21F2E0FCF009D12EA /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reminder.h; path = Model/Reminder.h; sourceTree = "<group>"; };
+		1AA68CE31F2E0FCF009D12EA /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reminder.m; path = Model/Reminder.m; sourceTree = "<group>"; };
+		1AA68CE41F2E0FCF009D12EA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		1AA68CE51F2E0FCF009D12EA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
 		1AC8236A1EA5104F009AFBFC /* MojAutomobilModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MojAutomobilModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		1AC8236B1EA52487009AFBFC /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataController.h; path = Services/DataController.h; sourceTree = "<group>"; };
 		1AC8236C1EA52487009AFBFC /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataController.m; path = Services/DataController.m; sourceTree = "<group>"; };
@@ -190,14 +191,14 @@
 		1AE78AA31E81AFBD0018FF66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1AC8235E1EA509FE009AFBFC /* User.h */,
-				1AC8235F1EA509FE009AFBFC /* User.m */,
-				1AC823611EA50BE9009AFBFC /* Reminder.h */,
-				1AC823621EA50BE9009AFBFC /* Reminder.m */,
-				1AC823641EA50C97009AFBFC /* Car.h */,
-				1AC823651EA50C97009AFBFC /* Car.m */,
-				1AC823671EA50D72009AFBFC /* Expenses.h */,
-				1AC823681EA50D72009AFBFC /* Expenses.m */,
+				1AA68CDE1F2E0FCF009D12EA /* Car.h */,
+				1AA68CDF1F2E0FCF009D12EA /* Car.m */,
+				1AA68CE01F2E0FCF009D12EA /* Expenses.h */,
+				1AA68CE11F2E0FCF009D12EA /* Expenses.m */,
+				1AA68CE21F2E0FCF009D12EA /* Reminder.h */,
+				1AA68CE31F2E0FCF009D12EA /* Reminder.m */,
+				1AA68CE41F2E0FCF009D12EA /* User.h */,
+				1AA68CE51F2E0FCF009D12EA /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -385,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -395,25 +396,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC823691EA50D72009AFBFC /* Expenses.m in Sources */,
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
 				1AD691521F239CF900627D0F /* AddNewCarViewController.m in Sources */,
 				1A6793DA1E34D8A400713D25 /* UIFont+UDFont.m in Sources */,
-				1AC823661EA50C97009AFBFC /* Car.m in Sources */,
 				1A0691F41EB8AC5600CB3326 /* CalendarService.m in Sources */,
-				1AC823601EA509FE009AFBFC /* User.m in Sources */,
 				1A0691F71EB8B6ED00CB3326 /* AddReminderViewController.m in Sources */,
 				1A17D8FF1ECB5196009F6580 /* AutoTableViewCell.m in Sources */,
 				1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */,
 				1AC8236D1EA52487009AFBFC /* DataController.m in Sources */,
 				1A17D8FB1ECB5025009F6580 /* CarViewController.m in Sources */,
+				1AA68CE61F2E0FCF009D12EA /* Car.m in Sources */,
+				1AA68CE81F2E0FCF009D12EA /* Reminder.m in Sources */,
+				1AA68CE91F2E0FCF009D12EA /* User.m in Sources */,
 				8488D1991DAE9A68008FBF41 /* ReminderViewController.m in Sources */,
 				1AE78AA91E81B5F70018FF66 /* SignUpViewController.m in Sources */,
 				1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */,
 				1A6793D71E34D55D00713D25 /* BasicViewController.m in Sources */,
+				1AA68CE71F2E0FCF009D12EA /* Expenses.m in Sources */,
 				8488D1AE1DB5600E008FBF41 /* ParkingTableViewCell.m in Sources */,
-				1AC823631EA50BE9009AFBFC /* Reminder.m in Sources */,
 				1AE78AA61E81B0120018FF66 /* LoginViewController.m in Sources */,
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
 				1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */,
@@ -607,10 +608,11 @@
 		1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1A221AD61F2E02C100D1746B /* MojAutomobilModel 3.xcdatamodel */,
 				1AC8236A1EA5104F009AFBFC /* MojAutomobilModel 2.xcdatamodel */,
 				1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */,
 			);
-			currentVersion = 1AC8236A1EA5104F009AFBFC /* MojAutomobilModel 2.xcdatamodel */;
+			currentVersion = 1A221AD61F2E02C100D1746B /* MojAutomobilModel 3.xcdatamodel */;
 			path = MojAutomobilModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

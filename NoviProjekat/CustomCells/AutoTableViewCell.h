@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *brandNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeOfCarLabel;
 @property (weak, nonatomic) IBOutlet UILabel *registrationPlateLabel;
+@property (strong, nonatomic) Car *car;
 
 @end

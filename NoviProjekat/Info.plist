@@ -53,5 +53,7 @@
 	<string>kako bi kreirali podsetnike</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>kako bi kreirali podsetnike</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>kako bi izabrali slike</string>
 </dict>
 </plist>

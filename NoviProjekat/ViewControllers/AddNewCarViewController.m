@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *carBrandtextField;
 @property (weak, nonatomic) IBOutlet UITextField *carTypeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *addCarButton;
+@property (weak, nonatomic) IBOutlet UIButton *addCarImage;
+
+@property (strong, nonatomic) NSData *carImage;
 
 @end
 
@@ -40,35 +43,122 @@
     [borderLayer setBorderWidth:1.0f];
     [borderLayer setBorderColor:[[UIColor getGreyColor] CGColor]];
     [self.carImageView.layer addSublayer:borderLayer];
+    if (self.car) {
+        [self setupTextFields];
+    }
 }
-- (IBAction)addCarButtonPressed:(UIButton *)sender {
+
+
+-(void)setupTextFields {
+    self.carTypeTextField.text = self.car.type;
+    self.carBrandtextField.text = self.car.brandName;
+    self.carPlateTextField.text = self.car.registration;
+    self.car.image = nil;
+    [self.addCarButton setTitle:@"Izmeni Automobil" forState:UIControlStateNormal];
+}
+
+
+-(void)updateCar {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Car"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"brandName" ascending:NO]];
+    [request setReturnsObjectsAsFaults:NO];
+    request.predicate = [NSPredicate predicateWithFormat:@"registration = %@", self.car.registration];
     NSError *error = nil;
-    
-    Car *car = [NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    car.type = self.carTypeTextField.text;
-    car.brandName = self.carBrandtextField.text;
+    NSArray *matches = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    Car *car = [matches objectAtIndex:0];
     car.registration = self.carPlateTextField.text;
-    car.hasOwnerRelationship = [DataController sharedInstance].userInfo;
-//     [[DataController sharedInstance].userInfo addHasCarRelationshipObject:car];
-    
-    
+    car.brandName = self.carBrandtextField.text;
+    car.type = self.carTypeTextField.text;
+    if (self.carImage) {
+        car.image = self.carImage;
+    }
     if (![self.appDelegate.managedObjectContext save:&error]) {
         NSLog(@"Great, error while fixing error; couldn't save: %@", [error localizedDescription]);
     } else {
         NSLog(@"Car saved");
-//        [DataController sharedInstance].userInfo = user;
-//        [DataController sharedInstance].carInfo = car;
-//        UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
-//        tabBarController.selectedIndex=0;
-//        UINavigationController *nav = [tabBarController.viewControllers objectAtIndex:1];
-//        ParkingViewController *parkingVC = (ParkingViewController*) [nav.viewControllers objectAtIndex:0];
-//        parkingVC.car = car;
-//        [self presentViewController:tabBarController animated:YES completion:nil];
-//        //        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLoggedIn"];
-//        //        [[NSUserDefaults standardUserDefaults] synchronize];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Uspesno ste izmenili automobil!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+             [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 
 }
+
+
+- (IBAction)addCarButtonPressed:(UIButton *)sender {
+    NSError *error = nil;
+    
+    if (self.car) {
+        if ([self validateTFs]) {
+            [self updateCar];
+        }
+        
+    }else{
+        Car *car = [NSEntityDescription insertNewObjectForEntityForName:@"Car" inManagedObjectContext:self.appDelegate.managedObjectContext];
+        car.type = self.carTypeTextField.text;
+        car.brandName = self.carBrandtextField.text;
+        car.registration = self.carPlateTextField.text;
+        if (self.carImage) {
+            car.image = self.carImage;
+        }
+        car.hasOwnerRelationship = [DataController sharedInstance].userInfo;
+        //     [[DataController sharedInstance].userInfo addHasCarRelationshipObject:car];
+        
+        
+        if (![self.appDelegate.managedObjectContext save:&error]) {
+            NSLog(@"Great, error while fixing error; couldn't save: %@", [error localizedDescription]);
+        } else {
+            NSLog(@"Car saved");
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Uspesno ste dodali automobil!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:ok];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+
+        }
+
+    }
+   
+}
+
+- (IBAction)addCarImagePressed:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    //Permetto la modifica delle foto
+    picker.allowsEditing = YES;
+    //Imposto il delegato
+    picker.delegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    UIImage *pickedImage = info[UIImagePickerControllerOriginalImage];
+    self.carImage = UIImageJPEGRepresentation(pickedImage, 0.0);
+    self.carImageView.image = pickedImage;
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
+
+-(BOOL)validateTFs {
+    if (self.carPlateTextField.text != self.car.registration || self.carBrandtextField.text != self.car.brandName || self.carTypeTextField.text != self.car.type || self.carImage) {
+        return YES;
+    }
+    return NO;
+}
+
+
+
+
 
 /*
 #pragma mark - Navigation

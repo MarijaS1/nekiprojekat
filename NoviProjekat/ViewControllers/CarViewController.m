@@ -72,6 +72,10 @@
         cell.brandNameLabel.text = car.brandName;
         cell.typeOfCarLabel.text = car.type;
         cell.registrationPlateLabel.text = car.registration;
+        if (car.image) {
+            cell.autoImageView.image = [UIImage imageWithData:car.image];
+        }
+      
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -89,5 +93,15 @@
 
     
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AddNewCarViewController *addCarVC = (AddNewCarViewController*) [self.storyboard instantiateViewControllerWithIdentifier:@"addNewCarViewController"];
+    addCarVC.car = [self.carArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:addCarVC animated:YES];
+    
+
+}
+
+
 
 @end

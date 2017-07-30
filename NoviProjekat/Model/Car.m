@@ -14,8 +14,10 @@
 @dynamic registration;
 @dynamic type;
 @dynamic brandName;
+@dynamic image;
 @dynamic hasOwnerRelationship;
 @dynamic hasReminderRelationship;
 @dynamic hasExpensesRelationship;
+
 
 @end

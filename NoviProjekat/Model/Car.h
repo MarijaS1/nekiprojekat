@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *registration;
 @property (nullable, nonatomic, copy) NSString *type;
 @property (nullable, nonatomic, copy) NSString *brandName;
+@property (nullable, nonatomic, copy) NSData *image;
 @property (nullable, nonatomic, retain) User *hasOwnerRelationship;
 @property (nullable, nonatomic, retain) NSOrderedSet<Remider *> *hasReminderRelationship;
 @property (nullable, nonatomic, retain) NSOrderedSet<Expenses *> *hasExpensesRelationship;

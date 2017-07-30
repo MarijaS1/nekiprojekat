@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BasicViewController.h"
 
-@interface AddNewCarViewController : BasicViewController
+@interface AddNewCarViewController : BasicViewController<UIImagePickerControllerDelegate>
+
+@property (nonatomic, strong) Car *car;
 
 @end
