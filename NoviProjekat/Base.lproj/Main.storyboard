@@ -328,20 +328,142 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
             </objects>
             <point key="canvasLocation" x="4642" y="-1297"/>
         </scene>
-        <!--View Controller-->
+        <!--Kontrola troškova-->
         <scene sceneID="bXR-1P-rFd">
             <objects>
-                <viewController storyboardIdentifier="expensesViewController" id="Oaj-LV-28r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="expensesViewController" id="Oaj-LV-28r" customClass="ExpensesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sP8-Le-RnS"/>
                         <viewControllerLayoutGuide type="bottom" id="QON-d2-UUh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IBK-Fi-Qd5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e7f-lp-2qs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Tabela"/>
+                                    <segment title="Grafik"/>
+                                </segments>
+                                <color key="tintColor" red="0.44189640470000002" green="0.76703559030000001" blue="0.33527768569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJ7-mw-D39">
+                                <rect key="frame" x="0.0" y="30" width="320" height="425"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k7h-iN-1x8">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bQr-SM-Dap">
+                                            <size key="itemSize" width="320" height="420"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XZm-5c-Dha">
+                                                <rect key="frame" x="0.0" y="2.5" width="320" height="420"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="frc-NE-YI0">
+                                                            <rect key="frame" x="10" y="0.0" width="300" height="420"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <prototypes>
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AvG-gj-dOL">
+                                                                    <rect key="frame" x="0.0" y="28" width="300" height="44"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AvG-gj-dOL" id="lEH-VE-bZc">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </tableViewCellContentView>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                </tableViewCell>
+                                                            </prototypes>
+                                                        </tableView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="frc-NE-YI0" firstAttribute="top" secondItem="XZm-5c-Dha" secondAttribute="top" id="S5f-RI-ncd"/>
+                                                    <constraint firstItem="frc-NE-YI0" firstAttribute="leading" secondItem="XZm-5c-Dha" secondAttribute="leading" constant="10" id="SMf-ii-lXR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="frc-NE-YI0" secondAttribute="trailing" constant="10" id="rf5-gG-3hE"/>
+                                                    <constraint firstAttribute="bottom" secondItem="frc-NE-YI0" secondAttribute="bottom" id="yOs-Cb-eOW"/>
+                                                </constraints>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9xu-LQ-lBr">
+                                                <rect key="frame" x="330" y="2.5" width="320" height="420"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZo-g5-9kd">
+                                                            <rect key="frame" x="8" y="8" width="304" height="404"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb0-yg-8n2">
+                                                                    <rect key="frame" x="24" y="10" width="256" height="250"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="250" id="Y4w-vE-yRH"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNn-zk-ItD">
+                                                                    <rect key="frame" x="24" y="280" width="256" height="250"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="250" id="C7P-DE-oSJ"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="GNn-zk-ItD" firstAttribute="top" secondItem="Rb0-yg-8n2" secondAttribute="bottom" constant="20" id="1bq-Nv-hTG"/>
+                                                                <constraint firstItem="GNn-zk-ItD" firstAttribute="leading" secondItem="kZo-g5-9kd" secondAttribute="leading" constant="24" id="Bfm-lc-3Nd"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Rb0-yg-8n2" secondAttribute="trailing" constant="24" id="MpI-fx-mB5"/>
+                                                                <constraint firstAttribute="bottom" secondItem="GNn-zk-ItD" secondAttribute="bottom" constant="-126" id="RlM-1D-7GU"/>
+                                                                <constraint firstItem="Rb0-yg-8n2" firstAttribute="leading" secondItem="kZo-g5-9kd" secondAttribute="leading" constant="24" id="S5s-YW-jAg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="GNn-zk-ItD" secondAttribute="trailing" constant="24" id="b0X-S4-Qzz"/>
+                                                                <constraint firstItem="GNn-zk-ItD" firstAttribute="centerX" secondItem="kZo-g5-9kd" secondAttribute="centerX" id="g4t-DV-CQo"/>
+                                                                <constraint firstItem="Rb0-yg-8n2" firstAttribute="centerX" secondItem="kZo-g5-9kd" secondAttribute="centerX" id="wpY-QO-OXV"/>
+                                                                <constraint firstItem="Rb0-yg-8n2" firstAttribute="top" secondItem="kZo-g5-9kd" secondAttribute="top" constant="10" id="zHL-ik-gJl"/>
+                                                            </constraints>
+                                                        </scrollView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="kZo-g5-9kd" firstAttribute="top" secondItem="9xu-LQ-lBr" secondAttribute="topMargin" id="4MI-6x-ioy"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="kZo-g5-9kd" secondAttribute="bottom" id="ckb-rt-5eJ"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="kZo-g5-9kd" secondAttribute="trailing" id="egh-0e-H2L"/>
+                                                    <constraint firstItem="kZo-g5-9kd" firstAttribute="leading" secondItem="9xu-LQ-lBr" secondAttribute="leadingMargin" id="teq-XL-kkV"/>
+                                                </constraints>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="k7h-iN-1x8" secondAttribute="trailing" id="9Xq-cR-BWh"/>
+                                    <constraint firstItem="k7h-iN-1x8" firstAttribute="top" secondItem="GJ7-mw-D39" secondAttribute="top" id="PpF-hk-5kG"/>
+                                    <constraint firstItem="k7h-iN-1x8" firstAttribute="leading" secondItem="GJ7-mw-D39" secondAttribute="leading" id="gBK-c4-sdx"/>
+                                    <constraint firstAttribute="bottom" secondItem="k7h-iN-1x8" secondAttribute="bottom" id="ph5-Yd-FX7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e7f-lp-2qs" firstAttribute="top" secondItem="sP8-Le-RnS" secondAttribute="bottom" id="0i0-bO-VLq"/>
+                            <constraint firstItem="GJ7-mw-D39" firstAttribute="top" secondItem="e7f-lp-2qs" secondAttribute="bottom" constant="2" id="1Ye-nO-3N3"/>
+                            <constraint firstItem="QON-d2-UUh" firstAttribute="top" secondItem="GJ7-mw-D39" secondAttribute="bottom" id="8Fj-XJ-1ET"/>
+                            <constraint firstAttribute="trailing" secondItem="e7f-lp-2qs" secondAttribute="trailing" id="EPy-9C-eEe"/>
+                            <constraint firstItem="GJ7-mw-D39" firstAttribute="leading" secondItem="IBK-Fi-Qd5" secondAttribute="leading" id="R8g-ut-had"/>
+                            <constraint firstItem="e7f-lp-2qs" firstAttribute="centerX" secondItem="IBK-Fi-Qd5" secondAttribute="centerX" id="XbS-K3-Ji9"/>
+                            <constraint firstItem="e7f-lp-2qs" firstAttribute="leading" secondItem="IBK-Fi-Qd5" secondAttribute="leading" id="ZdL-0W-itS"/>
+                            <constraint firstAttribute="trailing" secondItem="GJ7-mw-D39" secondAttribute="trailing" id="xoO-fY-CD3"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yfk-ql-kOC"/>
+                    <navigationItem key="navigationItem" title="Kontrola troškova" id="Yfk-ql-kOC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zed-uU-ghY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -672,7 +794,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-QD-d77">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="91" id="DSs-xG-eW8" customClass="AutoTableViewCell">
@@ -682,7 +804,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -952,9 +1074,10 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGI-dK-woU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kontrola troškova" id="KoN-Mq-C7T"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVt-i4-KYh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rVt-i4-KYh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

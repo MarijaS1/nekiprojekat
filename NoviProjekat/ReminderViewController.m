@@ -48,9 +48,9 @@
     [self addNotifications];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self showProgressWithInfoMessage:@"Please wait..."];
+         [[CalendarService sharedInstance] getAllCalendarEvents];
     });
     
-    [[CalendarService sharedInstance] getAllCalendarEvents];
     
 }
 
@@ -102,13 +102,14 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self hideProgressAndMessage];
+        
+        if (self.eventsArray.count != 0) {
+            [self showTableView];
+        }else{
+            [self showEmptyView];
+        }
     });
     
-    if (self.eventsArray.count != 0) {
-        [self showTableView];
-    }else{
-        [self showEmptyView];
-    }
 }
 
 

@@ -53,7 +53,7 @@
     self.carTypeTextField.text = self.car.type;
     self.carBrandtextField.text = self.car.brandName;
     self.carPlateTextField.text = self.car.registration;
-    self.car.image = nil;
+    self.carImageView.image = [UIImage imageWithData:self.car.image];
     [self.addCarButton setTitle:@"Izmeni Automobil" forState:UIControlStateNormal];
 }
 
@@ -69,7 +69,8 @@
     car.registration = self.carPlateTextField.text;
     car.brandName = self.carBrandtextField.text;
     car.type = self.carTypeTextField.text;
-    if (self.carImage) {
+    
+    if (car.image!=self.car.image) {
         car.image = self.carImage;
     }
     if (![self.appDelegate.managedObjectContext save:&error]) {
