@@ -14,6 +14,7 @@
 		1A17D8FB1ECB5025009F6580 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17D8FA1ECB5025009F6580 /* CarViewController.m */; };
 		1A17D8FF1ECB5196009F6580 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17D8FD1ECB5196009F6580 /* AutoTableViewCell.m */; };
 		1A17D9001ECB5196009F6580 /* AutoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A17D8FE1ECB5196009F6580 /* AutoTableViewCell.xib */; };
+		1A1B1BD31F40793300D053B7 /* AddNewExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B1BD21F40793300D053B7 /* AddNewExpenseViewController.m */; };
 		1A1D2A691E1AFB2200205CA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1D2A681E1AFB2200205CA9 /* Localizable.strings */; };
 		1A1D2A901E1B039400205CA9 /* LocalizableStringService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */; };
 		1A667C711EC8B96300201980 /* ReminderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A667C6F1EC8B96300201980 /* ReminderTableViewCell.m */; };
@@ -56,6 +57,8 @@
 		1A17D8FC1ECB5196009F6580 /* AutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoTableViewCell.h; path = CustomCells/AutoTableViewCell.h; sourceTree = "<group>"; };
 		1A17D8FD1ECB5196009F6580 /* AutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoTableViewCell.m; path = CustomCells/AutoTableViewCell.m; sourceTree = "<group>"; };
 		1A17D8FE1ECB5196009F6580 /* AutoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AutoTableViewCell.xib; path = CustomCells/AutoTableViewCell.xib; sourceTree = "<group>"; };
+		1A1B1BD11F40793300D053B7 /* AddNewExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddNewExpenseViewController.h; path = ViewControllers/AddNewExpenseViewController.h; sourceTree = "<group>"; };
+		1A1B1BD21F40793300D053B7 /* AddNewExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddNewExpenseViewController.m; path = ViewControllers/AddNewExpenseViewController.m; sourceTree = "<group>"; };
 		1A1D2A681E1AFB2200205CA9 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1A1D2A8E1E1B039400205CA9 /* LocalizableStringService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalizableStringService.h; path = Services/LocalizableStringService.h; sourceTree = "<group>"; };
 		1A1D2A8F1E1B039400205CA9 /* LocalizableStringService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalizableStringService.m; path = Services/LocalizableStringService.m; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				1AD691511F239CF900627D0F /* AddNewCarViewController.m */,
 				1AB046431F3B90F600313C3E /* ExpensesViewController.h */,
 				1AB046441F3B90F600313C3E /* ExpensesViewController.m */,
+				1A1B1BD11F40793300D053B7 /* AddNewExpenseViewController.h */,
+				1A1B1BD21F40793300D053B7 /* AddNewExpenseViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 				1A17D8FF1ECB5196009F6580 /* AutoTableViewCell.m in Sources */,
 				1A6793DF1E34DB9800713D25 /* UIColor+UDColor.m in Sources */,
 				1AC8236D1EA52487009AFBFC /* DataController.m in Sources */,
+				1A1B1BD31F40793300D053B7 /* AddNewExpenseViewController.m in Sources */,
 				1A17D8FB1ECB5025009F6580 /* CarViewController.m in Sources */,
 				1AA68CE61F2E0FCF009D12EA /* Car.m in Sources */,
 				1AA68CE81F2E0FCF009D12EA /* Reminder.m in Sources */,

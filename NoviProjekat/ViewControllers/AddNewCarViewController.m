@@ -36,13 +36,13 @@
 }
 
 -(void)initGui {
-    CALayer *borderLayer = [CALayer layer];
-    CGRect borderFrame = CGRectMake(0, 0, (self.carImageView.frame.size.width), (self.carImageView.frame.size.height));
-    [borderLayer setBackgroundColor:[[UIColor clearColor] CGColor]];
-    [borderLayer setFrame:borderFrame];
-    [borderLayer setBorderWidth:1.0f];
-    [borderLayer setBorderColor:[[UIColor getGreyColor] CGColor]];
-    [self.carImageView.layer addSublayer:borderLayer];
+//    CALayer *borderLayer = [CALayer layer];
+//    CGRect borderFrame = CGRectMake(0, 0, (self.carImageView.frame.size.width), (self.carImageView.frame.size.height));
+//    [borderLayer setBackgroundColor:[[UIColor clearColor] CGColor]];
+//    [borderLayer setFrame:borderFrame];
+//    [borderLayer setBorderWidth:1.0f];
+//    [borderLayer setBorderColor:[[UIColor getGreyColor] CGColor]];
+//    [self.carImageView.layer addSublayer:borderLayer];
     if (self.car) {
         [self setupTextFields];
     }
