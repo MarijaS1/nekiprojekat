@@ -55,4 +55,6 @@
  */
 + (UIColor *)getFBBlueColor;
 
++ (UIColor *)getGreenColor;
+
 @end

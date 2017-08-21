@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasicViewController.h"
 
-@interface ExpensesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ExpensesViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource, ChartViewDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControll;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

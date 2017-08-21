@@ -358,18 +358,71 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJ7-mw-D39">
                                 <rect key="frame" x="0.0" y="42" width="320" height="413"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FOo-bW-gRY">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FOo-bW-gRY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
                                         <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EjR-rl-LAG">
-                                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExpensesTableViewCell" rowHeight="60" id="EjR-rl-LAG" customClass="ExpensesTableViewCell">
+                                                <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EjR-rl-LAG" id="tDj-c7-Kll">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="write" translatesAutoresizingMaskIntoConstraints="NO" id="1JL-HE-Zbi">
+                                                            <rect key="frame" x="18" y="7.5" width="45" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="45" id="Uig-lt-WGM"/>
+                                                                <constraint firstAttribute="height" constant="45" id="rBD-0e-wPT"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300,00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjq-wi-3AA">
+                                                            <rect key="frame" x="257" y="8" width="55" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namena" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tk3-QR-LWn">
+                                                            <rect key="frame" x="71" y="7.5" width="53.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIc-C3-QCI">
+                                                            <rect key="frame" x="71" y="24.5" width="37.5" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registracija" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW7-Eb-jib">
+                                                            <rect key="frame" x="71" y="38" width="66" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="BIc-C3-QCI" firstAttribute="top" secondItem="tk3-QR-LWn" secondAttribute="bottom" id="46e-bM-fpO"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="yjq-wi-3AA" secondAttribute="bottom" id="Cec-1B-xag"/>
+                                                        <constraint firstItem="KW7-Eb-jib" firstAttribute="bottom" secondItem="1JL-HE-Zbi" secondAttribute="bottom" id="SkX-Kz-yw7"/>
+                                                        <constraint firstItem="KW7-Eb-jib" firstAttribute="leading" secondItem="1JL-HE-Zbi" secondAttribute="trailing" constant="8" id="WtQ-yc-52w"/>
+                                                        <constraint firstItem="yjq-wi-3AA" firstAttribute="trailing" secondItem="tDj-c7-Kll" secondAttribute="trailingMargin" id="X7E-y4-K71"/>
+                                                        <constraint firstItem="yjq-wi-3AA" firstAttribute="top" secondItem="tDj-c7-Kll" secondAttribute="topMargin" id="e7C-6S-3vq"/>
+                                                        <constraint firstItem="1JL-HE-Zbi" firstAttribute="centerY" secondItem="tDj-c7-Kll" secondAttribute="centerY" id="pUJ-kl-j7P"/>
+                                                        <constraint firstItem="tk3-QR-LWn" firstAttribute="top" secondItem="1JL-HE-Zbi" secondAttribute="top" id="uP0-A3-iW0"/>
+                                                        <constraint firstItem="BIc-C3-QCI" firstAttribute="leading" secondItem="1JL-HE-Zbi" secondAttribute="trailing" constant="8" id="waK-uo-par"/>
+                                                        <constraint firstItem="1JL-HE-Zbi" firstAttribute="leading" secondItem="tDj-c7-Kll" secondAttribute="leadingMargin" constant="10" id="zMa-s8-dlh"/>
+                                                        <constraint firstItem="tk3-QR-LWn" firstAttribute="leading" secondItem="1JL-HE-Zbi" secondAttribute="trailing" constant="8" id="zRz-qx-jRr"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="amountLabel" destination="yjq-wi-3AA" id="WI3-qU-Hoz"/>
+                                                    <outlet property="carLabel" destination="KW7-Eb-jib" id="EcO-tC-Gn8"/>
+                                                    <outlet property="dateLabel" destination="BIc-C3-QCI" id="CI2-tg-pI5"/>
+                                                    <outlet property="expenseImageView" destination="1JL-HE-Zbi" id="jLi-vA-cAw"/>
+                                                    <outlet property="purposeLabel" destination="tk3-QR-LWn" id="2oo-Me-wQo"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -393,17 +446,17 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="415"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oka-E0-SlM" customClass="PieChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="20" width="320" height="150"/>
+                                                <rect key="frame" x="0.0" y="20" width="320" height="350"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="An0-SJ-l4K"/>
+                                                    <constraint firstAttribute="height" constant="350" id="An0-SJ-l4K"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQN-z3-S05" customClass="BarChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="190" width="320" height="150"/>
+                                                <rect key="frame" x="0.0" y="390" width="320" height="350"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="oUM-wk-ria"/>
+                                                    <constraint firstAttribute="height" constant="350" id="oUM-wk-ria"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -419,7 +472,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qdu-zH-14f" firstAttribute="top" secondItem="g2j-cR-OxF" secondAttribute="top" id="FOy-RZ-ITY"/>
                                     <constraint firstItem="qdu-zH-14f" firstAttribute="leading" secondItem="g2j-cR-OxF" secondAttribute="leading" id="Jyt-pu-Byt"/>
@@ -1330,5 +1383,6 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
         <image name="parking" width="30" height="30"/>
         <image name="piggy_bank" width="40" height="40"/>
         <image name="reminder" width="30" height="30"/>
+        <image name="write" width="64" height="64"/>
     </resources>
 </document>

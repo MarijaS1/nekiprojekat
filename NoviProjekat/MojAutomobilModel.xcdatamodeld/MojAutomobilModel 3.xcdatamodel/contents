@@ -33,7 +33,7 @@
     </entity>
     <elements>
         <element name="Car" positionX="-119" positionY="-225" width="128" height="165"/>
-        <element name="Expenses" positionX="63" positionY="62" width="128" height="120"/>
+        <element name="Expenses" positionX="63" positionY="62" width="128" height="118"/>
         <element name="Remider" positionX="-315" positionY="107" width="128" height="120"/>
         <element name="User" positionX="-488" positionY="-162" width="128" height="120"/>
     </elements>

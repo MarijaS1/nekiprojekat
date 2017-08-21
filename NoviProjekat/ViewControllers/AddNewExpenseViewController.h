@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BasicViewController.h"
 
-@interface AddNewExpenseViewController : BasicViewController
+@interface AddNewExpenseViewController : BasicViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *amount;
 @property (weak, nonatomic) IBOutlet UITextField *typeOfExpenseTF;
 @property (weak, nonatomic) IBOutlet UITextField *dateTextField;

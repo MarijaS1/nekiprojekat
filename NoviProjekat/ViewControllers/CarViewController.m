@@ -27,11 +27,11 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    User *user = [DataController sharedInstance].userInfo;
+//    User *user = [DataController sharedInstance].userInfo;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Car"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"brandName" ascending:NO]];
     [request setReturnsObjectsAsFaults:NO];
-    request.predicate = [NSPredicate predicateWithFormat:@"hasOwnerRelationship = %@", user.objectID];
+//    request.predicate = [NSPredicate predicateWithFormat:@"hasOwnerRelationship = %@", user.objectID];
     NSError *error = nil;
     NSArray *matches = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
     if (!matches || error ) {

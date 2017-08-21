@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A0691F41EB8AC5600CB3326 /* CalendarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0691F31EB8AC5600CB3326 /* CalendarService.m */; };
 		1A0691F71EB8B6ED00CB3326 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */; };
+		1A07DCE11F49D5D5008A9874 /* ExpensesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A07DCE01F49D5D5008A9874 /* ExpensesTableViewCell.m */; };
+		1A07DCE51F49F058008A9874 /* GroupedExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A07DCE41F49F058008A9874 /* GroupedExpenses.m */; };
 		1A0C80CA1E6C611F0084D24C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0C80C91E6C611F0084D24C /* CoreData.framework */; };
 		1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */; };
 		1A17D8FB1ECB5025009F6580 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17D8FA1ECB5025009F6580 /* CarViewController.m */; };
@@ -50,6 +52,10 @@
 		1A0691F31EB8AC5600CB3326 /* CalendarService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarService.m; path = Services/CalendarService.m; sourceTree = "<group>"; };
 		1A0691F51EB8B6ED00CB3326 /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddReminderViewController.h; path = ViewControllers/AddReminderViewController.h; sourceTree = "<group>"; };
 		1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddReminderViewController.m; path = ViewControllers/AddReminderViewController.m; sourceTree = "<group>"; };
+		1A07DCDF1F49D5D5008A9874 /* ExpensesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpensesTableViewCell.h; path = CustomCells/ExpensesTableViewCell.h; sourceTree = "<group>"; };
+		1A07DCE01F49D5D5008A9874 /* ExpensesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpensesTableViewCell.m; path = CustomCells/ExpensesTableViewCell.m; sourceTree = "<group>"; };
+		1A07DCE31F49F058008A9874 /* GroupedExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupedExpenses.h; path = Model/GroupedExpenses.h; sourceTree = "<group>"; };
+		1A07DCE41F49F058008A9874 /* GroupedExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupedExpenses.m; path = Model/GroupedExpenses.m; sourceTree = "<group>"; };
 		1A0C80C91E6C611F0084D24C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MojAutomobilModel.xcdatamodel; sourceTree = "<group>"; };
 		1A17D8F91ECB5025009F6580 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarViewController.h; path = ViewControllers/CarViewController.h; sourceTree = "<group>"; };
@@ -194,6 +200,8 @@
 				1A17D8FC1ECB5196009F6580 /* AutoTableViewCell.h */,
 				1A17D8FD1ECB5196009F6580 /* AutoTableViewCell.m */,
 				1A17D8FE1ECB5196009F6580 /* AutoTableViewCell.xib */,
+				1A07DCDF1F49D5D5008A9874 /* ExpensesTableViewCell.h */,
+				1A07DCE01F49D5D5008A9874 /* ExpensesTableViewCell.m */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -209,6 +217,8 @@
 				1AA68CE31F2E0FCF009D12EA /* Reminder.m */,
 				1AA68CE41F2E0FCF009D12EA /* User.h */,
 				1AA68CE51F2E0FCF009D12EA /* User.m */,
+				1A07DCE31F49F058008A9874 /* GroupedExpenses.h */,
+				1A07DCE41F49F058008A9874 /* GroupedExpenses.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -406,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A07DCE11F49D5D5008A9874 /* ExpensesTableViewCell.m in Sources */,
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
 				1AD691521F239CF900627D0F /* AddNewCarViewController.m in Sources */,
@@ -431,6 +442,7 @@
 				8488D1931DAE9A68008FBF41 /* main.m in Sources */,
 				1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */,
 				1A667C711EC8B96300201980 /* ReminderTableViewCell.m in Sources */,
+				1A07DCE51F49F058008A9874 /* GroupedExpenses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

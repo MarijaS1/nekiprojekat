@@ -8,6 +8,8 @@
 
 #import "AddNewExpenseViewController.h"
 #import "ActionSheetPicker.h"
+#import "Expenses.h"
+#import "Car.h"
 
 @interface AddNewExpenseViewController ()
 
@@ -56,6 +58,8 @@
     self.carStringArray = [[NSMutableArray alloc] init];
     self.carArray = [[NSArray alloc] init];
     User *user = [DataController sharedInstance].userInfo;
+    
+    //Get cars
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Car"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"brandName" ascending:NO]];
     [request setReturnsObjectsAsFaults:NO];
@@ -71,28 +75,51 @@
         }
 //        [self.tableView reloadData];
     }
-
+    
+    
+    
 }
 
 -(void)addExpense{
-    Expenses *ex = [Expenses ]
+        NSError *error = nil;
     
-    Expenses *car = [NSEntityDescription insertNewObjectForEntityForName:@"Expenses" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    car.type = self.carTypeTextField.text;
-    car.brandName = self.carBrandtextField.text;
-    car.registration = self.carPlateTextField.text;
-    if (self.carImage) {
-        car.image = self.carImage;
+    
+   Expenses  *expense = [NSEntityDescription insertNewObjectForEntityForName:@"Expenses" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    
+    expense.amount = self.amount.text.doubleValue;
+    expense.purpose = self.typeOfExpenseTF.text;
+    expense.date = self.selectedDate;
+    
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Car"];
+    [request setReturnsObjectsAsFaults:NO];
+    request.predicate = [NSPredicate predicateWithFormat:@"registration = %@", self.selectedCar.registration];
+
+    NSArray *matches = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if (!matches || error ) {
+        NSLog(@"Error while getting car");
+    }else if ([matches count]){
+        Car  *car = (Car*)matches.firstObject;
+        expense.hasCarRelationship = car;
     }
-    car.hasOwnerRelationship = [DataController sharedInstance].userInfo;
+
+    
+//    car.type = self.carTypeTextField.text;
+//    car.brandName = self.carBrandtextField.text;
+//    car.registration = self.carPlateTextField.text;
+//    if (self.carImage) {
+//        car.image = self.carImage;
+//    }
+//    car.hasOwnerRelationship = [DataController sharedInstance].userInfo;
     //     [[DataController sharedInstance].userInfo addHasCarRelationshipObject:car];
     
     
     if (![self.appDelegate.managedObjectContext save:&error]) {
         NSLog(@"Great, error while fixing error; couldn't save: %@", [error localizedDescription]);
     } else {
-        NSLog(@"Car saved");
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Uspesno ste dodali automobil!" preferredStyle:UIAlertControllerStyleAlert];
+        NSLog(@"Expense saved");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Uspesno ste dodali trosak!" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [alert dismissViewControllerAnimated:YES completion:nil];
         }];

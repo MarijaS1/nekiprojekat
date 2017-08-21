@@ -36,6 +36,7 @@
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"username" ascending:NO]];
+       [request setReturnsObjectsAsFaults:NO];
     request.predicate = [NSPredicate predicateWithFormat:@"username = %@", self.emailTextField.text];
     NSError *error = nil;
     NSArray *matches = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
@@ -50,12 +51,12 @@
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Car"];
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"brandName" ascending:NO]];
         [request setReturnsObjectsAsFaults:NO];
-        request.predicate = [NSPredicate predicateWithFormat:@"hasOwnerRelationship = %@", user.objectID];
+//        request.predicate = [NSPredicate predicateWithFormat:@"hasOwnerRelationship = %@", user.objectID];
         NSError *error = nil;
         NSArray *matches = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
-        if (!matches || error || (matches.count > 1)) {
+        if (!matches || error ) {
             NSLog(@"Error while getting car");
-        }else if ([matches count] == 1){
+        }else if ([matches count] >= 1){
             Car *car = [matches lastObject];
             [DataController sharedInstance].carInfo = car;
             UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
