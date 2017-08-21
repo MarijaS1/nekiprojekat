@@ -11,6 +11,7 @@
 		1A0691F71EB8B6ED00CB3326 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0691F61EB8B6ED00CB3326 /* AddReminderViewController.m */; };
 		1A07DCE11F49D5D5008A9874 /* ExpensesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A07DCE01F49D5D5008A9874 /* ExpensesTableViewCell.m */; };
 		1A07DCE51F49F058008A9874 /* GroupedExpenses.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A07DCE41F49F058008A9874 /* GroupedExpenses.m */; };
+		1A07DCE91F4B58D9008A9874 /* LabelChartValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A07DCE81F4B58D9008A9874 /* LabelChartValueFormatter.m */; };
 		1A0C80CA1E6C611F0084D24C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0C80C91E6C611F0084D24C /* CoreData.framework */; };
 		1A0C80CD1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C80CB1E6C61C60084D24C /* MojAutomobilModel.xcdatamodeld */; };
 		1A17D8FB1ECB5025009F6580 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A17D8FA1ECB5025009F6580 /* CarViewController.m */; };
@@ -56,6 +57,8 @@
 		1A07DCE01F49D5D5008A9874 /* ExpensesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpensesTableViewCell.m; path = CustomCells/ExpensesTableViewCell.m; sourceTree = "<group>"; };
 		1A07DCE31F49F058008A9874 /* GroupedExpenses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupedExpenses.h; path = Model/GroupedExpenses.h; sourceTree = "<group>"; };
 		1A07DCE41F49F058008A9874 /* GroupedExpenses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupedExpenses.m; path = Model/GroupedExpenses.m; sourceTree = "<group>"; };
+		1A07DCE71F4B58D9008A9874 /* LabelChartValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelChartValueFormatter.h; path = Services/LabelChartValueFormatter.h; sourceTree = "<group>"; };
+		1A07DCE81F4B58D9008A9874 /* LabelChartValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelChartValueFormatter.m; path = Services/LabelChartValueFormatter.m; sourceTree = "<group>"; };
 		1A0C80C91E6C611F0084D24C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1A0C80CC1E6C61C60084D24C /* MojAutomobilModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MojAutomobilModel.xcdatamodel; sourceTree = "<group>"; };
 		1A17D8F91ECB5025009F6580 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarViewController.h; path = ViewControllers/CarViewController.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				1AC8236C1EA52487009AFBFC /* DataController.m */,
 				1A0691F21EB8AC5600CB3326 /* CalendarService.h */,
 				1A0691F31EB8AC5600CB3326 /* CalendarService.m */,
+				1A07DCE71F4B58D9008A9874 /* LabelChartValueFormatter.h */,
+				1A07DCE81F4B58D9008A9874 /* LabelChartValueFormatter.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A07DCE91F4B58D9008A9874 /* LabelChartValueFormatter.m in Sources */,
 				1A07DCE11F49D5D5008A9874 /* ExpensesTableViewCell.m in Sources */,
 				8488D19C1DAE9A68008FBF41 /* ParkingViewController.m in Sources */,
 				8488D1961DAE9A68008FBF41 /* AppDelegate.m in Sources */,
