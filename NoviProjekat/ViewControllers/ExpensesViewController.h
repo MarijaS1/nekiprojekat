@@ -18,5 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *wholeTableView;
 @property (weak, nonatomic) IBOutlet UIView *chartsView;
+    @property (weak, nonatomic) IBOutlet UILabel *sumAmountLabel;
 
 @end

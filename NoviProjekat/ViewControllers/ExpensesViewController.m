@@ -42,6 +42,7 @@
     
     [self getData];
     [self getGroupedExpenses];
+    [self getGroupedByCar];
 }
 
 
@@ -58,11 +59,61 @@
     if (!matchesExpense || error ) {
         NSLog(@"Error while getting expenses");
     }else if ([matchesExpense count]){
+        [self.expensesArray removeAllObjects];
         self.expensesArray = [matchesExpense mutableCopy];
         [self.tableView reloadData];
     }
     
     
+}
+    
+-(void)getGroupedByCar{
+    NSError *error = nil;
+    //Get expenses
+    
+    NSFetchRequest *requestExpense = [NSFetchRequest fetchRequestWithEntityName:@"Expenses"];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Expenses" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    requestExpense.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    [requestExpense setReturnsObjectsAsFaults:NO];
+    NSExpressionDescription* amountDesc = [[NSExpressionDescription alloc] init];
+    [amountDesc setExpression:[NSExpression expressionWithFormat:@"@sum.amount"]];
+    [amountDesc setExpressionResultType:NSDecimalAttributeType];
+    [amountDesc setName:@"amount"];
+    
+    NSRelationshipDescription* carDesc = [entity.relationshipsByName objectForKey:@"car"];
+    NSAttributeDescription* purposeDesc = [entity.attributesByName objectForKey:@"purpose"];
+
+    //    NSAttributeDescription* amountDesc = [entity.attributesByName objectForKey:@"amount"];
+    [requestExpense setPropertiesToGroupBy:[NSArray arrayWithObjects:carDesc, nil]];
+    [requestExpense setPropertiesToFetch:[NSArray arrayWithObjects:carDesc, amountDesc,purposeDesc, nil]];
+    [requestExpense setResultType:NSDictionaryResultType];
+    NSArray *matchesExpense = [self.appDelegate.managedObjectContext executeFetchRequest:requestExpense error:&error];
+    if (!matchesExpense || error ) {
+        NSLog(@"Error while getting expenses");
+    }else if ([matchesExpense count]){
+        [self.groupedArray removeAllObjects];
+        self.groupedArray = [matchesExpense mutableCopy];
+        double sumAmount = 0.00;
+        for (NSDictionary *amountDict in self.groupedArray) {
+            sumAmount += ((NSString*)[amountDict valueForKey:@"amount"]).doubleValue;
+        }
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [numberFormatter setGroupingSize:3];
+        [numberFormatter setCurrencySymbol:@""];
+        [numberFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"sr"]];
+        [numberFormatter setMaximumFractionDigits:2];
+        
+        
+        self.sumAmountLabel.text =  [numberFormatter stringFromNumber:[NSNumber numberWithDouble:sumAmount]];
+        [self setupPieChart];
+        [self setupBarChart];
+        [self updateChartData];
+        [self updateBarChartData];
+        
+        //        [self.tableView reloadData];
+    }
+
 }
 
 -(void)getGroupedExpenses {
@@ -73,16 +124,35 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Expenses" inManagedObjectContext:self.appDelegate.managedObjectContext];
     requestExpense.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
     [requestExpense setReturnsObjectsAsFaults:NO];
+    NSExpressionDescription* amountDesc = [[NSExpressionDescription alloc] init];
+    [amountDesc setExpression:[NSExpression expressionWithFormat:@"@sum.amount"]];
+    [amountDesc setExpressionResultType:NSDecimalAttributeType];
+    [amountDesc setName:@"amount"];
+    
     NSAttributeDescription* purposeDesc = [entity.attributesByName objectForKey:@"purpose"];
-    NSAttributeDescription* amountDesc = [entity.attributesByName objectForKey:@"amount"];
-    [requestExpense setPropertiesToGroupBy:[NSArray arrayWithObjects:purposeDesc, amountDesc, nil]];
+//    NSAttributeDescription* amountDesc = [entity.attributesByName objectForKey:@"amount"];
+    [requestExpense setPropertiesToGroupBy:[NSArray arrayWithObjects:purposeDesc, nil]];
     [requestExpense setPropertiesToFetch:[NSArray arrayWithObjects:purposeDesc, amountDesc, nil]];
     [requestExpense setResultType:NSDictionaryResultType];
     NSArray *matchesExpense = [self.appDelegate.managedObjectContext executeFetchRequest:requestExpense error:&error];
     if (!matchesExpense || error ) {
         NSLog(@"Error while getting expenses");
     }else if ([matchesExpense count]){
+        [self.groupedArray removeAllObjects];
         self.groupedArray = [matchesExpense mutableCopy];
+        double sumAmount = 0.00;
+        for (NSDictionary *amountDict in self.groupedArray) {
+            sumAmount += ((NSString*)[amountDict valueForKey:@"amount"]).doubleValue;
+        }
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [numberFormatter setGroupingSize:3];
+        [numberFormatter setCurrencySymbol:@""];
+        [numberFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"sr"]];
+        [numberFormatter setMaximumFractionDigits:2];
+        
+       
+        self.sumAmountLabel.text =  [numberFormatter stringFromNumber:[NSNumber numberWithDouble:sumAmount]];
         [self setupPieChart];
         [self setupBarChart];
         [self updateChartData];
@@ -351,7 +421,15 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ExpensesTableViewCell *cell= (ExpensesTableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"ExpensesTableViewCell" forIndexPath:indexPath];
     Expenses *expense = ((Expenses*)self.expensesArray[indexPath.row]);
-    cell.amountLabel.text = [NSString stringWithFormat:@"%2.f", expense.amount] ;
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [numberFormatter setGroupingSize:3];
+    [numberFormatter setCurrencySymbol:@""];
+    [numberFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"sr"]];
+    [numberFormatter setMaximumFractionDigits:2];
+    cell.amountLabel.text = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:expense.amount]];
+    
     cell.purposeLabel.text = expense.purpose;
     self.dateFormatter.dateFormat = @"dd/MM/yyyy";
     cell.dateLabel.text = [self.dateFormatter stringFromDate:expense.date];

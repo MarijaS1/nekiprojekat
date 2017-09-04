@@ -20,12 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.emailTextField.text = @"mara";
+    self.passwordTextField.text = @"maratest1";
     // Do any additional setup after loading the view.
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:YES];
+    [self signInButtonPressed:[UIButton new]];
 }
 
 - (void)didReceiveMemoryWarning {
