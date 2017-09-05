@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BasicViewController.h"
+#import "FSCalendar.h"
 
 @interface ExpensesViewController : BasicViewController <UITableViewDelegate, UITableViewDataSource, ChartViewDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControll;
@@ -19,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *wholeTableView;
 @property (weak, nonatomic) IBOutlet UIView *chartsView;
     @property (weak, nonatomic) IBOutlet UILabel *sumAmountLabel;
+    @property (weak, nonatomic) IBOutlet FSCalendar *calendar;
+    @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeightConstraint;
 
 @end

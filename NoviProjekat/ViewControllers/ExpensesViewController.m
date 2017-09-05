@@ -16,11 +16,15 @@
 #import "LabelChartValueFormatter.h"
 
 
-@interface ExpensesViewController ()
+@interface ExpensesViewController () <FSCalendarDataSource,FSCalendarDelegate,UIGestureRecognizerDelegate>
+    {
+        void * _KVOContext;
+    }
 
 @property (strong, nonatomic) NSMutableArray *expensesArray;
 @property (strong, nonatomic) NSMutableArray *groupedArray;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) UIPanGestureRecognizer *scopeGesture;
 
 @end
 
@@ -35,7 +39,29 @@
     self.wholeTableView.alpha = 1;
     self.chartsView.alpha = 0;
     self.dateFormatter = [[NSDateFormatter alloc]init];
+    
+    if ([[UIDevice currentDevice].model hasPrefix:@"iPad"]) {
+        self.calendarHeightConstraint.constant = 400;
+    }
+    
+    [self.calendar selectDate:[NSDate date] scrollToDate:YES];
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self.calendar action:@selector(handleScopeGesture:)];
+    panGesture.delegate = self;
+    panGesture.minimumNumberOfTouches = 1;
+    panGesture.maximumNumberOfTouches = 2;
+    [self.view addGestureRecognizer:panGesture];
+    self.scopeGesture = panGesture;
+    
+    // While the scope gesture begin, the pan gesture of tableView should cancel.
+    [self.tableView.panGestureRecognizer requireGestureRecognizerToFail:panGesture];
+    
+    [self.calendar addObserver:self forKeyPath:@"scope" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:_KVOContext];
+    
+    self.calendar.scope = FSCalendarScopeWeek;
 }
+    
+    
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -75,17 +101,17 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Expenses" inManagedObjectContext:self.appDelegate.managedObjectContext];
     requestExpense.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
     [requestExpense setReturnsObjectsAsFaults:NO];
-    NSExpressionDescription* amountDesc = [[NSExpressionDescription alloc] init];
-    [amountDesc setExpression:[NSExpression expressionWithFormat:@"@sum.amount"]];
-    [amountDesc setExpressionResultType:NSDecimalAttributeType];
-    [amountDesc setName:@"amount"];
+//    NSExpressionDescription* amountDesc = [[NSExpressionDescription alloc] init];
+//    [amountDesc setExpression:[NSExpression expressionWithFormat:@"@sum.amount"]];
+//    [amountDesc setExpressionResultType:NSDecimalAttributeType];
+//    [amountDesc setName:@"amount"];
     
-    NSRelationshipDescription* carDesc = [entity.relationshipsByName objectForKey:@"car"];
+    NSRelationshipDescription* carDesc = [entity.relationshipsByName objectForKey:@"hasCarRelationship"];
     NSAttributeDescription* purposeDesc = [entity.attributesByName objectForKey:@"purpose"];
-
-    //    NSAttributeDescription* amountDesc = [entity.attributesByName objectForKey:@"amount"];
-    [requestExpense setPropertiesToGroupBy:[NSArray arrayWithObjects:carDesc, nil]];
-    [requestExpense setPropertiesToFetch:[NSArray arrayWithObjects:carDesc, amountDesc,purposeDesc, nil]];
+        NSAttributeDescription* amountDesc = [entity.attributesByName objectForKey:@"amount"];
+    
+    [requestExpense setPropertiesToGroupBy:[NSArray arrayWithObjects:purposeDesc, amountDesc, carDesc, nil]];
+    [requestExpense setPropertiesToFetch:[NSArray arrayWithObjects: amountDesc, purposeDesc, carDesc, nil]];
     [requestExpense setResultType:NSDictionaryResultType];
     NSArray *matchesExpense = [self.appDelegate.managedObjectContext executeFetchRequest:requestExpense error:&error];
     if (!matchesExpense || error ) {
@@ -407,7 +433,66 @@
     }];
 }
 
+#pragma mark - KVO
+    
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+    {
+        if (context == _KVOContext) {
+            FSCalendarScope oldScope = [change[NSKeyValueChangeOldKey] unsignedIntegerValue];
+            FSCalendarScope newScope = [change[NSKeyValueChangeNewKey] unsignedIntegerValue];
+            NSLog(@"From %@ to %@",(oldScope==FSCalendarScopeWeek?@"week":@"month"),(newScope==FSCalendarScopeWeek?@"week":@"month"));
+        } else {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        }
+    }
+    
+#pragma mark - <UIGestureRecognizerDelegate>
+    
+    // Whether scope gesture should begin
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+    {
+        BOOL shouldBegin = self.tableView.contentOffset.y <= -self.tableView.contentInset.top;
+        if (shouldBegin) {
+            CGPoint velocity = [self.scopeGesture velocityInView:self.view];
+            switch (self.calendar.scope) {
+                case FSCalendarScopeMonth:
+                return velocity.y < 0;
+                case FSCalendarScopeWeek:
+                return velocity.y > 0;
+            }
+        }
+        return shouldBegin;
+    }
+    
+#pragma mark - <FSCalendarDelegate>
+    
+- (void)calendar:(FSCalendar *)calendar boundingRectWillChange:(CGRect)bounds animated:(BOOL)animated
+    {
+        //    NSLog(@"%@",(calendar.scope==FSCalendarScopeWeek?@"week":@"month"));
+        _calendarHeightConstraint.constant = CGRectGetHeight(bounds);
+        [self.view layoutIfNeeded];
+    }
+    
+- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
+    {
+        NSLog(@"did select date %@",[self.dateFormatter stringFromDate:date]);
+        
+        NSMutableArray *selectedDates = [NSMutableArray arrayWithCapacity:calendar.selectedDates.count];
+        [calendar.selectedDates enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [selectedDates addObject:[self.dateFormatter stringFromDate:obj]];
+        }];
+        NSLog(@"selected dates is %@",selectedDates);
+        if (monthPosition == FSCalendarMonthPositionNext || monthPosition == FSCalendarMonthPositionPrevious) {
+            [calendar setCurrentPage:date animated:YES];
+        }
+    }
+    
+- (void)calendarCurrentPageDidChange:(FSCalendar *)calendar
+    {
+        NSLog(@"%s %@", __FUNCTION__, [self.dateFormatter stringFromDate:calendar.currentPage]);
+    }
 
+    
 #pragma mark - TableView
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

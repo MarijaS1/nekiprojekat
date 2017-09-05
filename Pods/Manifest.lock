@@ -3,6 +3,7 @@ PODS:
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - FSCalendar (2.7.9)
   - IQKeyboardManager (4.0.8)
   - MBProgressHUD (1.0.0)
   - SkyFloatingLabelTextField (3.2.0)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Charts
+  - FSCalendar
   - IQKeyboardManager
   - MBProgressHUD (~> 1.0.0)
   - SkyFloatingLabelTextField (~> 3.0)
@@ -19,11 +21,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
   IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SkyFloatingLabelTextField: 4e2d2f7160af660ed1da6bb9d0027b5c474b4b79
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: 6ae169aab693a1673248e603719a1e5d14875381
+PODFILE CHECKSUM: f655cb7e41304488ed8404ffeaf5da2685df9d93
 
 COCOAPODS: 1.2.1

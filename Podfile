@@ -11,7 +11,7 @@ target 'NoviProjekat' do
     pod 'IQKeyboardManager'
     pod 'ActionSheetPicker-3.0'
     pod 'SkyFloatingLabelTextField', '~> 3.0'
-	
+	pod 'FSCalendar'
 
   # Pods for NoviProjekat
 

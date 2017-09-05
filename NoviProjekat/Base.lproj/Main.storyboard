@@ -328,7 +328,7 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
             </objects>
             <point key="canvasLocation" x="4642" y="-1297"/>
         </scene>
-        <!--Kontrola troškova-->
+        <!--Data Source-->
         <scene sceneID="bXR-1P-rFd">
             <objects>
                 <viewController storyboardIdentifier="expensesViewController" id="Oaj-LV-28r" customClass="ExpensesViewController" sceneMemberID="viewController">
@@ -358,15 +358,26 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJ7-mw-D39">
                                 <rect key="frame" x="0.0" y="42" width="320" height="413"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8G4-SF-0x2" customClass="FSCalendar">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="xCW-wm-fZ2"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Oaj-LV-28r" id="cB1-19-rLo"/>
+                                            <outlet property="delegate" destination="Oaj-LV-28r" id="MS2-Dq-7uo"/>
+                                        </connections>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FOo-bW-gRY">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="388"/>
+                                        <rect key="frame" x="0.0" y="300" width="320" height="88"/>
                                         <color key="backgroundColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExpensesTableViewCell" rowHeight="60" id="EjR-rl-LAG" customClass="ExpensesTableViewCell">
                                                 <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EjR-rl-LAG" id="tDj-c7-Kll">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="write" translatesAutoresizingMaskIntoConstraints="NO" id="1JL-HE-Zbi">
@@ -458,11 +469,14 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8G4-SF-0x2" secondAttribute="trailing" id="0Mt-pW-lZs"/>
                                     <constraint firstAttribute="trailing" secondItem="FOo-bW-gRY" secondAttribute="trailing" id="5HB-1W-Eku"/>
                                     <constraint firstItem="rQA-mb-mk1" firstAttribute="top" secondItem="FOo-bW-gRY" secondAttribute="bottom" id="DKe-VX-Gcf"/>
-                                    <constraint firstItem="FOo-bW-gRY" firstAttribute="top" secondItem="GJ7-mw-D39" secondAttribute="top" id="cPg-M2-XM5"/>
+                                    <constraint firstItem="8G4-SF-0x2" firstAttribute="leading" secondItem="GJ7-mw-D39" secondAttribute="leading" id="V4t-1l-7io"/>
                                     <constraint firstItem="rQA-mb-mk1" firstAttribute="leading" secondItem="GJ7-mw-D39" secondAttribute="leading" id="cS0-Jw-bKE"/>
                                     <constraint firstAttribute="trailing" secondItem="rQA-mb-mk1" secondAttribute="trailing" id="eIC-FA-K4i"/>
+                                    <constraint firstItem="8G4-SF-0x2" firstAttribute="top" secondItem="GJ7-mw-D39" secondAttribute="top" id="jS3-U2-brG"/>
+                                    <constraint firstItem="FOo-bW-gRY" firstAttribute="top" secondItem="8G4-SF-0x2" secondAttribute="bottom" id="o23-Hx-paw"/>
                                     <constraint firstAttribute="bottom" secondItem="rQA-mb-mk1" secondAttribute="bottom" id="o9u-rf-p5o"/>
                                     <constraint firstItem="FOo-bW-gRY" firstAttribute="leading" secondItem="GJ7-mw-D39" secondAttribute="leading" id="oqV-Nw-WcD"/>
                                 </constraints>
@@ -535,6 +549,8 @@ Dodajte podsetnike kako bi dobijali obaveštenja</string>
                     </navigationItem>
                     <connections>
                         <outlet property="barChartView" destination="vQN-z3-S05" id="xpl-KN-Qe3"/>
+                        <outlet property="calendar" destination="8G4-SF-0x2" id="Udz-1f-TSc"/>
+                        <outlet property="calendarHeightConstraint" destination="xCW-wm-fZ2" id="j1r-OH-gbH"/>
                         <outlet property="chartsView" destination="g2j-cR-OxF" id="FCi-We-jBG"/>
                         <outlet property="pieChartView" destination="oka-E0-SlM" id="uiY-FR-VfR"/>
                         <outlet property="segmentedControll" destination="e7f-lp-2qs" id="TPI-zK-JH7"/>
