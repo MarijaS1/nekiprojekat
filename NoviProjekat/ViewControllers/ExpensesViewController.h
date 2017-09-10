@@ -22,5 +22,6 @@
     @property (weak, nonatomic) IBOutlet UILabel *sumAmountLabel;
     @property (weak, nonatomic) IBOutlet FSCalendar *calendar;
     @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIView *emptyView;
 
 @end

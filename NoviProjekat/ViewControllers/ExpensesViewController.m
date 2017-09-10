@@ -16,7 +16,7 @@
 #import "LabelChartValueFormatter.h"
 
 
-@interface ExpensesViewController () <FSCalendarDataSource,FSCalendarDelegate,UIGestureRecognizerDelegate>
+@interface ExpensesViewController () <FSCalendarDataSource,FSCalendarDelegate,FSCalendarDelegateAppearance,UIGestureRecognizerDelegate>
     {
         void * _KVOContext;
     }
@@ -59,6 +59,11 @@
     [self.calendar addObserver:self forKeyPath:@"scope" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:_KVOContext];
     
     self.calendar.scope = FSCalendarScopeWeek;
+    self.calendar.appearance.headerTitleColor = [UIColor getGreenColor];
+    self.calendar.appearance.weekdayTextColor = [UIColor blackColor];
+    self.calendar.backgroundColor = [UIColor getGreyColor];
+    self.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"sr"];
+    self.emptyView.hidden = YES;
 }
     
     
@@ -66,81 +71,51 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self getData];
+    [self getDataWithDate:nil];
     [self getGroupedExpenses];
-    [self getGroupedByCar];
+    
 }
 
 
 
--(void)getData {
+    -(void)getDataWithDate:(NSDate*)date {
     NSError *error = nil;
-    //Get expenses
-    
+   
+
     NSFetchRequest *requestExpense = [NSFetchRequest fetchRequestWithEntityName:@"Expenses"];
     requestExpense.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+        if (date != nil) {
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth  | NSCalendarUnitDay) fromDate:date];
+            //create a date with these components
+            NSDate *startDate = [calendar dateFromComponents:components];
+            [components setMonth:0];
+            [components setDay:1]; //reset the other components
+            [components setYear:0]; //reset the other components
+            NSDate *endDate = [calendar dateByAddingComponents:components toDate:startDate options:0];
+           
+            requestExpense.predicate = [NSPredicate predicateWithFormat:@"((date >= %@) AND (date <= %@)) || (date = nil)",startDate,endDate];
+
+
+        }
     [requestExpense setReturnsObjectsAsFaults:NO];
     
     NSArray *matchesExpense = [self.appDelegate.managedObjectContext executeFetchRequest:requestExpense error:&error];
     if (!matchesExpense || error ) {
         NSLog(@"Error while getting expenses");
+        self.emptyView.hidden = YES;
     }else if ([matchesExpense count]){
         [self.expensesArray removeAllObjects];
         self.expensesArray = [matchesExpense mutableCopy];
         [self.tableView reloadData];
+        self.emptyView.hidden = YES;
+    }else{
+        self.emptyView.hidden = NO;
     }
     
     
 }
     
--(void)getGroupedByCar{
-    NSError *error = nil;
-    //Get expenses
-    
-    NSFetchRequest *requestExpense = [NSFetchRequest fetchRequestWithEntityName:@"Expenses"];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Expenses" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    requestExpense.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
-    [requestExpense setReturnsObjectsAsFaults:NO];
-//    NSExpressionDescription* amountDesc = [[NSExpressionDescription alloc] init];
-//    [amountDesc setExpression:[NSExpression expressionWithFormat:@"@sum.amount"]];
-//    [amountDesc setExpressionResultType:NSDecimalAttributeType];
-//    [amountDesc setName:@"amount"];
-    
-    NSRelationshipDescription* carDesc = [entity.relationshipsByName objectForKey:@"hasCarRelationship"];
-    NSAttributeDescription* purposeDesc = [entity.attributesByName objectForKey:@"purpose"];
-        NSAttributeDescription* amountDesc = [entity.attributesByName objectForKey:@"amount"];
-    
-    [requestExpense setPropertiesToGroupBy:[NSArray arrayWithObjects:purposeDesc, amountDesc, carDesc, nil]];
-    [requestExpense setPropertiesToFetch:[NSArray arrayWithObjects: amountDesc, purposeDesc, carDesc, nil]];
-    [requestExpense setResultType:NSDictionaryResultType];
-    NSArray *matchesExpense = [self.appDelegate.managedObjectContext executeFetchRequest:requestExpense error:&error];
-    if (!matchesExpense || error ) {
-        NSLog(@"Error while getting expenses");
-    }else if ([matchesExpense count]){
-        [self.groupedArray removeAllObjects];
-        self.groupedArray = [matchesExpense mutableCopy];
-        double sumAmount = 0.00;
-        for (NSDictionary *amountDict in self.groupedArray) {
-            sumAmount += ((NSString*)[amountDict valueForKey:@"amount"]).doubleValue;
-        }
-        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        [numberFormatter setGroupingSize:3];
-        [numberFormatter setCurrencySymbol:@""];
-        [numberFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"sr"]];
-        [numberFormatter setMaximumFractionDigits:2];
-        
-        
-        self.sumAmountLabel.text =  [numberFormatter stringFromNumber:[NSNumber numberWithDouble:sumAmount]];
-        [self setupPieChart];
-        [self setupBarChart];
-        [self updateChartData];
-        [self updateBarChartData];
-        
-        //        [self.tableView reloadData];
-    }
-
-}
 
 -(void)getGroupedExpenses {
     NSError *error = nil;
@@ -473,10 +448,10 @@
         [self.view layoutIfNeeded];
     }
     
-- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
-    {
+- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition{
         NSLog(@"did select date %@",[self.dateFormatter stringFromDate:date]);
-        
+    
+       [self getDataWithDate:date];
         NSMutableArray *selectedDates = [NSMutableArray arrayWithCapacity:calendar.selectedDates.count];
         [calendar.selectedDates enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [selectedDates addObject:[self.dateFormatter stringFromDate:obj]];
@@ -485,12 +460,20 @@
         if (monthPosition == FSCalendarMonthPositionNext || monthPosition == FSCalendarMonthPositionPrevious) {
             [calendar setCurrentPage:date animated:YES];
         }
-    }
+}
     
-- (void)calendarCurrentPageDidChange:(FSCalendar *)calendar
-    {
+- (void)calendarCurrentPageDidChange:(FSCalendar *)calendar{
         NSLog(@"%s %@", __FUNCTION__, [self.dateFormatter stringFromDate:calendar.currentPage]);
-    }
+}
+    
+
+
+-(UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance fillSelectionColorForDate:(NSDate *)date{
+     return [UIColor getGreenColor];
+}
+    
+
+
 
     
 #pragma mark - TableView
@@ -544,6 +527,18 @@
     
     return  cell;
 }
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+         
+    }
+}
+
 
 
 
